@@ -51,11 +51,11 @@ function Hero() {
           <div className="font-mono text-[10px] text-tech-cyan/70 tracking-[0.2em] leading-relaxed z-10">
             <div className="flex items-center gap-2 mb-3">
               <div className="size-1.5 bg-tech-neon rounded-full shadow-[0_0_8px_var(--color-tech-neon)] animate-pulse" />
-              TECH.INFRA_ACTIVE
+              TECH · AUTOMAÇÃO
             </div>
-            <div>LATENCY · 0.014ms</div>
-            <div>NODES · 1,024 ON</div>
-            <div>AUTOMATION · MAX</div>
+            <div>SISTEMA</div>
+            <div>OPERAÇÃO</div>
+            <div>CRESCIMENTO</div>
           </div>
           <div className="text-[110px] xl:text-[140px] font-bold text-white/[0.025] tracking-tighter leading-none select-none -ml-2 z-10">
             TECH<br />CORE
