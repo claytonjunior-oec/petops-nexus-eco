@@ -295,13 +295,13 @@ function TechSection() {
   );
 }
 
-function Stat({ label, value, trend, color }: { label: string; value: string; trend: string; color: string }) {
+function Stat({ label, color }: { label: string; color: string }) {
   return (
     <div className="rounded-lg border border-white/5 bg-bg-base/60 p-4">
       <div className="font-mono text-[10px] text-white/40 tracking-widest mb-2">{label}</div>
       <div className="flex items-end justify-between">
-        <div className="text-2xl font-light text-white tabular-nums">{value}</div>
-        <div className={`text-[10px] font-mono text-${color} tabular-nums`}>{trend}</div>
+        <div className="h-6 w-16 rounded bg-white/5" />
+        <div className={`h-1 w-8 rounded-full bg-${color}/40`} />
       </div>
     </div>
   );
