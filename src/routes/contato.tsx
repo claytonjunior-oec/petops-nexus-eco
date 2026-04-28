@@ -1,0 +1,135 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/site/Nav";
+import { Footer } from "@/components/site/Footer";
+import { useState } from "react";
+
+export const Route = createFileRoute("/contato")({
+  head: () => ({
+    meta: [
+      { title: "Contato — Agende uma demo da PetOps" },
+      {
+        name: "description",
+        content:
+          "Fale com a PetOps. Agende uma demonstração da Tech, solicite o catálogo Care ou conheça o ecossistema completo.",
+      },
+      { property: "og:title", content: "Contato PetOps" },
+      { property: "og:description", content: "Agende sua demo e conheça o ecossistema PetOps." },
+    ],
+  }),
+  component: ContactPage,
+});
+
+function ContactPage() {
+  const [sent, setSent] = useState(false);
+  return (
+    <div className="min-h-dvh bg-bg-base text-titanium">
+      <Nav />
+      <main className="pt-16">
+        <section className="relative px-6 lg:px-10 py-24 overflow-hidden">
+          <div className="absolute inset-0 bg-grid-pattern bg-grid-fade pointer-events-none" />
+          <div className="absolute top-0 right-0 size-[500px] bg-tech-cyan/10 blur-[140px] rounded-full pointer-events-none" />
+          <div className="absolute bottom-0 left-0 size-[500px] bg-care-blue/10 blur-[140px] rounded-full pointer-events-none" />
+
+          <div className="relative max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="size-1.5 bg-tech-neon rounded-full shadow-[0_0_10px_var(--color-tech-neon)] animate-pulse" />
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/60">
+                  CONEXÃO ABERTA
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-6xl font-medium tracking-tight text-white leading-[1.05] text-balance">
+                Escolha o próximo nível do seu{" "}
+                <span className="text-gradient-brand">negócio pet.</span>
+              </h1>
+              <p className="mt-6 text-lg text-white/50 max-w-md leading-relaxed">
+                Conte um pouco sobre sua operação. Retornamos com a melhor frente
+                para você: Tech, Care ou ecossistema completo.
+              </p>
+
+              <div className="mt-12 space-y-4 font-mono text-xs text-white/60">
+                <div className="flex items-center gap-3">
+                  <span className="text-tech-cyan">›</span> contato@petops.com.br
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="text-care-blue">›</span> Atendimento em horário comercial
+                </div>
+              </div>
+            </div>
+
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                setSent(true);
+              }}
+              className="rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-8 md:p-10 space-y-5"
+            >
+              {sent ? (
+                <div className="py-12 text-center">
+                  <div className="size-12 mx-auto rounded-full bg-tech-neon/10 border border-tech-neon/30 flex items-center justify-center mb-6">
+                    <span className="text-tech-neon text-xl">✓</span>
+                  </div>
+                  <h3 className="text-2xl font-medium text-white mb-2">Mensagem enviada</h3>
+                  <p className="text-white/50">Retornamos em breve.</p>
+                </div>
+              ) : (
+                <>
+                  <Field label="Nome" name="nome" />
+                  <Field label="Empresa" name="empresa" />
+                  <Field label="E-mail" name="email" type="email" />
+                  <Field label="Telefone / WhatsApp" name="telefone" />
+                  <div>
+                    <label className="font-mono text-[10px] uppercase tracking-widest text-white/40 block mb-2">
+                      Interesse
+                    </label>
+                    <select
+                      name="interesse"
+                      className="w-full bg-bg-base border border-white/10 rounded-md px-4 py-3 text-white focus:outline-none focus:border-tech-cyan transition"
+                    >
+                      <option>PetOps Tech</option>
+                      <option>PetOps Care</option>
+                      <option>Ecossistema completo</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="font-mono text-[10px] uppercase tracking-widest text-white/40 block mb-2">
+                      Mensagem
+                    </label>
+                    <textarea
+                      name="msg"
+                      rows={4}
+                      className="w-full bg-bg-base border border-white/10 rounded-md px-4 py-3 text-white focus:outline-none focus:border-tech-cyan transition resize-none"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full font-mono text-[11px] uppercase tracking-widest px-6 py-4 bg-white text-bg-base rounded-sm font-semibold hover:bg-white/90 transition"
+                  >
+                    Enviar mensagem
+                  </button>
+                </>
+              )}
+            </form>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+function Field({ label, name, type = "text" }: { label: string; name: string; type?: string }) {
+  return (
+    <div>
+      <label className="font-mono text-[10px] uppercase tracking-widest text-white/40 block mb-2">
+        {label}
+      </label>
+      <input
+        type={type}
+        name={name}
+        required
+        className="w-full bg-bg-base border border-white/10 rounded-md px-4 py-3 text-white focus:outline-none focus:border-tech-cyan transition"
+      />
+    </div>
+  );
+}
