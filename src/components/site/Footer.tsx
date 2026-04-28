@@ -8,7 +8,7 @@ export function Footer() {
           <div className="flex items-center gap-2 mb-4">
             <div className="size-2 rounded-full bg-tech-neon shadow-[0_0_10px_var(--color-tech-neon)] animate-pulse" />
             <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/60">
-              ECOSSISTEMA ONLINE
+              PETOPS · TECH + CARE
             </span>
           </div>
           <h3 className="text-2xl font-medium text-white tracking-tight max-w-md leading-tight">
