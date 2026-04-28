@@ -68,11 +68,11 @@ function Hero() {
           <div className="font-mono text-[10px] text-care-blue/70 tracking-[0.2em] leading-relaxed text-right z-10">
             <div className="flex items-center justify-end gap-2 mb-3">
               <div className="size-1.5 bg-care-green rounded-full shadow-[0_0_8px_var(--color-care-green)]" />
-              CARE.BIO_SYNCED
+              CARE · CUIDADO
             </div>
-            <div>WELFARE · NOMINAL</div>
-            <div>EXPERIENCE · 99.8</div>
-            <div>RECURRENCE · ACTIVE</div>
+            <div>EXPERIÊNCIA</div>
+            <div>PRODUTO</div>
+            <div>RECORRÊNCIA</div>
           </div>
           <div className="text-[110px] xl:text-[140px] font-bold text-white/[0.025] tracking-tighter leading-none select-none text-right -mr-2 z-10">
             CARE<br />SYNC
