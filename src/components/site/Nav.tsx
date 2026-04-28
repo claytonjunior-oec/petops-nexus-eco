@@ -19,10 +19,10 @@ export function Nav() {
             <img
               src={logo}
               alt="PetOps"
-              className="size-8 object-contain invert opacity-90 group-hover:opacity-100 transition"
+              className="size-9 object-contain opacity-95 group-hover:opacity-100 transition"
             />
-            <span className="font-semibold tracking-[0.18em] text-white text-sm">
-              PETOPS
+            <span className="font-semibold tracking-[0.22em] text-titanium text-sm">
+              PET<span className="text-tech-cyan">OPS</span>
             </span>
           </Link>
           <div className="hidden md:flex items-center gap-7 font-mono text-[11px] uppercase tracking-[0.18em] text-white/50">

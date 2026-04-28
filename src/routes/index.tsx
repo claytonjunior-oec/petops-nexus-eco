@@ -90,7 +90,7 @@ function Hero() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-28 border border-white/10 rounded-full flex items-center justify-center backdrop-blur-md bg-bg-base/50 shadow-[0_0_50px_rgba(255,255,255,0.06)]">
             <div className="size-14 border border-white/20 rounded-full flex items-center justify-center relative">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-tech-cyan/30 to-care-blue/30 blur-md" />
-              <img src={logo} alt="" className="size-8 invert opacity-90 relative" />
+              <img src={logo} alt="" className="size-9 object-contain relative" />
             </div>
           </div>
         </div>
