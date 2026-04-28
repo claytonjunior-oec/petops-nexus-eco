@@ -243,7 +243,7 @@ function TechSection() {
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-2 font-mono text-[10px] text-white/40 tracking-widest">
                 <div className="size-1.5 bg-tech-neon rounded-full animate-pulse" />
-                PETOPS.TECH / DASH
+                PETOPS · TECH
               </div>
               <div className="flex gap-1.5">
                 <div className="size-2 rounded-full bg-white/10" />
@@ -253,13 +253,13 @@ function TechSection() {
             </div>
 
             <div className="grid grid-cols-2 gap-3 mb-3">
-              <Stat label="Reativação" value="94.2%" trend="+12.4%" color="tech-neon" />
-              <Stat label="No-show" value="3.1%" trend="-8.2%" color="tech-cyan" />
+              <Stat label="Reativação" color="tech-neon" />
+              <Stat label="No-show" color="tech-cyan" />
             </div>
 
             <div className="rounded-lg border border-white/5 bg-bg-base/60 p-5">
               <div className="font-mono text-[10px] text-white/40 tracking-widest mb-4">
-                FLUXO · ÚLTIMOS 7 DIAS
+                FLUXO OPERACIONAL
               </div>
               <div className="flex items-end gap-2 h-24">
                 {[40, 60, 35, 80, 55, 95, 70].map((h, i) => (
