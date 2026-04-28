@@ -2,7 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Section } from "@/components/site/Section";
-import logo from "@/assets/petops-logo.png";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
