@@ -88,9 +88,9 @@ function Hero() {
         {/* Center spine */}
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent pointer-events-none z-20 hidden md:block">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-28 border border-white/10 rounded-full flex items-center justify-center backdrop-blur-md bg-bg-base/50 shadow-[0_0_50px_rgba(255,255,255,0.06)]">
-            <div className="size-14 border border-white/20 rounded-full flex items-center justify-center relative">
+          <div className="size-14 border border-white/20 rounded-full flex items-center justify-center relative">
               <div className="absolute inset-0 rounded-full bg-gradient-to-r from-tech-cyan/30 to-care-blue/30 blur-md" />
-              <img src={logo} alt="" className="size-9 object-contain relative" />
+              <div className="size-2 rounded-full bg-white/80 shadow-[0_0_12px_rgba(255,255,255,0.6)] relative" />
             </div>
           </div>
         </div>
