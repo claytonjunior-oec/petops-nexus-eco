@@ -51,11 +51,11 @@ function Hero() {
           <div className="font-mono text-[10px] text-tech-cyan/70 tracking-[0.2em] leading-relaxed z-10">
             <div className="flex items-center gap-2 mb-3">
               <div className="size-1.5 bg-tech-neon rounded-full shadow-[0_0_8px_var(--color-tech-neon)] animate-pulse" />
-              TECH.INFRA_ACTIVE
+              TECH · AUTOMAÇÃO
             </div>
-            <div>LATENCY · 0.014ms</div>
-            <div>NODES · 1,024 ON</div>
-            <div>AUTOMATION · MAX</div>
+            <div>SISTEMA</div>
+            <div>OPERAÇÃO</div>
+            <div>CRESCIMENTO</div>
           </div>
           <div className="text-[110px] xl:text-[140px] font-bold text-white/[0.025] tracking-tighter leading-none select-none -ml-2 z-10">
             TECH<br />CORE
@@ -68,11 +68,11 @@ function Hero() {
           <div className="font-mono text-[10px] text-care-blue/70 tracking-[0.2em] leading-relaxed text-right z-10">
             <div className="flex items-center justify-end gap-2 mb-3">
               <div className="size-1.5 bg-care-green rounded-full shadow-[0_0_8px_var(--color-care-green)]" />
-              CARE.BIO_SYNCED
+              CARE · CUIDADO
             </div>
-            <div>WELFARE · NOMINAL</div>
-            <div>EXPERIENCE · 99.8</div>
-            <div>RECURRENCE · ACTIVE</div>
+            <div>EXPERIÊNCIA</div>
+            <div>PRODUTO</div>
+            <div>RECORRÊNCIA</div>
           </div>
           <div className="text-[110px] xl:text-[140px] font-bold text-white/[0.025] tracking-tighter leading-none select-none text-right -mr-2 z-10">
             CARE<br />SYNC
@@ -104,7 +104,7 @@ function Hero() {
               </span>
               <div className="w-px h-3 bg-white/20" />
               <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
-                V. 2.0
+                Tech + Care
               </span>
             </div>
 
@@ -149,13 +149,13 @@ function Hero() {
 
         {/* Bottom UI bar */}
         <div className="absolute bottom-0 inset-x-0 h-12 border-t border-white/5 bg-bg-base/40 backdrop-blur flex items-center justify-between px-6 lg:px-10 z-40 hidden md:flex">
-          <div className="font-mono text-[10px] text-white/30 tracking-widest">// SECURE_CONNECTION</div>
+          <div className="font-mono text-[10px] text-white/30 tracking-widest">// PETOPS · ECOSSISTEMA</div>
           <div className="flex gap-1">
             <div className="w-8 h-1 bg-white/30 rounded-full" />
             <div className="w-2 h-1 bg-white/10 rounded-full" />
             <div className="w-2 h-1 bg-white/10 rounded-full" />
           </div>
-          <div className="font-mono text-[10px] text-white/30 tracking-widest">SYS.SCROLL ↓</div>
+          <div className="font-mono text-[10px] text-white/30 tracking-widest">EXPLORAR ↓</div>
         </div>
       </div>
     </main>
@@ -243,7 +243,7 @@ function TechSection() {
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-2 font-mono text-[10px] text-white/40 tracking-widest">
                 <div className="size-1.5 bg-tech-neon rounded-full animate-pulse" />
-                PETOPS.TECH / DASH
+                PETOPS · TECH
               </div>
               <div className="flex gap-1.5">
                 <div className="size-2 rounded-full bg-white/10" />
@@ -253,13 +253,13 @@ function TechSection() {
             </div>
 
             <div className="grid grid-cols-2 gap-3 mb-3">
-              <Stat label="Reativação" value="94.2%" trend="+12.4%" color="tech-neon" />
-              <Stat label="No-show" value="3.1%" trend="-8.2%" color="tech-cyan" />
+              <Stat label="Reativação" color="tech-neon" />
+              <Stat label="No-show" color="tech-cyan" />
             </div>
 
             <div className="rounded-lg border border-white/5 bg-bg-base/60 p-5">
               <div className="font-mono text-[10px] text-white/40 tracking-widest mb-4">
-                FLUXO · ÚLTIMOS 7 DIAS
+                FLUXO OPERACIONAL
               </div>
               <div className="flex items-end gap-2 h-24">
                 {[40, 60, 35, 80, 55, 95, 70].map((h, i) => (
@@ -295,13 +295,13 @@ function TechSection() {
   );
 }
 
-function Stat({ label, value, trend, color }: { label: string; value: string; trend: string; color: string }) {
+function Stat({ label, color }: { label: string; color: string }) {
   return (
     <div className="rounded-lg border border-white/5 bg-bg-base/60 p-4">
       <div className="font-mono text-[10px] text-white/40 tracking-widest mb-2">{label}</div>
       <div className="flex items-end justify-between">
-        <div className="text-2xl font-light text-white tabular-nums">{value}</div>
-        <div className={`text-[10px] font-mono text-${color} tabular-nums`}>{trend}</div>
+        <div className="h-6 w-16 rounded bg-white/5" />
+        <div className={`h-1 w-8 rounded-full bg-${color}/40`} />
       </div>
     </div>
   );
@@ -319,10 +319,10 @@ function CareSection() {
           <div className="rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] glow-care">
             <div className="flex items-center justify-between mb-8">
               <div className="font-mono text-[10px] text-white/40 tracking-widest">
-                PETOPS.CARE / LINE
+                PETOPS · CARE
               </div>
               <div className="font-mono text-[10px] text-care-blue/70 tracking-widest">
-                06 SKUs
+                LINHA PROFISSIONAL
               </div>
             </div>
             <div className="grid grid-cols-3 gap-3">
@@ -445,24 +445,24 @@ function ParaQuem() {
 
 /* ---------------- PROVA ---------------- */
 function Prova() {
+  const pillars = [
+    { t: "Tech + Care", d: "Duas frentes que se potencializam — automação e cuidado em um único ecossistema.", c: "tech-cyan" },
+    { t: "Foco total no pet", d: "Construído de ponta a ponta para a realidade de quem opera no mercado pet.", c: "tech-neon" },
+    { t: "Premium por design", d: "Estética, fluxo e produto pensados para elevar a percepção da sua marca.", c: "care-blue" },
+  ];
   return (
     <Section
       eyebrow="Construído com visão de ecossistema"
       title="Para quem quer evoluir o mercado pet."
     >
       <div className="grid md:grid-cols-3 gap-4">
-        {[
-          { v: "2", l: "frentes integradas", c: "tech-cyan" },
-          { v: "06+", l: "módulos operacionais", c: "tech-neon" },
-          { v: "100%", l: "foco em negócios pet", c: "care-blue" },
-        ].map((s) => (
-          <div key={s.l} className="p-10 rounded-xl border border-white/10 bg-bg-surface text-center">
-            <div className={`text-6xl font-light text-${s.c} tabular-nums tracking-tight mb-3`}>
-              {s.v}
+        {pillars.map((p) => (
+          <div key={p.t} className="p-10 rounded-xl border border-white/10 bg-bg-surface">
+            <div className={`h-px w-10 bg-${p.c}/60 mb-6`} />
+            <div className="text-2xl font-medium text-white tracking-tight mb-3">
+              {p.t}
             </div>
-            <div className="font-mono text-[10px] uppercase tracking-widest text-white/50">
-              {s.l}
-            </div>
+            <p className="text-sm text-white/55 leading-relaxed">{p.d}</p>
           </div>
         ))}
       </div>

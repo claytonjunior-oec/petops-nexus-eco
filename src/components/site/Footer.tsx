@@ -8,7 +8,7 @@ export function Footer() {
           <div className="flex items-center gap-2 mb-4">
             <div className="size-2 rounded-full bg-tech-neon shadow-[0_0_10px_var(--color-tech-neon)] animate-pulse" />
             <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/60">
-              ECOSSISTEMA ONLINE
+              PETOPS · TECH + CARE
             </span>
           </div>
           <h3 className="text-2xl font-medium text-white tracking-tight max-w-md leading-tight">
@@ -45,10 +45,7 @@ export function Footer() {
       <div className="border-t border-white/5">
         <div className="max-w-[1440px] mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-[10px] tracking-widest text-white/30 uppercase">
           <div>© {new Date().getFullYear()} PetOps · Todos os direitos reservados</div>
-          <div className="flex items-center gap-4">
-            <span>SYS.STATUS · OPERACIONAL</span>
-            <span className="size-1.5 bg-tech-neon rounded-full shadow-[0_0_8px_var(--color-tech-neon)]" />
-          </div>
+          <div>Tech + Care</div>
         </div>
       </div>
     </footer>
