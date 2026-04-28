@@ -445,24 +445,24 @@ function ParaQuem() {
 
 /* ---------------- PROVA ---------------- */
 function Prova() {
+  const pillars = [
+    { t: "Tech + Care", d: "Duas frentes que se potencializam — automação e cuidado em um único ecossistema.", c: "tech-cyan" },
+    { t: "Foco total no pet", d: "Construído de ponta a ponta para a realidade de quem opera no mercado pet.", c: "tech-neon" },
+    { t: "Premium por design", d: "Estética, fluxo e produto pensados para elevar a percepção da sua marca.", c: "care-blue" },
+  ];
   return (
     <Section
       eyebrow="Construído com visão de ecossistema"
       title="Para quem quer evoluir o mercado pet."
     >
       <div className="grid md:grid-cols-3 gap-4">
-        {[
-          { v: "2", l: "frentes integradas", c: "tech-cyan" },
-          { v: "06+", l: "módulos operacionais", c: "tech-neon" },
-          { v: "100%", l: "foco em negócios pet", c: "care-blue" },
-        ].map((s) => (
-          <div key={s.l} className="p-10 rounded-xl border border-white/10 bg-bg-surface text-center">
-            <div className={`text-6xl font-light text-${s.c} tabular-nums tracking-tight mb-3`}>
-              {s.v}
+        {pillars.map((p) => (
+          <div key={p.t} className="p-10 rounded-xl border border-white/10 bg-bg-surface">
+            <div className={`h-px w-10 bg-${p.c}/60 mb-6`} />
+            <div className="text-2xl font-medium text-white tracking-tight mb-3">
+              {p.t}
             </div>
-            <div className="font-mono text-[10px] uppercase tracking-widest text-white/50">
-              {s.l}
-            </div>
+            <p className="text-sm text-white/55 leading-relaxed">{p.d}</p>
           </div>
         ))}
       </div>
