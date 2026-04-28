@@ -104,7 +104,7 @@ function Hero() {
               </span>
               <div className="w-px h-3 bg-white/20" />
               <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
-                V. 2.0
+                Tech + Care
               </span>
             </div>
 
