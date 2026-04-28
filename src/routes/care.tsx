@@ -38,7 +38,7 @@ const diferenciais = [
   "Apresentação premium",
   "Experiência sensorial de cuidado",
   "Potencial real de revenda",
-  "Private label / atacado disponível",
+  "Condições profissionais para parceiros",
 ];
 
 function CarePage() {
