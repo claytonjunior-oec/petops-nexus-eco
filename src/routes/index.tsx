@@ -319,10 +319,10 @@ function CareSection() {
           <div className="rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] glow-care">
             <div className="flex items-center justify-between mb-8">
               <div className="font-mono text-[10px] text-white/40 tracking-widest">
-                PETOPS.CARE / LINE
+                PETOPS · CARE
               </div>
               <div className="font-mono text-[10px] text-care-blue/70 tracking-widest">
-                06 SKUs
+                LINHA PROFISSIONAL
               </div>
             </div>
             <div className="grid grid-cols-3 gap-3">
