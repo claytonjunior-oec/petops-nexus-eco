@@ -114,9 +114,11 @@ function Hero() {
               <span className="text-gradient-brand">começa aqui.</span>
             </h1>
 
-            <p className="text-base md:text-xl text-white/55 max-w-2xl text-pretty font-light leading-relaxed mb-10">
-              Tecnologia para automatizar, organizar e vender mais. Cuidado e
-              produtos para elevar a experiência do seu negócio pet.
+            <p className="text-base md:text-xl text-white/55 max-w-2xl text-pretty font-light leading-relaxed mb-4">
+              Menos no-show, mais recompra e a sua equipe livre do WhatsApp manual. Tecnologia que opera sozinha + uma linha premium de cuidado que eleva a sua margem.
+            </p>
+            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/35 mb-10">
+              Pet shops · Clínicas · Banho &amp; tosa · Daycare · Hotel
             </p>
 
             <div className="flex flex-col gap-3 w-full max-w-md">
