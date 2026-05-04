@@ -151,7 +151,7 @@ function Hero() {
         </div>
 
         {/* Bottom UI bar */}
-        <div className="absolute bottom-0 inset-x-0 h-12 border-t border-white/5 bg-bg-base/40 backdrop-blur flex items-center justify-between px-6 lg:px-10 z-40 hidden md:flex">
+        <div className="absolute bottom-0 inset-x-0 h-12 border-t border-white/5 bg-bg-base/40 backdrop-blur items-center justify-between px-6 lg:px-10 z-40 hidden md:flex">
           <div className="font-mono text-[10px] text-white/30 tracking-widest">// PETOPS · ECOSSISTEMA</div>
           <div className="flex gap-1">
             <div className="w-8 h-1 bg-white/30 rounded-full" />
