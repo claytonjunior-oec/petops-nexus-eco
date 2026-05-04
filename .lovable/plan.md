@@ -1,50 +1,77 @@
-## Auditoria de conteúdo: o que vaza segredo de negócio vs. o que pode ficar
 
-Fiz uma varredura nas páginas Home, Tech, Care, Ecossistema e Footer. Abaixo, o que considero **risco** (expõe nome de fornecedor, métricas inventadas, capacidade interna ou stack) vs. **seguro** (marketing legítimo, posicionamento, benefícios).
+# Melhorias na página inicial — vender melhor o ecossistema PetOps
 
-### 🔴 REMOVER — expõe segredo, fornecedor ou métrica não-comprovável
+A home hoje apresenta bem o conceito visual (Tech à esquerda, Care à direita), mas peca em **storytelling de venda**: não mostra dor, não mostra resultado tangível, e o "Tech + Care juntos" aparece como decoração e não como diferencial real. As mudanças abaixo focam em transformar a home numa narrativa de conversão.
 
-| Onde | Conteúdo atual | Problema |
-|---|---|---|
-| `/tech` plano anterior | "OpenRouteService" no Taxi Pet | Expõe **fornecedor de roteamento** — concorrente copia stack |
-| `/tech` plano anterior | "IA (Haku)" como nome do bot | Nome interno do agente — segredo de produto, não precisa estar no site público |
-| Home Hero | `LATENCY · 0.014ms`, `NODES · 1,024 ON`, `WELFARE · NOMINAL`, `EXPERIENCE · 99.8`, `RECURRENCE · ACTIVE` | Métricas **inventadas** que parecem dado real — risco de credibilidade e propaganda enganosa |
-| Home Tech mock | `Reativação 94.2% +12.4%`, `No-show 3.1% -8.2%` | Mesmo problema: KPIs falsos podem ser usados contra a marca |
-| Home Care mock | `06 SKUs` | Revela **tamanho real do catálogo** (pequeno) — fragiliza posicionamento premium |
-| `/care` | "Private label / atacado disponível" | Expõe modelo comercial sensível (terceirização de fórmula). Decidir se é estratégico mostrar publicamente |
-| Home "Prova" | `2 frentes`, `06+ módulos`, `100% foco` | "06+ módulos" subdimensiona o produto; números fracos como prova social |
-| Footer | `SYS.STATUS · OPERACIONAL` + `ECOSSISTEMA ONLINE` | Sugere status page de SaaS que não existe — pode gerar expectativa errada |
+## 1. Hero — adicionar gancho de valor concreto
 
-### 🟡 SUAVIZAR — não é segredo, mas soa interno demais ou data
+Hoje o subtítulo é genérico ("Tecnologia para automatizar..."). Vou:
+- Manter o título atual ("O futuro da operação pet começa aqui")
+- Trocar o subtítulo por algo direto e mensurável em linguagem de dono de negócio: foco em **menos no-show, mais recompra, equipe livre do WhatsApp manual**
+- Adicionar uma micro-linha de prova logo abaixo dos botões: "Pet shops · Clínicas · Banho & tosa · Daycare · Hotel" (mostra encaixe imediato)
 
-| Onde | Conteúdo | Ação |
-|---|---|---|
-| Home Hero | `V. 2.0` | Remover versão (não há v1 público) |
-| Home Hero | `TECH.INFRA_ACTIVE`, `CARE.BIO_SYNCED` | Trocar por labels neutros tipo `TECH · AUTOMAÇÃO`, `CARE · CUIDADO` |
-| Tech mock | `PETOPS.TECH / DASH` + barras de fluxo "últimos 7 dias" | Manter como **ilustração abstrata** sem números concretos |
+## 2. Nova seção: "O problema" (antes de Conceito)
 
-### 🟢 MANTER — marketing legítimo e seguro
+Inserir uma seção curta de **dor**, espelhando a lista `dores` que já existe em tech.tsx, em formato de "checklist invertido". Faz o visitante se reconhecer antes de ouvir a solução. Estilo: 6 itens em grid, cada um com um traço cinza riscado e ícone de alerta sutil.
 
-- Posicionamento Tech + Care, headlines, ecossistema
-- Lista de capacidades em alto nível (Agenda, WhatsApp com IA, Portal do Tutor, Daycare, Taxi Pet, Vacinas, Financeiro, Multi-unidade) — **isso é vitrine de produto, não segredo**
-- Categorias Care (Higiene, Hidratação, etc.) — categoria é público
-- Jornada Tech + Care no /ecossistema
-- "Para quem é", CTAs, formulário de contato
+Exemplos:
+- Agenda bagunçada no WhatsApp
+- Cliente que some e ninguém percebe
+- Atendente respondendo o mesmo todo dia
+- Sem previsibilidade de receita
+- Ficha do pet em caderno
+- Tutor sem lembrete de vacina
 
-### ✏️ Edições propostas (resumo da execução)
+## 3. Reescrever a seção "Tech + Care" (Together) — o coração da venda do ecossistema
 
-1. **Home Hero** — remover `V. 2.0`, trocar labels mono para algo neutro, remover linhas de métrica falsa (latency, nodes, welfare, experience, recurrence). Manter só o vibe de "command center" com labels conceituais.
-2. **Home TechSection mock** — substituir números reais por placeholders abstratos (sem `94.2%` etc.). Manter o gráfico de barras como decorativo, sem rótulo "últimos 7 dias".
-3. **Home CareSection mock** — remover `06 SKUs`, substituir por `PETOPS.CARE / LINE` apenas, ou `LINHA PROFISSIONAL`.
-4. **Home Prova** — substituir os 3 stats numéricos por 3 pilares qualitativos (ex: "Tech + Care · Ecossistema integrado · Foco no mercado pet") OU remover a seção e usar uma linha única de manifesto.
-5. **/tech (quando refizermos os módulos)** — usar nome genérico "IA de atendimento" em vez de "Haku"; descrever cálculo de rota como "via mapa em tempo real" sem citar provedor.
-6. **/care** — trocar "Private label / atacado disponível" por "Condições profissionais para parceiros" (mantém ideia, esconde modelo).
-7. **Footer** — remover `SYS.STATUS · OPERACIONAL` e `ECOSSISTEMA ONLINE`. Manter só copyright + tagline.
+Hoje é uma timeline horizontal genérica de 6 etapas. Vou transformar em **comparativo de impacto** mostrando o que cada frente entrega sozinha e o multiplicador quando juntas:
 
-### Fora de escopo
+```text
+   PETOPS TECH              PETOPS CARE             TECH + CARE
+   ─────────────            ─────────────           ─────────────
+   Reduz custo              Eleva margem            Multiplica LTV
+   operacional              por serviço             do cliente
+   
+   Agenda, IA,              Linha premium           Recompra
+   automação                de cuidado              automatizada
+                                                    + produto na sacola
+```
 
-- Não mexer em rotas/estrutura de páginas
-- Não trocar paleta nem layout
-- Não criar novas seções — só limpar conteúdo
+Visualmente: 3 colunas, as duas laterais em tech-cyan e care-blue, a do meio (Tech + Care) com gradiente das duas cores e destaque maior — "1 + 1 = 3". Isso é o que faltava: justificar **por que existir como ecossistema** em vez de duas empresas separadas.
 
-Se aprovar, executo todas as edições acima de uma vez. Se quiser revisar algum item específico (ex: manter "Haku" como branding público, ou manter o "06 SKUs"), me avise antes.
+A timeline atual de 6 etapas (Captação → Recompra) pode ficar abaixo, menor, como "fluxo unificado".
+
+## 4. Seção "Para quem é" — virar cards com cenário real
+
+Hoje é só uma lista de tags ("Pet shops", "Clínicas"...). Pouco persuasivo. Vou converter em 3-4 cards de **persona**, cada um com:
+- Tipo de negócio
+- Dor principal daquele perfil
+- O que o ecossistema entrega pra ele
+
+Exemplo: *Pet shop em expansão → "Equipe travada no WhatsApp e sem padrão entre lojas" → "Atendimento centralizado + multi-unidade + linha Care para revenda"*
+
+## 5. Substituir "Prova" por algo mais forte
+
+A seção atual ("Tech + Care / Foco total no pet / Premium por design") é abstrata. Vou trocar por **3 razões para escolher a PetOps agora**, mais concretas:
+- **Construído por quem opera** — nasceu dentro de operações pet reais
+- **Plataforma única, não um Frankenstein** — agenda, atendimento, financeiro e produto no mesmo lugar
+- **Pronto para escalar** — multi-unidade, app no celular, dados isolados por loja
+
+## 6. CTA final — simplificar a decisão
+
+Hoje tem 3 botões equivalentes (Tech / Falar / Care). Vou:
+- Promover **"Falar com a PetOps"** como ação principal (botão branco maior, centro)
+- Manter Tech e Care como links secundários menores
+- Adicionar uma frase de redução de atrito: "Demo de 20 min, sem compromisso"
+
+## 7. Ajustes finos
+
+- Hero mobile: a coluna lateral some (`hidden md:flex`), então no celular o hero fica vazio nas laterais. Vou garantir que o conteúdo central tenha respiro melhor e o badge "Ecossistema Unificado" fique visível.
+- Bottom UI bar do hero (`hidden md:flex` aplicado depois de `flex`) — há um conflito de classes. Corrigir para `hidden md:flex` único.
+- Nas seções TechSection e CareSection, os botões "Agendar demo" / "Quero revender" continuam — apenas reforçar visualmente como CTAs.
+
+## Arquivos afetados
+
+- `src/routes/index.tsx` — todas as mudanças acima (1 arquivo, reescrita das seções `Hero`, `Together`, `ParaQuem`, `Prova`, `FinalCTA` + nova seção `Problema`)
+
+Nenhum asset novo, nenhuma rota nova, nenhuma dependência nova.

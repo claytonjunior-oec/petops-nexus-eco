@@ -28,6 +28,7 @@ function HomePage() {
     <div className="min-h-dvh bg-bg-base text-titanium overflow-x-hidden">
       <Nav />
       <Hero />
+      <Problema />
       <Conceito />
       <TechSection />
       <CareSection />
@@ -113,9 +114,11 @@ function Hero() {
               <span className="text-gradient-brand">começa aqui.</span>
             </h1>
 
-            <p className="text-base md:text-xl text-white/55 max-w-2xl text-pretty font-light leading-relaxed mb-10">
-              Tecnologia para automatizar, organizar e vender mais. Cuidado e
-              produtos para elevar a experiência do seu negócio pet.
+            <p className="text-base md:text-xl text-white/55 max-w-2xl text-pretty font-light leading-relaxed mb-4">
+              Menos no-show, mais recompra e a sua equipe livre do WhatsApp manual. Tecnologia que opera sozinha + uma linha premium de cuidado que eleva a sua margem.
+            </p>
+            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/35 mb-10">
+              Pet shops · Clínicas · Banho &amp; tosa · Daycare · Hotel
             </p>
 
             <div className="flex flex-col gap-3 w-full max-w-md">
@@ -148,7 +151,7 @@ function Hero() {
         </div>
 
         {/* Bottom UI bar */}
-        <div className="absolute bottom-0 inset-x-0 h-12 border-t border-white/5 bg-bg-base/40 backdrop-blur flex items-center justify-between px-6 lg:px-10 z-40 hidden md:flex">
+        <div className="absolute bottom-0 inset-x-0 h-12 border-t border-white/5 bg-bg-base/40 backdrop-blur items-center justify-between px-6 lg:px-10 z-40 hidden md:flex">
           <div className="font-mono text-[10px] text-white/30 tracking-widest">// PETOPS · ECOSSISTEMA</div>
           <div className="flex gap-1">
             <div className="w-8 h-1 bg-white/30 rounded-full" />
@@ -380,24 +383,114 @@ function CareSection() {
   );
 }
 
+/* ---------------- PROBLEMA ---------------- */
+function Problema() {
+  const dores = [
+    "Agenda bagunçada no WhatsApp",
+    "Cliente que some e ninguém percebe",
+    "Atendente respondendo o mesmo todo dia",
+    "Sem previsibilidade de receita no fim do mês",
+    "Ficha do pet em caderno e planilha",
+    "Tutor sem lembrete de vacina",
+  ];
+  return (
+    <Section
+      eyebrow="O problema"
+      title={<>Operar pet hoje é apagar incêndio o dia inteiro.</>}
+      intro="Se algum desses pontos parece familiar, a sua operação está deixando dinheiro e cliente na mesa."
+    >
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {dores.map((d, i) => (
+          <div
+            key={d}
+            className="flex items-start gap-3 p-5 rounded-lg border border-white/8 bg-bg-surface/50"
+          >
+            <div className="mt-1 size-1.5 rounded-full bg-red-400/60 shrink-0 shadow-[0_0_8px_rgba(248,113,113,0.4)]" />
+            <div>
+              <div className="font-mono text-[9px] text-white/30 tracking-widest mb-1">
+                DOR.{String(i + 1).padStart(2, "0")}
+              </div>
+              <div className="text-sm text-white/70 line-through decoration-white/15">
+                {d}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
 /* ---------------- TOGETHER ---------------- */
 function Together() {
   const steps = ["Captação", "Atendimento", "Agendamento", "Execução", "Pós-serviço", "Recompra"];
   return (
     <Section
       eyebrow="Tech + Care"
-      title={<>A nova geração de negócios pet não separa operação de experiência.</>}
-      intro="Com a PetOps, sua empresa automatiza a rotina, melhora o atendimento e amplia valor com uma linha de cuidado pensada para elevar a percepção da marca."
+      title={<>Sozinhos, já entregam. Juntos, viram um <span className="text-gradient-brand">multiplicador</span>.</>}
+      intro="Tech reduz o custo de operar. Care eleva a margem por serviço. No mesmo ecossistema, viram recompra automatizada com produto na sacola."
     >
-      <div className="relative rounded-2xl border border-white/10 bg-bg-surface/40 backdrop-blur p-6 md:p-10">
-        <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-tech-cyan/40 via-white/20 to-care-blue/40 hidden md:block" />
+      <div className="grid md:grid-cols-3 gap-4 mb-10">
+        <div className="p-8 rounded-xl border border-tech-cyan/20 bg-bg-surface relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-px bg-tech-cyan/40" />
+          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-tech-cyan mb-4">
+            PetOps Tech
+          </div>
+          <div className="text-2xl font-medium text-white tracking-tight mb-2">
+            Reduz custo operacional
+          </div>
+          <p className="text-sm text-white/55 leading-relaxed">
+            Agenda, IA no WhatsApp, lembretes e gestão. Sua equipe para de
+            digitar e volta a vender.
+          </p>
+        </div>
+
+        <div className="p-8 rounded-xl border border-white/15 bg-gradient-to-br from-tech-cyan/10 via-bg-surface to-care-blue/10 relative overflow-hidden md:scale-105 md:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]">
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-tech-cyan to-care-blue" />
+          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/80 mb-4 flex items-center gap-2">
+            <span className="text-tech-cyan">Tech</span>
+            <span className="text-white/40">+</span>
+            <span className="text-care-blue">Care</span>
+          </div>
+          <div className="text-2xl font-medium text-white tracking-tight mb-2">
+            Multiplica o LTV do cliente
+          </div>
+          <p className="text-sm text-white/70 leading-relaxed mb-4">
+            Recompra automatizada, produto premium na sacola e tutor fidelizado
+            por experiência — não por desconto.
+          </p>
+          <div className="font-mono text-[10px] text-white/50 tracking-widest">
+            1 + 1 = 3
+          </div>
+        </div>
+
+        <div className="p-8 rounded-xl border border-care-blue/20 bg-bg-surface relative overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-px bg-care-blue/40" />
+          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-care-blue mb-4">
+            PetOps Care
+          </div>
+          <div className="text-2xl font-medium text-white tracking-tight mb-2">
+            Eleva margem por serviço
+          </div>
+          <p className="text-sm text-white/55 leading-relaxed">
+            Linha premium de cuidado em embalagens que comunicam valor — para
+            usar, vender e fidelizar.
+          </p>
+        </div>
+      </div>
+
+      <div className="relative rounded-2xl border border-white/10 bg-bg-surface/40 backdrop-blur p-6 md:p-8">
+        <div className="font-mono text-[10px] text-white/40 tracking-widest mb-6 text-center">
+          FLUXO UNIFICADO DA JORNADA DO TUTOR
+        </div>
+        <div className="absolute top-[60%] left-6 right-6 h-px bg-gradient-to-r from-tech-cyan/40 via-white/20 to-care-blue/40 hidden md:block" />
         <div className="grid grid-cols-2 md:grid-cols-6 gap-3 relative">
           {steps.map((s, i) => (
             <div key={s} className="flex flex-col items-center text-center group">
-              <div className="size-12 rounded-full border border-white/15 bg-bg-base flex items-center justify-center mb-3 backdrop-blur group-hover:border-white/40 transition relative z-10">
-                <div className="font-mono text-[10px] text-white/60">{String(i + 1).padStart(2, "0")}</div>
+              <div className="size-10 rounded-full border border-white/15 bg-bg-base flex items-center justify-center mb-2 backdrop-blur group-hover:border-white/40 transition relative z-10">
+                <div className="font-mono text-[9px] text-white/60">{String(i + 1).padStart(2, "0")}</div>
               </div>
-              <div className="text-sm text-white font-medium">{s}</div>
+              <div className="text-xs text-white/80 font-medium">{s}</div>
             </div>
           ))}
         </div>
@@ -417,25 +510,51 @@ function Together() {
 
 /* ---------------- PARA QUEM ---------------- */
 function ParaQuem() {
-  const items = [
-    "Pet shops",
-    "Banho e tosa",
-    "Clínicas veterinárias",
-    "Operações em expansão",
-    "Negócios que querem elevar margem e experiência",
+  const personas = [
+    {
+      tag: "Pet shop em expansão",
+      pain: "Equipe travada no WhatsApp e sem padrão entre lojas.",
+      solve: "Atendimento centralizado, multi-unidade e linha Care para revenda.",
+    },
+    {
+      tag: "Banho & tosa de bairro",
+      pain: "Agenda no caderno, no-show alto e cliente que some.",
+      solve: "Agenda inteligente, lembretes automáticos e reativação no WhatsApp.",
+    },
+    {
+      tag: "Clínica veterinária",
+      pain: "Prontuário disperso e tutor que esquece reforço de vacina.",
+      solve: "Prontuário digital, alerta de vacina automático e portal do tutor.",
+    },
+    {
+      tag: "Daycare / Hotel",
+      pain: "Pais ansiosos pedindo notícia do pet o dia todo.",
+      solve: "Check-in com foto, atualizações no WhatsApp e Care premium na hospedagem.",
+    },
   ];
   return (
     <Section eyebrow="Para quem é" title="Construído para o novo negócio pet.">
-      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
-        {items.map((it, i) => (
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {personas.map((p, i) => (
           <div
-            key={it}
-            className="p-6 rounded-lg border border-white/10 bg-bg-surface hover:border-white/30 hover:bg-bg-elevated transition group"
+            key={p.tag}
+            className="p-6 rounded-xl border border-white/10 bg-bg-surface hover:border-white/25 transition flex flex-col"
           >
-            <div className="font-mono text-[10px] text-white/30 mb-4 tracking-widest">
+            <div className="font-mono text-[10px] text-white/30 mb-3 tracking-widest">
               T.{String(i + 1).padStart(2, "0")}
             </div>
-            <div className="text-white font-medium leading-tight">{it}</div>
+            <div className="text-white font-medium leading-tight mb-4">{p.tag}</div>
+            <div className="space-y-3 mt-auto">
+              <div>
+                <div className="font-mono text-[9px] uppercase tracking-widest text-red-400/60 mb-1">Dor</div>
+                <p className="text-xs text-white/55 leading-relaxed">{p.pain}</p>
+              </div>
+              <div className="h-px bg-white/5" />
+              <div>
+                <div className="font-mono text-[9px] uppercase tracking-widest text-tech-neon/70 mb-1">PetOps</div>
+                <p className="text-xs text-white/75 leading-relaxed">{p.solve}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
@@ -446,18 +565,33 @@ function ParaQuem() {
 /* ---------------- PROVA ---------------- */
 function Prova() {
   const pillars = [
-    { t: "Tech + Care", d: "Duas frentes que se potencializam — automação e cuidado em um único ecossistema.", c: "tech-cyan" },
-    { t: "Foco total no pet", d: "Construído de ponta a ponta para a realidade de quem opera no mercado pet.", c: "tech-neon" },
-    { t: "Premium por design", d: "Estética, fluxo e produto pensados para elevar a percepção da sua marca.", c: "care-blue" },
+    {
+      t: "Construído por quem opera",
+      d: "Nasceu dentro de operações pet reais — cada módulo resolve uma dor que vivemos no balcão.",
+      c: "tech-cyan",
+    },
+    {
+      t: "Plataforma única, não um Frankenstein",
+      d: "Agenda, atendimento, financeiro, prontuário e produto no mesmo lugar. Sem integração frágil, sem retrabalho.",
+      c: "tech-neon",
+    },
+    {
+      t: "Pronto para escalar",
+      d: "Multi-unidade com dados isolados, app no celular online e offline e sistema seguro em nuvem.",
+      c: "care-blue",
+    },
   ];
   return (
     <Section
-      eyebrow="Construído com visão de ecossistema"
-      title="Para quem quer evoluir o mercado pet."
+      eyebrow="Por que PetOps"
+      title="Três motivos para começar agora."
     >
       <div className="grid md:grid-cols-3 gap-4">
-        {pillars.map((p) => (
-          <div key={p.t} className="p-10 rounded-xl border border-white/10 bg-bg-surface">
+        {pillars.map((p, i) => (
+          <div key={p.t} className="p-10 rounded-xl border border-white/10 bg-bg-surface relative">
+            <div className="font-mono text-[10px] text-white/30 tracking-widest mb-6">
+              {String(i + 1).padStart(2, "0")} / 03
+            </div>
             <div className={`h-px w-10 bg-${p.c}/60 mb-6`} />
             <div className="text-2xl font-medium text-white tracking-tight mb-3">
               {p.t}
@@ -486,34 +620,43 @@ function FinalCTA() {
           </span>
         </div>
         <h2 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.02] text-balance mb-6">
-          Escolha o próximo nível do seu{" "}
-          <span className="text-gradient-brand">negócio pet.</span>
+          Vamos colocar o seu negócio pet no{" "}
+          <span className="text-gradient-brand">próximo nível?</span>
         </h2>
-        <p className="text-lg text-white/50 max-w-xl mx-auto mb-12">
-          Tech, Care ou ecossistema completo. Comece pela frente que faz mais
-          sentido hoje.
+        <p className="text-lg text-white/50 max-w-xl mx-auto mb-10">
+          Em 20 minutos a gente mostra como o ecossistema PetOps se encaixa na
+          sua operação — sem compromisso.
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center">
-          <Link
-            to="/tech"
-            className="font-mono text-[11px] uppercase tracking-widest px-6 py-4 bg-bg-surface border border-tech-cyan/30 rounded-md text-tech-cyan hover:border-tech-cyan transition"
-          >
-            Quero ver a Tech
-          </Link>
+
+        <div className="flex flex-col items-center gap-4">
           <Link
             to="/contato"
-            className="font-mono text-[11px] uppercase tracking-widest px-8 py-4 bg-white text-bg-base rounded-md font-semibold hover:bg-white/90 transition"
+            className="font-mono text-[12px] uppercase tracking-widest px-10 py-5 bg-white text-bg-base rounded-md font-semibold hover:bg-white/90 transition shadow-[0_20px_60px_-15px_rgba(255,255,255,0.3)]"
           >
-            Falar com a PetOps
+            Falar com a PetOps →
           </Link>
-          <Link
-            to="/care"
-            className="font-mono text-[11px] uppercase tracking-widest px-6 py-4 bg-bg-surface border border-care-blue/30 rounded-md text-care-blue hover:border-care-blue transition"
-          >
-            Quero ver a Care
-          </Link>
+          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/35">
+            Demo de 20 min · sem compromisso
+          </div>
+
+          <div className="flex items-center gap-6 mt-6 pt-6 border-t border-white/5 w-full max-w-md justify-center">
+            <Link
+              to="/tech"
+              className="font-mono text-[11px] uppercase tracking-widest text-tech-cyan/80 hover:text-tech-cyan transition"
+            >
+              ← Ver a Tech
+            </Link>
+            <div className="w-px h-3 bg-white/15" />
+            <Link
+              to="/care"
+              className="font-mono text-[11px] uppercase tracking-widest text-care-blue/80 hover:text-care-blue transition"
+            >
+              Ver a Care →
+            </Link>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+
