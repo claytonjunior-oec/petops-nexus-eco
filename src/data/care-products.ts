@@ -20,6 +20,8 @@ export type CareKit = {
   image?: string | null;
 };
 
+import shampooProImg from "@/assets/care-shampoo-pro.png";
+
 export const careProducts: CareProduct[] = [
   {
     id: "shampoo-pro",
