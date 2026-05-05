@@ -82,7 +82,7 @@ export const careProducts: CareProduct[] = [
     composition:
       "Cloreto de alquil dimetil benzil amônio, tensoativo não iônico, fragrância e veículo aquoso.",
     tags: ["Profissional", "Uso interno do salão"],
-    image: null,
+    image: desinfetanteImg,
   },
   {
     id: "colonia-he",
