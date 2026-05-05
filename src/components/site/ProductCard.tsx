@@ -22,7 +22,6 @@ export function ProductCard({ product }: { product: CareProduct }) {
               loading="lazy"
             />
           )
-          )
           : (
             <div className="flex flex-col items-center gap-3 text-white/40">
               <ImageIcon className="size-8" />
