@@ -211,3 +211,52 @@ export const careKits: CareKit[] = [
     image: kitOperacaoImg,
   },
 ];
+
+export const careSubscriptions: CareSubscription[] = [
+  {
+    id: "plano-start",
+    name: "Plano Start",
+    tagline: "Para petshops começando a estruturar a operação.",
+    capacity: "Ideal para 80–150 banhos/mês",
+    monthlyPrice: 890,
+    items: [
+      "2× Care Shampoo Pro 5L",
+      "1× Care Condicionador Reparador 5L",
+      "1× Care Desinfetante Bactericida 5L",
+      "6× Care Colônia Soft (mix He / She)",
+    ],
+  },
+  {
+    id: "plano-pro",
+    name: "Plano Pro",
+    tagline: "O equilíbrio entre operação do salão e revenda no balcão.",
+    capacity: "Ideal para 200–350 banhos/mês",
+    monthlyPrice: 1690,
+    highlight: true,
+    badge: "Mais escolhido",
+    items: [
+      "4× Care Shampoo Pro 5L",
+      "2× Care Condicionador Reparador 5L",
+      "2× Care Desinfetante Bactericida 5L",
+      "12× Care Colônia Soft",
+      "6× Care Hálito Fresh",
+      "4× Kit Cuidado Diário (revenda)",
+    ],
+  },
+  {
+    id: "plano-max",
+    name: "Plano Max",
+    tagline: "Operações de alto volume ou múltiplas unidades.",
+    capacity: "Ideal para 400+ banhos/mês",
+    monthlyPrice: 2890,
+    items: [
+      "8× Care Shampoo Pro 5L",
+      "4× Care Condicionador Reparador 5L",
+      "4× Care Desinfetante Bactericida 5L",
+      "24× Care Colônia Soft",
+      "12× Care Hálito Fresh",
+      "8× Kit Cuidado Diário",
+      "4× Care Protect Focinho + 4× Care Protect Patinhas",
+    ],
+  },
+];
