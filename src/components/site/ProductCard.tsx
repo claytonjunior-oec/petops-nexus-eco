@@ -18,9 +18,10 @@ export function ProductCard({ product }: { product: CareProduct }) {
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-full object-contain p-6"
+              className="w-full h-full object-contain p-4"
               loading="lazy"
             />
+          )
           )
           : (
             <div className="flex flex-col items-center gap-3 text-white/40">
