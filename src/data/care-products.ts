@@ -62,7 +62,7 @@ export const careProducts: CareProduct[] = [
     composition:
       "Blend de óleos vegetais (karité, coco e amêndoas doces), álcool ceto-estearílico, fragrância suave e conservante seguro.",
     tags: ["Reparador", "Vegetal", "Para revenda"],
-    image: null,
+    image: condicionadorImg,
   },
   {
     id: "desinfetante-bactericida",
