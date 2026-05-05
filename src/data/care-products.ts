@@ -21,6 +21,7 @@ export type CareKit = {
 };
 
 import shampooProImg from "@/assets/care-shampoo-pro.png";
+import condicionadorImg from "@/assets/care-condicionador-reparador.png";
 
 export const careProducts: CareProduct[] = [
   {
@@ -48,7 +49,7 @@ export const careProducts: CareProduct[] = [
     code: "CARE.02",
     name: "Care Condicionador Reparador",
     category: "Hidratação",
-    size: "500ml",
+    size: "5L",
     headline: "Pelo macio, brilhante e fácil de pentear.",
     description:
       "Finaliza o banho com hidratação profunda. A combinação de manteiga de karité, óleo de coco e óleo de amêndoas doce repara fios ressecados e devolve maciez de cobertor.",
@@ -61,7 +62,7 @@ export const careProducts: CareProduct[] = [
     composition:
       "Blend de óleos vegetais (karité, coco e amêndoas doces), álcool ceto-estearílico, fragrância suave e conservante seguro.",
     tags: ["Reparador", "Vegetal", "Para revenda"],
-    image: null,
+    image: condicionadorImg,
   },
   {
     id: "desinfetante-bactericida",
