@@ -22,6 +22,7 @@ export type CareKit = {
 
 import shampooProImg from "@/assets/care-shampoo-pro.png";
 import condicionadorImg from "@/assets/care-condicionador-reparador.png";
+import desinfetanteImg from "@/assets/care-desinfetante.png";
 
 export const careProducts: CareProduct[] = [
   {
@@ -81,7 +82,7 @@ export const careProducts: CareProduct[] = [
     composition:
       "Cloreto de alquil dimetil benzil amônio, tensoativo não iônico, fragrância e veículo aquoso.",
     tags: ["Profissional", "Uso interno do salão"],
-    image: null,
+    image: desinfetanteImg,
   },
   {
     id: "colonia-he",
