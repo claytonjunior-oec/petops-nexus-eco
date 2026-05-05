@@ -11,13 +11,19 @@ export function ProductCard({ product }: { product: CareProduct }) {
   return (
     <article className="group relative rounded-xl border border-white/10 bg-bg-surface overflow-hidden hover:border-care-blue/40 transition-all flex flex-col">
       {/* Imagem / placeholder */}
-      <div className="relative aspect-square w-full bg-gradient-to-br from-care-blue/20 via-bg-elevated to-tech-cyan/10 border-b border-white/10 flex items-center justify-center overflow-hidden">
+      <div
+        className={`relative aspect-square w-full border-b border-white/10 flex items-center justify-center overflow-hidden ${
+          product.image
+            ? "bg-white"
+            : "bg-gradient-to-br from-care-blue/20 via-bg-elevated to-tech-cyan/10"
+        }`}
+      >
         {product.image
           ? (
             <img
               src={product.image}
               alt={product.name}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain p-6"
               loading="lazy"
             />
           )
