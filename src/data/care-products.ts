@@ -182,14 +182,6 @@ export const careProducts: CareProduct[] = [
 
 export const careKits: CareKit[] = [
   {
-    id: "kit-pos-banho",
-    name: "Kit Pós-Banho Essencial",
-    pitch:
-      "Ideal para venda no balcão pós-banho. Aumenta o ticket médio do petshop sem esforço de venda.",
-    items: ["Care Shampoo Pro", "Care Condicionador Reparador", "Care Colônia Soft (He ou She)"],
-    image: null,
-  },
-  {
     id: "kit-cuidado-diario",
     name: "Kit Cuidado Diário",
     pitch:
