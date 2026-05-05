@@ -20,6 +20,17 @@ export type CareKit = {
   image?: string | null;
 };
 
+export type CareSubscription = {
+  id: string;
+  name: string;
+  tagline: string;
+  capacity: string;
+  monthlyPrice: number;
+  highlight?: boolean;
+  badge?: string;
+  items: string[];
+};
+
 import shampooProImg from "@/assets/care-shampoo-pro.png";
 import condicionadorImg from "@/assets/care-condicionador-reparador.png";
 import desinfetanteImg from "@/assets/care-desinfetante.png";
