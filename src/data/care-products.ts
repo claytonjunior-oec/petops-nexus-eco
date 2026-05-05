@@ -29,6 +29,7 @@ import halitoFreshImg from "@/assets/care-halito-fresh.png";
 import protectPatinhasImg from "@/assets/care-protect-patinhas.png";
 import protectFocinhoImg from "@/assets/care-protect-focinho.png";
 import kitCuidadoDiarioImg from "@/assets/care-kit-cuidado-diario.png";
+import kitOperacaoImg from "@/assets/care-kit-operacao-petshop.png";
 
 export const careProducts: CareProduct[] = [
   {
@@ -196,6 +197,6 @@ export const careKits: CareKit[] = [
     pitch:
       "Para uso interno do salão de banho e tosa. Padrão profissional, custo otimizado para volume.",
     items: ["Care Shampoo Pro 5L", "Care Condicionador Reparador", "Care Desinfetante Bactericida 5L"],
-    image: null,
+    image: kitOperacaoImg,
   },
 ];
