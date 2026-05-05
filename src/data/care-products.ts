@@ -136,7 +136,7 @@ export const careProducts: CareProduct[] = [
     ],
     composition: "Veículo aquoso, clorexidina 0,1%, glicerina, cloreto de cetilpiridínio e aroma de menta.",
     tags: ["Uso diário", "Para revenda"],
-    image: null,
+    image: halitoFreshImg,
   },
   {
     id: "protect-focinho",
