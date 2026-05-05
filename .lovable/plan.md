@@ -1,77 +1,84 @@
+# PetOps Care — Catálogo de produtos profissionais
 
-# Melhorias na página inicial — vender melhor o ecossistema PetOps
+## Objetivo
+Transformar a página `/care` (hoje genérica, só com categorias) num catálogo real de **linha profissional PetOps Care**, com os 8 produtos descritos, kits de revenda para o petshop, e narrativa de marca **"90% natural, 10% ciência"**. Sem nenhuma menção ao fornecedor original (Bioclub) e sem reutilizar nomes do fornecedor.
 
-A home hoje apresenta bem o conceito visual (Tech à esquerda, Care à direita), mas peca em **storytelling de venda**: não mostra dor, não mostra resultado tangível, e o "Tech + Care juntos" aparece como decoração e não como diferencial real. As mudanças abaixo focam em transformar a home numa narrativa de conversão.
+## Reescrita de marca dos produtos
 
-## 1. Hero — adicionar gancho de valor concreto
+Renomeio com identidade PetOps Care, mantendo a função do produto:
 
-Hoje o subtítulo é genérico ("Tecnologia para automatizar..."). Vou:
-- Manter o título atual ("O futuro da operação pet começa aqui")
-- Trocar o subtítulo por algo direto e mensurável em linguagem de dono de negócio: foco em **menos no-show, mais recompra, equipe livre do WhatsApp manual**
-- Adicionar uma micro-linha de prova logo abaixo dos botões: "Pet shops · Clínicas · Banho & tosa · Daycare · Hotel" (mostra encaixe imediato)
+| # | Nome PetOps Care | Categoria | Tamanho | Função |
+|---|---|---|---|---|
+| 01 | **Care Shampoo Pro** | Higiene | 5L | Limpeza profunda, pH balanceado |
+| 02 | **Care Condicionador Reparador** | Hidratação | 500ml | Karité + óleo de coco + amêndoas doces |
+| 03 | **Care Desinfetante Bactericida** | Limpeza de ambiente | 5L | 99,9% fungos/bactérias, ambientes pet |
+| 04 | **Care Colônia Soft — He** | Odorização | 120ml | Cheirinho de bebê, linha macho |
+| 05 | **Care Colônia Soft — She** | Odorização | 120ml | Cheirinho de bebê, linha fêmea |
+| 06 | **Care Hálito Fresh** | Cuidado bucal | 120ml | Spray bucal de menta, uso diário |
+| 07 | **Care Protect Focinho** | Cuidado complementar | 15g | Hidratante vegano focinho |
+| 08 | **Care Protect Patinhas** | Cuidado complementar | 15g | Hidratante vegano coxins |
 
-## 2. Nova seção: "O problema" (antes de Conceito)
+(Nomes finais podem ser ajustados depois; mantenho o prefixo "Care" para reforçar marca.)
 
-Inserir uma seção curta de **dor**, espelhando a lista `dores` que já existe em tech.tsx, em formato de "checklist invertido". Faz o visitante se reconhecer antes de ouvir a solução. Estilo: 6 itens em grid, cada um com um traço cinza riscado e ícone de alerta sutil.
+Cada produto recebe descrição reescrita do zero (sem trechos copiados do fornecedor), com:
+- Headline curta (1 linha de promessa)
+- Descrição (2–3 frases reescritas, foco em sensação + benefício)
+- "Modo de uso" simplificado em bullets
+- "Composição" reescrita em linguagem amigável (ex: "Base vegetal suave + D-Pantenol")
+- Tags: `Profissional`, `Vegano` (quando aplicável), `Para revenda`
+- Slot de imagem placeholder (proporção quadrada, com label "Imagem em breve")
 
-Exemplos:
-- Agenda bagunçada no WhatsApp
-- Cliente que some e ninguém percebe
-- Atendente respondendo o mesmo todo dia
-- Sem previsibilidade de receita
-- Ficha do pet em caderno
-- Tutor sem lembrete de vacina
+## Kits de revenda (aumento de ticket médio do petshop)
 
-## 3. Reescrever a seção "Tech + Care" (Together) — o coração da venda do ecossistema
+Três kits sugeridos, cada um como card destacado:
 
-Hoje é uma timeline horizontal genérica de 6 etapas. Vou transformar em **comparativo de impacto** mostrando o que cada frente entrega sozinha e o multiplicador quando juntas:
+- **Kit Pós-Banho Essencial** — Shampoo + Condicionador + Colônia
+- **Kit Cuidado Diário** — Hálito Fresh + Protect Focinho + Protect Patinhas
+- **Kit Operação Petshop** — Shampoo 5L + Condicionador + Desinfetante 5L (uso interno do salão)
+
+Cada kit mostra: composição, posicionamento ("ideal para venda no balcão pós-banho"), imagem placeholder.
+
+## Narrativa "90% natural, 10% ciência"
+
+Selo / faixa visual logo abaixo do hero, com 3 pilares:
+- **90% Natural** — manteiga de karité, óleos vegetais, base vegetal suave
+- **10% Ciência** — ativos dermatológicos, pH balanceado, conservação segura
+- **0% Crueldade** — fórmulas veganas na linha Protect
+
+## Estrutura nova de `/care`
 
 ```text
-   PETOPS TECH              PETOPS CARE             TECH + CARE
-   ─────────────            ─────────────           ─────────────
-   Reduz custo              Eleva margem            Multiplica LTV
-   operacional              por serviço             do cliente
-   
-   Agenda, IA,              Linha premium           Recompra
-   automação                de cuidado              automatizada
-                                                    + produto na sacola
+Hero (mantém)
+ └─ subtítulo atualizado: "Linha profissional · 90% natural · pensada para revenda"
+
+Faixa "90/10/0" (nova)
+
+Seção "Linha Profissional" (substitui categorias genéricas)
+ └─ Grid 8 produtos (cards com imagem placeholder + descrição + uso + composição amigável)
+     · cada card é expansível (Accordion) para "Modo de uso" e "Composição"
+
+Seção "Kits PetOps Care" (nova)
+ └─ 3 kits em destaque, com proposta de ticket médio para o petshop
+
+Seção "Diferenciais" (mantém, ajustada)
+ └─ inclui "Fórmulas 90% naturais" e "Veganas na linha Protect"
+
+CTA final (mantém)
+ └─ "Solicitar catálogo profissional" + "Quero revender"
 ```
 
-Visualmente: 3 colunas, as duas laterais em tech-cyan e care-blue, a do meio (Tech + Care) com gradiente das duas cores e destaque maior — "1 + 1 = 3". Isso é o que faltava: justificar **por que existir como ecossistema** em vez de duas empresas separadas.
+## Implementação técnica
 
-A timeline atual de 6 etapas (Captação → Recompra) pode ficar abaixo, menor, como "fluxo unificado".
+- Editar **`src/routes/care.tsx`**: substituir bloco de categorias por grid de produtos; adicionar seções 90/10/0 e Kits.
+- Criar **`src/data/care-products.ts`** com array tipado dos 8 produtos + 3 kits (single source of truth, fácil para você ajustar copy depois).
+- Criar componente **`src/components/site/ProductCard.tsx`** com:
+  - slot de imagem placeholder (`<div>` com gradiente Care Navy/Gold + ícone + texto "Imagem em breve")
+  - quando você fornecer as imagens, basta adicionar o caminho em `care-products.ts` (campo `image?: string`) e o card troca o placeholder pela `<img>` automaticamente.
+- Usar `<Accordion>` (já em `src/components/ui/accordion.tsx`) para "Modo de uso" e "Composição" dentro do card.
+- Manter paleta Navy/Gold/White já definida em `styles.css`. Sem libs novas.
+- Imagens dos produtos ficarão em `src/assets/care/` quando você enviar; por ora o array tem `image: null`.
 
-## 4. Seção "Para quem é" — virar cards com cenário real
-
-Hoje é só uma lista de tags ("Pet shops", "Clínicas"...). Pouco persuasivo. Vou converter em 3-4 cards de **persona**, cada um com:
-- Tipo de negócio
-- Dor principal daquele perfil
-- O que o ecossistema entrega pra ele
-
-Exemplo: *Pet shop em expansão → "Equipe travada no WhatsApp e sem padrão entre lojas" → "Atendimento centralizado + multi-unidade + linha Care para revenda"*
-
-## 5. Substituir "Prova" por algo mais forte
-
-A seção atual ("Tech + Care / Foco total no pet / Premium por design") é abstrata. Vou trocar por **3 razões para escolher a PetOps agora**, mais concretas:
-- **Construído por quem opera** — nasceu dentro de operações pet reais
-- **Plataforma única, não um Frankenstein** — agenda, atendimento, financeiro e produto no mesmo lugar
-- **Pronto para escalar** — multi-unidade, app no celular, dados isolados por loja
-
-## 6. CTA final — simplificar a decisão
-
-Hoje tem 3 botões equivalentes (Tech / Falar / Care). Vou:
-- Promover **"Falar com a PetOps"** como ação principal (botão branco maior, centro)
-- Manter Tech e Care como links secundários menores
-- Adicionar uma frase de redução de atrito: "Demo de 20 min, sem compromisso"
-
-## 7. Ajustes finos
-
-- Hero mobile: a coluna lateral some (`hidden md:flex`), então no celular o hero fica vazio nas laterais. Vou garantir que o conteúdo central tenha respiro melhor e o badge "Ecossistema Unificado" fique visível.
-- Bottom UI bar do hero (`hidden md:flex` aplicado depois de `flex`) — há um conflito de classes. Corrigir para `hidden md:flex` único.
-- Nas seções TechSection e CareSection, os botões "Agendar demo" / "Quero revender" continuam — apenas reforçar visualmente como CTAs.
-
-## Arquivos afetados
-
-- `src/routes/index.tsx` — todas as mudanças acima (1 arquivo, reescrita das seções `Hero`, `Together`, `ParaQuem`, `Prova`, `FinalCTA` + nova seção `Problema`)
-
-Nenhum asset novo, nenhuma rota nova, nenhuma dependência nova.
+## Fora de escopo neste passo
+- Página individual por produto (`/care/$slug`) — fácil de adicionar depois se quiser SEO de catálogo.
+- Formulário de pedido / e-commerce — segue como CTA para `/contato`.
+- Imagens reais — placeholders preparados para troca trivial.

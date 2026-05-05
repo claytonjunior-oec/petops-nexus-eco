@@ -3,42 +3,37 @@ import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Section } from "@/components/site/Section";
 import { Link } from "@tanstack/react-router";
+import { ImageIcon, Leaf, FlaskConical, HeartHandshake } from "lucide-react";
+import { ProductCard } from "@/components/site/ProductCard";
+import { careKits, careProducts } from "@/data/care-products";
 
 export const Route = createFileRoute("/care")({
   head: () => ({
     meta: [
-      { title: "PetOps Care — Linha premium de cuidado pet" },
+      { title: "PetOps Care — Linha profissional 90% natural para pet" },
       {
         name: "description",
         content:
-          "Produtos profissionais de higiene, hidratação e cuidado para elevar a experiência e o valor do seu negócio pet.",
+          "Linha profissional PetOps Care: shampoos, condicionadores, colônias, cuidado bucal e bálsamos veganos. 90% natural, pensada para revenda no petshop.",
       },
-      { property: "og:title", content: "PetOps Care" },
+      { property: "og:title", content: "PetOps Care — Linha profissional pet" },
       {
         property: "og:description",
         content:
-          "Uma linha de cuidado pensada para elevar a experiência do mercado pet.",
+          "Produtos profissionais para banho, tosa, clínica e revenda. 90% natural, 10% ciência, 0% crueldade.",
       },
     ],
   }),
   component: CarePage,
 });
 
-const categorias = [
-  { name: "Higiene", desc: "Shampoos e condicionadores de alta performance." },
-  { name: "Hidratação", desc: "Máscaras e tratamentos para pelagens nobres." },
-  { name: "Odorização", desc: "Perfumaria pet com fixação profissional." },
-  { name: "Limpeza de ambiente", desc: "Soluções para banho e tosa, clínica e canil." },
-  { name: "Cuidados complementares", desc: "Linha de finalização, escovação e proteção." },
-  { name: "Linha profissional", desc: "Embalagens e custo pensados para revenda." },
-];
-
 const diferenciais = [
-  "Fórmulas de alta qualidade",
-  "Apresentação premium",
-  "Experiência sensorial de cuidado",
-  "Potencial real de revenda",
-  "Condições profissionais para parceiros",
+  "Fórmulas 90% naturais",
+  "Linha Protect 100% vegana",
+  "pH balanceado e seguro para uso diário",
+  "Apresentação premium para a prateleira",
+  "Embalagens profissionais com custo para revenda",
+  "Kits prontos para aumentar o ticket médio",
 ];
 
 function CarePage() {
@@ -47,7 +42,7 @@ function CarePage() {
       <Nav />
       <main className="pt-16">
         {/* Hero */}
-        <section className="relative px-6 lg:px-10 pt-24 pb-32 overflow-hidden">
+        <section className="relative px-6 lg:px-10 pt-24 pb-24 overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern bg-grid-fade pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 size-[600px] bg-care-blue/10 blur-[140px] rounded-full pointer-events-none" />
           <div className="relative max-w-[1440px] mx-auto">
@@ -58,13 +53,14 @@ function CarePage() {
               </span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.05] max-w-4xl text-balance">
-              Uma linha de cuidado pensada para{" "}
-              <span className="text-care-blue">elevar a experiência</span> do
-              mercado pet.
+              Linha profissional{" "}
+              <span className="text-care-blue">90% natural</span>{" "}
+              para elevar o cuidado pet.
             </h1>
             <p className="mt-8 text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed">
-              Produtos premium para banho, tosa, clínica e revenda. Fórmulas de
-              alto nível em embalagens que comunicam valor desde a prateleira.
+              Produtos para banho, tosa, clínica e revenda. Fórmulas com base
+              vegetal, pH balanceado e apresentação que comunica valor desde a
+              prateleira.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <Link
@@ -83,26 +79,100 @@ function CarePage() {
           </div>
         </section>
 
-        {/* Categorias */}
-        <Section eyebrow="Categorias" title="Uma linha completa de cuidado profissional.">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {categorias.map((c, i) => (
+        {/* Faixa 90 / 10 / 0 */}
+        <section className="px-6 lg:px-10 pb-8">
+          <div className="max-w-[1440px] mx-auto grid md:grid-cols-3 gap-4">
+            {[
+              {
+                icon: Leaf,
+                value: "90%",
+                title: "Natural",
+                desc: "Manteiga de karité, óleos vegetais e bases suaves de origem vegetal.",
+              },
+              {
+                icon: FlaskConical,
+                value: "10%",
+                title: "Ciência",
+                desc: "Ativos dermatológicos, pH balanceado e conservação segura para uso diário.",
+              },
+              {
+                icon: HeartHandshake,
+                value: "0%",
+                title: "Crueldade",
+                desc: "Linha Protect 100% vegana. Cuidado que respeita o pet e o tutor.",
+              },
+            ].map((p) => (
               <div
-                key={c.name}
-                className="group relative rounded-xl border border-white/10 bg-bg-surface p-8 hover:border-care-blue/40 transition-all overflow-hidden"
+                key={p.title}
+                className="rounded-xl border border-white/10 bg-bg-surface/60 p-6 flex items-start gap-4"
               >
-                <div className="absolute -top-12 -right-12 size-32 bg-care-blue/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition" />
-                <div className="relative">
-                  <div className="font-mono text-[10px] text-care-blue/70 mb-4 tracking-widest">
-                    LINE.{String(i + 1).padStart(2, "0")}
+                <div className="size-12 rounded-lg border border-care-blue/30 bg-care-blue/10 flex items-center justify-center shrink-0">
+                  <p.icon className="size-5 text-care-blue" />
+                </div>
+                <div>
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl font-medium text-white">{p.value}</span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/60">
+                      {p.title}
+                    </span>
                   </div>
-                  <div className="size-14 rounded-lg border border-care-blue/20 bg-care-blue/5 mb-6 flex items-center justify-center">
-                    <div className="size-6 rounded-sm bg-gradient-to-br from-care-blue/40 to-care-green/20" />
-                  </div>
-                  <h3 className="text-xl font-medium text-white mb-2">{c.name}</h3>
-                  <p className="text-sm text-white/50 leading-relaxed">{c.desc}</p>
+                  <p className="text-sm text-white/55 leading-relaxed mt-1">{p.desc}</p>
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Linha profissional */}
+        <Section
+          eyebrow="Linha Profissional"
+          title="Catálogo PetOps Care."
+          intro="Oito produtos pensados para o salão, a clínica e a prateleira do petshop. Fórmulas profissionais com identidade premium."
+        >
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {careProducts.map((p) => <ProductCard key={p.id} product={p} />)}
+          </div>
+        </Section>
+
+        {/* Kits */}
+        <Section
+          eyebrow="Kits para revenda"
+          title="Aumente o ticket médio do seu petshop."
+          intro="Kits prontos para venda no balcão pós-banho ou para uso interno do salão. Recompra previsível, fidelização do tutor."
+        >
+          <div className="grid md:grid-cols-3 gap-5">
+            {careKits.map((k, i) => (
+              <article
+                key={k.id}
+                className="rounded-xl border border-white/10 bg-bg-surface overflow-hidden flex flex-col hover:border-care-blue/40 transition"
+              >
+                <div className="aspect-[4/3] w-full bg-gradient-to-br from-care-blue/20 via-bg-elevated to-tech-cyan/10 border-b border-white/10 flex items-center justify-center text-white/40">
+                  <div className="flex flex-col items-center gap-2">
+                    <ImageIcon className="size-7" />
+                    <span className="font-mono text-[10px] uppercase tracking-[0.25em]">
+                      Imagem em breve
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6 flex flex-col gap-4 flex-1">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-care-blue">
+                    KIT.{String(i + 1).padStart(2, "0")}
+                  </div>
+                  <h3 className="text-xl font-medium text-white">{k.name}</h3>
+                  <p className="text-sm text-white/60 leading-relaxed">{k.pitch}</p>
+                  <ul className="mt-auto space-y-1.5">
+                    {k.items.map((it) => (
+                      <li
+                        key={it}
+                        className="text-sm text-white/75 flex items-start gap-2"
+                      >
+                        <span className="text-tech-cyan font-mono">+</span>
+                        <span>{it}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
             ))}
           </div>
         </Section>
@@ -134,7 +204,7 @@ function CarePage() {
               Quer levar a Care para o seu negócio?
             </h3>
             <p className="text-white/50 mb-8">
-              Catálogo, condições profissionais e parceria de revenda.
+              Catálogo profissional, condições para revenda e kits prontos para o balcão.
             </p>
             <Link
               to="/contato"
