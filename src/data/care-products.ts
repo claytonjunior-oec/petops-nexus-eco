@@ -28,6 +28,7 @@ import coloniaSheImg from "@/assets/care-colonia-she.png";
 import halitoFreshImg from "@/assets/care-halito-fresh.png";
 import protectPatinhasImg from "@/assets/care-protect-patinhas.png";
 import protectFocinhoImg from "@/assets/care-protect-focinho.png";
+import kitCuidadoDiarioImg from "@/assets/care-kit-cuidado-diario.png";
 
 export const careProducts: CareProduct[] = [
   {
@@ -187,7 +188,7 @@ export const careKits: CareKit[] = [
     pitch:
       "Linha de manutenção entre banhos. Recompra previsível e fideliza o tutor ao seu petshop.",
     items: ["Care Hálito Fresh", "Care Protect Focinho", "Care Protect Patinhas"],
-    image: null,
+    image: kitCuidadoDiarioImg,
   },
   {
     id: "kit-operacao-petshop",

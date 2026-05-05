@@ -146,13 +146,24 @@ function CarePage() {
                 key={k.id}
                 className="rounded-xl border border-white/10 bg-bg-surface overflow-hidden flex flex-col hover:border-care-blue/40 transition"
               >
-                <div className="aspect-[4/3] w-full bg-gradient-to-br from-care-blue/20 via-bg-elevated to-tech-cyan/10 border-b border-white/10 flex items-center justify-center text-white/40">
-                  <div className="flex flex-col items-center gap-2">
-                    <ImageIcon className="size-7" />
-                    <span className="font-mono text-[10px] uppercase tracking-[0.25em]">
-                      Imagem em breve
-                    </span>
-                  </div>
+                <div className="aspect-[4/3] w-full border-b border-white/10 flex items-center justify-center overflow-hidden bg-white">
+                  {k.image
+                    ? (
+                      <img
+                        src={k.image}
+                        alt={k.name}
+                        className="w-full h-full object-contain"
+                        loading="lazy"
+                      />
+                    )
+                    : (
+                      <div className="flex flex-col items-center gap-2 text-white/40">
+                        <ImageIcon className="size-7" />
+                        <span className="font-mono text-[10px] uppercase tracking-[0.25em]">
+                          Imagem em breve
+                        </span>
+                      </div>
+                    )}
                 </div>
                 <div className="p-6 flex flex-col gap-4 flex-1">
                   <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-care-blue">
