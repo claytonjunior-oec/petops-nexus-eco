@@ -24,6 +24,7 @@ import shampooProImg from "@/assets/care-shampoo-pro.png";
 import condicionadorImg from "@/assets/care-condicionador-reparador.png";
 import desinfetanteImg from "@/assets/care-desinfetante.png";
 import coloniaHeImg from "@/assets/care-colonia-he.png";
+import coloniaSheImg from "@/assets/care-colonia-she.png";
 
 export const careProducts: CareProduct[] = [
   {
@@ -117,7 +118,7 @@ export const careProducts: CareProduct[] = [
     ],
     composition: "Fragrância exclusiva, polisorbato e veículo aquoso.",
     tags: ["Para revenda", "Pós-banho"],
-    image: null,
+    image: coloniaSheImg,
   },
   {
     id: "halito-fresh",
