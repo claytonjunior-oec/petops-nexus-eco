@@ -140,7 +140,7 @@ function CarePage() {
           title="Aumente o ticket médio do seu petshop."
           intro="Kits prontos para venda no balcão pós-banho ou para uso interno do salão. Recompra previsível, fidelização do tutor."
         >
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
             {careKits.map((k, i) => (
               <article
                 key={k.id}
