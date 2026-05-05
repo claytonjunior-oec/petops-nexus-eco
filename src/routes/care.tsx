@@ -5,7 +5,8 @@ import { Section } from "@/components/site/Section";
 import { Link } from "@tanstack/react-router";
 import { ImageIcon, Leaf, FlaskConical, HeartHandshake } from "lucide-react";
 import { ProductCard } from "@/components/site/ProductCard";
-import { careKits, careProducts } from "@/data/care-products";
+import { careKits, careProducts, careSubscriptions } from "@/data/care-products";
+import { Check, Repeat, ShieldCheck, Truck } from "lucide-react";
 
 export const Route = createFileRoute("/care")({
   head: () => ({
