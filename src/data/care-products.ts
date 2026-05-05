@@ -49,7 +49,7 @@ export const careProducts: CareProduct[] = [
     code: "CARE.02",
     name: "Care Condicionador Reparador",
     category: "Hidratação",
-    size: "500ml",
+    size: "5L",
     headline: "Pelo macio, brilhante e fácil de pentear.",
     description:
       "Finaliza o banho com hidratação profunda. A combinação de manteiga de karité, óleo de coco e óleo de amêndoas doce repara fios ressecados e devolve maciez de cobertor.",
