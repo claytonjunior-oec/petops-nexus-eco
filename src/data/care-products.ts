@@ -41,7 +41,7 @@ export const careProducts: CareProduct[] = [
     composition:
       "Tensoativos suaves de origem vegetal (coco e glicosídeo), D-Pantenol e conservante seguro. Sem corantes agressivos.",
     tags: ["Profissional", "pH balanceado", "Para revenda"],
-    image: null,
+    image: shampooProImg,
   },
   {
     id: "condicionador-reparador",
