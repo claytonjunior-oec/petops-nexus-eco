@@ -22,6 +22,7 @@ export type CareKit = {
 
 import shampooProImg from "@/assets/care-shampoo-pro.png";
 import condicionadorImg from "@/assets/care-condicionador-reparador.png";
+import desinfetanteImg from "@/assets/care-desinfetante.png";
 
 export const careProducts: CareProduct[] = [
   {
