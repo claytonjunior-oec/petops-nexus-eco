@@ -25,6 +25,7 @@ import condicionadorImg from "@/assets/care-condicionador-reparador.png";
 import desinfetanteImg from "@/assets/care-desinfetante.png";
 import coloniaHeImg from "@/assets/care-colonia-he.png";
 import coloniaSheImg from "@/assets/care-colonia-she.png";
+import halitoFreshImg from "@/assets/care-halito-fresh.png";
 
 export const careProducts: CareProduct[] = [
   {
@@ -135,7 +136,7 @@ export const careProducts: CareProduct[] = [
     ],
     composition: "Veículo aquoso, clorexidina 0,1%, glicerina, cloreto de cetilpiridínio e aroma de menta.",
     tags: ["Uso diário", "Para revenda"],
-    image: null,
+    image: halitoFreshImg,
   },
   {
     id: "protect-focinho",
