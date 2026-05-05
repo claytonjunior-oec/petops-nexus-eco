@@ -27,6 +27,7 @@ import coloniaHeImg from "@/assets/care-colonia-he.png";
 import coloniaSheImg from "@/assets/care-colonia-she.png";
 import halitoFreshImg from "@/assets/care-halito-fresh.png";
 import protectPatinhasImg from "@/assets/care-protect-patinhas.png";
+import protectFocinhoImg from "@/assets/care-protect-focinho.png";
 
 export const careProducts: CareProduct[] = [
   {
@@ -156,7 +157,7 @@ export const careProducts: CareProduct[] = [
     composition:
       "Manteiga de karité, emolientes vegetais, dióxido de titânio, óxido de zinco, filtros UV dermatológicos, fragrância e conservante.",
     tags: ["Vegano", "Profissional"],
-    image: null,
+    image: protectFocinhoImg,
   },
   {
     id: "protect-patinhas",
