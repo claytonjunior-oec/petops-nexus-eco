@@ -104,7 +104,7 @@ function Hero() {
         </div>
 
         {/* Right — Care (image) */}
-        <div className="w-1/2 relative overflow-hidden hidden md:block">
+        <div className="w-1/2 relative overflow-hidden hidden">
           <img
             src={heroCare}
             alt="Cachorro branco fofinho enrolado em toalha após o banho, segurado pela tutora"
@@ -135,27 +135,7 @@ function Hero() {
           </div>
         </div>
 
-        {/* Mobile background */}
-        <div className="md:hidden absolute inset-0">
-          <img
-            src={heroTech}
-            alt=""
-            className="absolute inset-0 w-full h-1/2 object-cover"
-            width={1024}
-            height={640}
-          />
-          <img
-            src={heroCare}
-            alt=""
-            className="absolute inset-x-0 bottom-0 w-full h-1/2 object-cover"
-            width={1024}
-            height={640}
-          />
-          <div className="absolute inset-0 bg-bg-base/80" />
-          <div className="absolute inset-0 bg-grid-pattern opacity-50" />
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 size-[500px] bg-tech-cyan/15 blur-[120px] rounded-full" />
-          <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 size-[500px] bg-care-blue/15 blur-[120px] rounded-full" />
-        </div>
+        {/* Mobile background handled by full-bleed husky above */}
 
         {/* Center spine with pet polaroid */}
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent pointer-events-none z-20 hidden md:block" />
