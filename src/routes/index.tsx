@@ -2,6 +2,10 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Section } from "@/components/site/Section";
+import heroTech from "@/assets/hero-tech.jpg";
+import heroCare from "@/assets/hero-care.jpg";
+import heroPetduo from "@/assets/hero-petduo.jpg";
+import { Heart, Sparkles, Star } from "lucide-react";
 
 
 export const Route = createFileRoute("/")({
