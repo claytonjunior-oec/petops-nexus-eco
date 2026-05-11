@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Section } from "@/components/site/Section";
+import heroHusky from "@/assets/hero-husky.jpg";
 import heroTech from "@/assets/hero-tech.jpg";
 import heroCare from "@/assets/hero-care.jpg";
 import heroPetduo from "@/assets/hero-petduo.jpg";
@@ -49,9 +50,28 @@ function HomePage() {
 function Hero() {
   return (
     <main className="relative pt-16 min-h-dvh flex items-stretch">
-      <div className="relative flex-1 flex min-h-[760px]">
+      {/* Full-bleed husky hero background */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <img
+          src={heroHusky}
+          alt="Husky sorrindo enquanto recebe carinho dos tutores em casa"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+          width={1920}
+          height={800}
+        />
+        {/* Cinematic vignette + brand grade */}
+        <div className="absolute inset-0 bg-gradient-to-b from-bg-base/70 via-bg-base/40 to-bg-base" />
+        <div className="absolute inset-0 bg-gradient-to-r from-bg-base/80 via-transparent to-bg-base/80" />
+        <div className="absolute inset-0 bg-gradient-to-br from-tech-cyan/10 via-transparent to-care-blue/15 mix-blend-overlay" />
+        <div className="absolute inset-0 bg-grid-pattern opacity-25 mix-blend-overlay pointer-events-none" />
+        <div className="absolute top-1/4 -left-1/4 size-[700px] bg-tech-cyan/15 blur-[160px] rounded-full pointer-events-none" />
+        <div className="absolute bottom-1/4 -right-1/4 size-[700px] bg-care-blue/15 blur-[160px] rounded-full pointer-events-none" />
+      </div>
+
+      <div className="relative flex-1 flex min-h-[760px] z-10">
         {/* Left — Tech (image) */}
-        <div className="w-1/2 relative border-r border-white/5 overflow-hidden hidden md:block">
+        <div className="w-1/2 relative border-r border-white/5 overflow-hidden hidden">
+
           <img
             src={heroTech}
             alt="Profissional de petshop sorrindo enquanto opera tablet ao lado de um golden retriever"
@@ -84,7 +104,7 @@ function Hero() {
         </div>
 
         {/* Right — Care (image) */}
-        <div className="w-1/2 relative overflow-hidden hidden md:block">
+        <div className="w-1/2 relative overflow-hidden hidden">
           <img
             src={heroCare}
             alt="Cachorro branco fofinho enrolado em toalha após o banho, segurado pela tutora"
@@ -115,27 +135,7 @@ function Hero() {
           </div>
         </div>
 
-        {/* Mobile background */}
-        <div className="md:hidden absolute inset-0">
-          <img
-            src={heroTech}
-            alt=""
-            className="absolute inset-0 w-full h-1/2 object-cover"
-            width={1024}
-            height={640}
-          />
-          <img
-            src={heroCare}
-            alt=""
-            className="absolute inset-x-0 bottom-0 w-full h-1/2 object-cover"
-            width={1024}
-            height={640}
-          />
-          <div className="absolute inset-0 bg-bg-base/80" />
-          <div className="absolute inset-0 bg-grid-pattern opacity-50" />
-          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 size-[500px] bg-tech-cyan/15 blur-[120px] rounded-full" />
-          <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 size-[500px] bg-care-blue/15 blur-[120px] rounded-full" />
-        </div>
+        {/* Mobile background handled by full-bleed husky above */}
 
         {/* Center spine with pet polaroid */}
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent pointer-events-none z-20 hidden md:block" />
