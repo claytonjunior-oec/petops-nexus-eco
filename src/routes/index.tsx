@@ -140,22 +140,6 @@ function Hero() {
         {/* Center spine with pet polaroid */}
         <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent pointer-events-none z-20 hidden md:block" />
 
-        {/* Floating pet polaroid — top */}
-        <div className="absolute top-24 left-1/2 -translate-x-1/2 z-30 hidden lg:block rotate-[-4deg] hover:rotate-0 transition-transform duration-500">
-          <div className="bg-titanium p-2 pb-8 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.8)] rounded-sm">
-            <img
-              src={heroPetduo}
-              alt="Gatinho e cachorrinho juntos"
-              className="size-32 object-cover"
-              width={256}
-              height={256}
-            />
-            <div className="font-mono text-[9px] uppercase tracking-widest text-bg-base/70 text-center mt-2">
-              família · 2026
-            </div>
-          </div>
-        </div>
-
         {/* Floating reviews card — bottom left */}
         <div className="absolute bottom-24 left-8 lg:left-16 z-30 hidden lg:flex items-center gap-3 rounded-full border border-white/10 bg-bg-base/70 backdrop-blur-md pl-3 pr-5 py-2 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
           <div className="flex -space-x-2">
