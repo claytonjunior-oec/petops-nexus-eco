@@ -15,15 +15,12 @@ export function Nav() {
     <nav className="fixed top-0 inset-x-0 h-16 z-50 border-b border-white/10 bg-bg-base/70 backdrop-blur-xl">
       <div className="h-full px-6 lg:px-10 flex items-center justify-between max-w-[1440px] mx-auto">
         <div className="flex items-center gap-10">
-          <Link to="/" className="flex items-center gap-2.5 group">
+          <Link to="/" className="flex items-center group">
             <img
               src={logo}
               alt="PetOps"
-              className="size-9 object-contain opacity-95 group-hover:opacity-100 transition"
+              className="h-14 w-14 object-contain opacity-95 group-hover:opacity-100 transition invert"
             />
-            <span className="font-semibold tracking-[0.22em] text-titanium text-sm">
-              PET<span className="text-tech-cyan">OPS</span>
-            </span>
           </Link>
           <div className="hidden md:flex items-center gap-7 font-mono text-[11px] uppercase tracking-[0.18em] text-white/50">
             {links.map((l) => (
