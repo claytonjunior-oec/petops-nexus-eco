@@ -50,54 +50,137 @@ function Hero() {
   return (
     <main className="relative pt-16 min-h-dvh flex items-stretch">
       <div className="relative flex-1 flex min-h-[760px]">
-        {/* Left — Tech */}
-        <div className="w-1/2 relative border-r border-white/5 bg-grid-pattern overflow-hidden hidden md:flex flex-col justify-between p-8">
-          <div className="absolute top-1/4 -left-1/4 size-[700px] bg-tech-cyan/10 blur-[140px] rounded-full pointer-events-none" />
-          <div className="font-mono text-[10px] text-tech-cyan/70 tracking-[0.2em] leading-relaxed z-10">
-            <div className="flex items-center gap-2 mb-3">
-              <div className="size-1.5 bg-tech-neon rounded-full shadow-[0_0_8px_var(--color-tech-neon)] animate-pulse" />
-              TECH · AUTOMAÇÃO
-            </div>
-            <div>SISTEMA</div>
-            <div>OPERAÇÃO</div>
-            <div>CRESCIMENTO</div>
+        {/* Left — Tech (image) */}
+        <div className="w-1/2 relative border-r border-white/5 overflow-hidden hidden md:block">
+          <img
+            src={heroTech}
+            alt="Profissional de petshop sorrindo enquanto opera tablet ao lado de um golden retriever"
+            className="absolute inset-0 w-full h-full object-cover"
+            width={1024}
+            height={1280}
+          />
+          {/* Color grade + readability overlays */}
+          <div className="absolute inset-0 bg-gradient-to-br from-bg-base/70 via-bg-base/40 to-tech-cyan/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent to-bg-base/85" />
+          <div className="absolute inset-0 bg-grid-pattern opacity-40 mix-blend-overlay pointer-events-none" />
+          <div className="absolute top-1/4 -left-1/4 size-[700px] bg-tech-cyan/15 blur-[140px] rounded-full pointer-events-none" />
+
+          {/* Top label */}
+          <div className="absolute top-8 left-8 font-mono text-[10px] text-tech-cyan tracking-[0.25em] z-10 flex items-center gap-2">
+            <div className="size-1.5 bg-tech-neon rounded-full shadow-[0_0_8px_var(--color-tech-neon)] animate-pulse" />
+            TECH · AUTOMAÇÃO
           </div>
-          <div className="text-[110px] xl:text-[140px] font-bold text-white/[0.025] tracking-tighter leading-none select-none -ml-2 z-10">
-            TECH<br />CORE
+
+          {/* Floating live stat */}
+          <div className="absolute top-24 left-8 z-10 rounded-lg border border-white/10 bg-bg-base/70 backdrop-blur-md px-4 py-3 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
+            <div className="font-mono text-[9px] uppercase tracking-widest text-white/50 mb-1">
+              No-show
+            </div>
+            <div className="flex items-baseline gap-1.5">
+              <span className="text-2xl font-medium text-white">−42%</span>
+              <span className="text-tech-neon text-[10px] font-mono">↓</span>
+            </div>
           </div>
         </div>
 
-        {/* Right — Care */}
-        <div className="w-1/2 relative bg-grid-pattern overflow-hidden hidden md:flex flex-col justify-between p-8">
-          <div className="absolute bottom-1/4 -right-1/4 size-[700px] bg-care-blue/10 blur-[140px] rounded-full pointer-events-none" />
-          <div className="font-mono text-[10px] text-care-blue/70 tracking-[0.2em] leading-relaxed text-right z-10">
-            <div className="flex items-center justify-end gap-2 mb-3">
-              <div className="size-1.5 bg-care-green rounded-full shadow-[0_0_8px_var(--color-care-green)]" />
-              CARE · CUIDADO
-            </div>
-            <div>EXPERIÊNCIA</div>
-            <div>PRODUTO</div>
-            <div>RECORRÊNCIA</div>
+        {/* Right — Care (image) */}
+        <div className="w-1/2 relative overflow-hidden hidden md:block">
+          <img
+            src={heroCare}
+            alt="Cachorro branco fofinho enrolado em toalha após o banho, segurado pela tutora"
+            className="absolute inset-0 w-full h-full object-cover"
+            width={1024}
+            height={1280}
+          />
+          <div className="absolute inset-0 bg-gradient-to-bl from-bg-base/70 via-bg-base/40 to-care-blue/10" />
+          <div className="absolute inset-0 bg-gradient-to-l from-transparent to-bg-base/85" />
+          <div className="absolute inset-0 bg-grid-pattern opacity-40 mix-blend-overlay pointer-events-none" />
+          <div className="absolute bottom-1/4 -right-1/4 size-[700px] bg-care-blue/15 blur-[140px] rounded-full pointer-events-none" />
+
+          {/* Top label */}
+          <div className="absolute top-8 right-8 font-mono text-[10px] text-care-blue tracking-[0.25em] z-10 flex items-center gap-2">
+            CARE · CUIDADO
+            <div className="size-1.5 bg-care-green rounded-full shadow-[0_0_8px_var(--color-care-green)]" />
           </div>
-          <div className="text-[110px] xl:text-[140px] font-bold text-white/[0.025] tracking-tighter leading-none select-none text-right -mr-2 z-10">
-            CARE<br />SYNC
+
+          {/* Floating product/rating card */}
+          <div className="absolute top-24 right-8 z-10 rounded-lg border border-white/10 bg-bg-base/70 backdrop-blur-md px-4 py-3 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
+            <div className="font-mono text-[9px] uppercase tracking-widest text-white/50 mb-1">
+              Recompra
+            </div>
+            <div className="flex items-baseline gap-1.5">
+              <span className="text-2xl font-medium text-white">3.2×</span>
+              <Heart className="size-3 text-care-blue fill-care-blue" />
+            </div>
           </div>
         </div>
 
         {/* Mobile background */}
-        <div className="md:hidden absolute inset-0 bg-grid-pattern">
+        <div className="md:hidden absolute inset-0">
+          <img
+            src={heroTech}
+            alt=""
+            className="absolute inset-0 w-full h-1/2 object-cover"
+            width={1024}
+            height={640}
+          />
+          <img
+            src={heroCare}
+            alt=""
+            className="absolute inset-x-0 bottom-0 w-full h-1/2 object-cover"
+            width={1024}
+            height={640}
+          />
+          <div className="absolute inset-0 bg-bg-base/80" />
+          <div className="absolute inset-0 bg-grid-pattern opacity-50" />
           <div className="absolute top-1/3 left-1/2 -translate-x-1/2 size-[500px] bg-tech-cyan/15 blur-[120px] rounded-full" />
           <div className="absolute bottom-1/4 left-1/2 -translate-x-1/2 size-[500px] bg-care-blue/15 blur-[120px] rounded-full" />
         </div>
 
-        {/* Center spine */}
-        <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent pointer-events-none z-20 hidden md:block">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-28 border border-white/10 rounded-full flex items-center justify-center backdrop-blur-md bg-bg-base/50 shadow-[0_0_50px_rgba(255,255,255,0.06)]">
-          <div className="size-14 border border-white/20 rounded-full flex items-center justify-center relative">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-tech-cyan/30 to-care-blue/30 blur-md" />
-              <div className="size-2 rounded-full bg-white/80 shadow-[0_0_12px_rgba(255,255,255,0.6)] relative" />
+        {/* Center spine with pet polaroid */}
+        <div className="absolute inset-y-0 left-1/2 -translate-x-1/2 w-px bg-gradient-to-b from-transparent via-white/30 to-transparent pointer-events-none z-20 hidden md:block" />
+
+        {/* Floating pet polaroid — top */}
+        <div className="absolute top-24 left-1/2 -translate-x-1/2 z-30 hidden lg:block rotate-[-4deg] hover:rotate-0 transition-transform duration-500">
+          <div className="bg-titanium p-2 pb-8 shadow-[0_30px_60px_-20px_rgba(0,0,0,0.8)] rounded-sm">
+            <img
+              src={heroPetduo}
+              alt="Gatinho e cachorrinho juntos"
+              className="size-32 object-cover"
+              width={256}
+              height={256}
+            />
+            <div className="font-mono text-[9px] uppercase tracking-widest text-bg-base/70 text-center mt-2">
+              família · 2026
             </div>
           </div>
+        </div>
+
+        {/* Floating reviews card — bottom left */}
+        <div className="absolute bottom-24 left-8 lg:left-16 z-30 hidden lg:flex items-center gap-3 rounded-full border border-white/10 bg-bg-base/70 backdrop-blur-md pl-3 pr-5 py-2 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
+          <div className="flex -space-x-2">
+            <div className="size-7 rounded-full border-2 border-bg-base bg-gradient-to-br from-tech-cyan to-tech-neon" />
+            <div className="size-7 rounded-full border-2 border-bg-base bg-gradient-to-br from-care-blue to-care-green" />
+            <div className="size-7 rounded-full border-2 border-bg-base bg-gradient-to-br from-brand-amber to-tech-cyan" />
+          </div>
+          <div>
+            <div className="flex items-center gap-1 text-tech-neon">
+              {[0, 1, 2, 3, 4].map((i) => (
+                <Star key={i} className="size-3 fill-current" />
+              ))}
+            </div>
+            <div className="font-mono text-[9px] uppercase tracking-widest text-white/60">
+              +120 petshops já operam
+            </div>
+          </div>
+        </div>
+
+        {/* Floating "feito com cuidado" badge — bottom right */}
+        <div className="absolute bottom-24 right-8 lg:right-16 z-30 hidden lg:flex items-center gap-2 rounded-full border border-care-blue/30 bg-care-blue/10 backdrop-blur-md px-4 py-2 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
+          <Sparkles className="size-3.5 text-care-blue" />
+          <span className="font-mono text-[10px] uppercase tracking-widest text-white/80">
+            90% natural · 0% crueldade
+          </span>
         </div>
 
         {/* Overlay content */}
@@ -113,15 +196,15 @@ function Hero() {
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-[80px] font-medium tracking-tight text-white leading-[1.02] text-balance mb-6">
+            <h1 className="text-5xl md:text-6xl lg:text-[80px] font-medium tracking-tight text-white leading-[1.02] text-balance mb-6 [text-shadow:0_4px_30px_rgba(0,0,0,0.5)]">
               O futuro da operação pet{" "}
               <span className="text-gradient-brand">começa aqui.</span>
             </h1>
 
-            <p className="text-base md:text-xl text-white/55 max-w-2xl text-pretty font-light leading-relaxed mb-4">
+            <p className="text-base md:text-xl text-white/70 max-w-2xl text-pretty font-light leading-relaxed mb-4 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">
               Menos no-show, mais recompra e a sua equipe livre do WhatsApp manual. Tecnologia que opera sozinha + uma linha premium de cuidado que eleva a sua margem.
             </p>
-            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/35 mb-10">
+            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/45 mb-10">
               Pet shops · Clínicas · Banho &amp; tosa · Daycare · Hotel
             </p>
 
@@ -129,7 +212,7 @@ function Hero() {
               <div className="grid grid-cols-2 gap-3">
                 <Link
                   to="/tech"
-                  className="group relative px-5 py-4 bg-bg-surface border border-tech-cyan/30 rounded-md hover:border-tech-cyan hover:shadow-[0_0_24px_-4px_var(--color-tech-cyan)] transition-all"
+                  className="group relative px-5 py-4 bg-bg-surface/80 backdrop-blur-md border border-tech-cyan/30 rounded-md hover:border-tech-cyan hover:shadow-[0_0_24px_-4px_var(--color-tech-cyan)] transition-all"
                 >
                   <span className="font-mono text-[11px] uppercase tracking-widest text-tech-cyan">
                     Conhecer Tech
@@ -137,7 +220,7 @@ function Hero() {
                 </Link>
                 <Link
                   to="/care"
-                  className="group relative px-5 py-4 bg-bg-surface border border-care-blue/30 rounded-md hover:border-care-blue hover:shadow-[0_0_24px_-4px_var(--color-care-blue)] transition-all"
+                  className="group relative px-5 py-4 bg-bg-surface/80 backdrop-blur-md border border-care-blue/30 rounded-md hover:border-care-blue hover:shadow-[0_0_24px_-4px_var(--color-care-blue)] transition-all"
                 >
                   <span className="font-mono text-[11px] uppercase tracking-widest text-care-blue">
                     Conhecer Care
@@ -155,14 +238,14 @@ function Hero() {
         </div>
 
         {/* Bottom UI bar */}
-        <div className="absolute bottom-0 inset-x-0 h-12 border-t border-white/5 bg-bg-base/40 backdrop-blur items-center justify-between px-6 lg:px-10 z-40 hidden md:flex">
-          <div className="font-mono text-[10px] text-white/30 tracking-widest">// PETOPS · ECOSSISTEMA</div>
+        <div className="absolute bottom-0 inset-x-0 h-12 border-t border-white/5 bg-bg-base/60 backdrop-blur items-center justify-between px-6 lg:px-10 z-40 hidden md:flex">
+          <div className="font-mono text-[10px] text-white/40 tracking-widest">// PETOPS · ECOSSISTEMA</div>
           <div className="flex gap-1">
             <div className="w-8 h-1 bg-white/30 rounded-full" />
             <div className="w-2 h-1 bg-white/10 rounded-full" />
             <div className="w-2 h-1 bg-white/10 rounded-full" />
           </div>
-          <div className="font-mono text-[10px] text-white/30 tracking-widest">EXPLORAR ↓</div>
+          <div className="font-mono text-[10px] text-white/40 tracking-widest">EXPLORAR ↓</div>
         </div>
       </div>
     </main>
