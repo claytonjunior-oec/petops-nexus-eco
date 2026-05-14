@@ -387,6 +387,103 @@ function TechPage() {
           </div>
         </Section>
 
+        {/* Planos */}
+        <Section
+          eyebrow="Planos · PetOps Tech"
+          title="Escolha o plano que cabe no tamanho do seu negócio."
+          intro="Do petshop começando a estruturar a operação à rede com múltiplas unidades. Todos os planos incluem suporte e Academy."
+        >
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {planos.map((p) => (
+              <div
+                key={p.id}
+                className={`relative rounded-2xl border p-7 flex flex-col ${
+                  p.highlight
+                    ? "border-tech-cyan/50 bg-bg-surface glow-tech"
+                    : "border-white/10 bg-bg-surface/60"
+                }`}
+              >
+                {p.highlight && p.badge && (
+                  <span className="absolute -top-3 left-7 font-mono text-[10px] uppercase tracking-widest px-2.5 py-1 bg-tech-cyan text-bg-base rounded-sm font-semibold">
+                    {p.badge}
+                  </span>
+                )}
+                <div className="flex items-baseline gap-2">
+                  <h3 className="text-2xl font-medium text-white tracking-tight">{p.name}</h3>
+                </div>
+                <p className="text-xs text-white/50 mt-1.5 leading-relaxed min-h-[32px]">{p.tagline}</p>
+                <div className="mt-5 mb-5">
+                  <div className="flex items-baseline gap-1">
+                    <span className="text-4xl font-medium text-white tracking-tight">{p.price}</span>
+                    <span className="text-xs text-white/40">/mês</span>
+                  </div>
+                  <div className="font-mono text-[10px] uppercase tracking-widest text-tech-cyan mt-2">{p.users}</div>
+                  <div className="text-xs text-white/45 mt-1">{p.limits}</div>
+                </div>
+                <ul className="space-y-2 mb-6 flex-1">
+                  {p.modulos.map((m) => (
+                    <li key={m} className="flex gap-2 text-sm text-white/75 leading-snug">
+                      <Check className="size-4 text-tech-cyan shrink-0 mt-0.5" />
+                      <span>{m}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="/contato"
+                  className={`block text-center font-mono text-[11px] uppercase tracking-widest px-5 py-3 rounded-sm transition ${
+                    p.highlight
+                      ? "bg-tech-cyan text-bg-base hover:opacity-90 font-semibold"
+                      : "border border-white/15 text-white hover:bg-white/5"
+                  }`}
+                >
+                  {p.cta}
+                </Link>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        {/* Comparativo */}
+        <Section
+          eyebrow="Comparativo"
+          title="Tudo que você ganha em cada plano."
+          intro="Todos os módulos do sistema, lado a lado."
+        >
+          <div className="rounded-2xl border border-white/10 bg-bg-surface/40 overflow-hidden">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm min-w-[640px]">
+                <thead>
+                  <tr className="border-b border-white/10 bg-bg-surface/60">
+                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-white/50 px-5 py-4">Módulo</th>
+                    <th className="font-mono text-[10px] uppercase tracking-widest text-white/50 px-3 py-4">Grátis</th>
+                    <th className="font-mono text-[10px] uppercase tracking-widest text-white/50 px-3 py-4">Essencial</th>
+                    <th className="font-mono text-[10px] uppercase tracking-widest text-tech-cyan px-3 py-4">Profissional</th>
+                    <th className="font-mono text-[10px] uppercase tracking-widest text-white/50 px-3 py-4">Premium</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparativo.map((row, i) => (
+                    <tr key={row.mod} className={i % 2 === 0 ? "bg-white/[0.015]" : ""}>
+                      <td className="text-white/80 px-5 py-3 border-b border-white/5">{row.mod}</td>
+                      <td className="text-center px-3 py-3 border-b border-white/5"><Cell v={row.g} /></td>
+                      <td className="text-center px-3 py-3 border-b border-white/5"><Cell v={row.e} /></td>
+                      <td className="text-center px-3 py-3 border-b border-white/5 bg-tech-cyan/[0.03]"><Cell v={row.p} /></td>
+                      <td className="text-center px-3 py-3 border-b border-white/5"><Cell v={row.x} /></td>
+                    </tr>
+                  ))}
+                  <tr className="bg-bg-surface/60">
+                    <td className="text-white/80 px-5 py-4 font-medium">Preço/mês</td>
+                    <td className="text-center px-3 py-4 text-white font-mono text-sm">R$ 0</td>
+                    <td className="text-center px-3 py-4 text-white font-mono text-sm">R$ 149</td>
+                    <td className="text-center px-3 py-4 text-tech-cyan font-mono text-sm font-semibold bg-tech-cyan/[0.05]">R$ 297</td>
+                    <td className="text-center px-3 py-4 text-white font-mono text-sm">R$ 497</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </Section>
+
         {/* CTA */}
         <Section align="center">
           <div className="rounded-2xl border border-tech-cyan/20 bg-bg-surface/60 backdrop-blur p-12 text-center max-w-3xl mx-auto glow-tech">
