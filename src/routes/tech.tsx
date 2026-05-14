@@ -5,6 +5,7 @@ import {
   ShoppingCart, Boxes, Wallet, Building2,
   Bell, RefreshCw, Image as ImageIcon, Syringe, BarChart3,
   Cloud, Smartphone, Send, ShieldCheck,
+  Check, Minus,
 } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
