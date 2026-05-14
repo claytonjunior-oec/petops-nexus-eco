@@ -4,6 +4,7 @@ import { Footer } from "@/components/site/Footer";
 import { Section } from "@/components/site/Section";
 import { Link } from "@tanstack/react-router";
 import { ImageIcon, Leaf, FlaskConical, HeartHandshake } from "lucide-react";
+import careHeroProdutos from "@/assets/care-hero-produtos.png";
 import { ProductCard } from "@/components/site/ProductCard";
 import { careKits, careProducts, careSubscriptions } from "@/data/care-products";
 import { Check, Repeat, ShieldCheck, Truck } from "lucide-react";
@@ -46,36 +47,46 @@ function CarePage() {
         <section className="relative px-6 lg:px-10 pt-24 pb-24 overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern bg-grid-fade pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 size-[600px] bg-care-blue/10 blur-[140px] rounded-full pointer-events-none" />
-          <div className="relative max-w-[1440px] mx-auto">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="size-1.5 bg-care-green rounded-full shadow-[0_0_10px_var(--color-care-green)]" />
-              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-care-blue">
-                MÓDULO 02 · CARE
-              </span>
+          <div className="relative max-w-[1440px] mx-auto grid lg:grid-cols-[1fr_1fr] gap-12 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="size-1.5 bg-care-green rounded-full shadow-[0_0_10px_var(--color-care-green)]" />
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-care-blue">
+                  MÓDULO 02 · CARE
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.05] text-balance">
+                Linha profissional{" "}
+                <span className="text-care-blue">90% natural</span>{" "}
+                para elevar o cuidado pet.
+              </h1>
+              <p className="mt-8 text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed">
+                Produtos para banho, tosa, clínica e revenda. Fórmulas com base
+                vegetal, pH balanceado e apresentação que comunica valor desde a
+                prateleira.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <Link
+                  to="/contato"
+                  className="font-mono text-[11px] uppercase tracking-widest px-6 py-3.5 bg-care-blue text-bg-base rounded-sm hover:opacity-90 transition font-semibold"
+                >
+                  Solicitar catálogo
+                </Link>
+                <Link
+                  to="/contato"
+                  className="font-mono text-[11px] uppercase tracking-widest px-6 py-3.5 border border-white/15 rounded-sm hover:bg-white/5 transition"
+                >
+                  Quero revender
+                </Link>
+              </div>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.05] max-w-4xl text-balance">
-              Linha profissional{" "}
-              <span className="text-care-blue">90% natural</span>{" "}
-              para elevar o cuidado pet.
-            </h1>
-            <p className="mt-8 text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed">
-              Produtos para banho, tosa, clínica e revenda. Fórmulas com base
-              vegetal, pH balanceado e apresentação que comunica valor desde a
-              prateleira.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link
-                to="/contato"
-                className="font-mono text-[11px] uppercase tracking-widest px-6 py-3.5 bg-care-blue text-bg-base rounded-sm hover:opacity-90 transition font-semibold"
-              >
-                Solicitar catálogo
-              </Link>
-              <Link
-                to="/contato"
-                className="font-mono text-[11px] uppercase tracking-widest px-6 py-3.5 border border-white/15 rounded-sm hover:bg-white/5 transition"
-              >
-                Quero revender
-              </Link>
+            <div className="relative">
+              <img
+                src={careHeroProdutos}
+                alt="Linha PetOps Care: Shampoo Pro, Condicionador Reparador, Desinfetante Bactericida e Colônias Soft"
+                className="w-full h-auto object-contain drop-shadow-[0_30px_60px_rgba(79,107,255,0.25)]"
+                loading="eager"
+              />
             </div>
           </div>
         </section>
