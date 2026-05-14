@@ -80,11 +80,11 @@ function CarePage() {
                 </Link>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative lg:-mr-16 xl:-mr-32">
               <img
                 src={careHeroProdutos}
                 alt="Linha PetOps Care: Shampoo Pro, Condicionador Reparador, Desinfetante Bactericida e Colônias Soft"
-                className="w-full h-auto object-contain drop-shadow-[0_30px_60px_rgba(79,107,255,0.25)]"
+                className="w-full h-auto object-contain scale-110 lg:scale-125 origin-center drop-shadow-[0_30px_60px_rgba(79,107,255,0.25)]"
                 loading="eager"
               />
             </div>
