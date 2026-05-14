@@ -2,6 +2,18 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { useState } from "react";
+import { z } from "zod";
+
+const WHATSAPP_NUMBER = "5511918967593";
+
+const contactSchema = z.object({
+  nome: z.string().trim().min(1, "Informe seu nome").max(100),
+  empresa: z.string().trim().min(1, "Informe a empresa").max(100),
+  email: z.string().trim().email("E-mail inválido").max(255),
+  telefone: z.string().trim().min(8, "Telefone inválido").max(30),
+  interesse: z.enum(["PetOps Tech", "PetOps Care", "Ecossistema completo"]),
+  msg: z.string().trim().max(1000).optional().default(""),
+});
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
