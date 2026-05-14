@@ -178,12 +178,23 @@ function CarePage() {
                     {plan.capacity}
                   </p>
                 </div>
-                <div className="flex items-baseline gap-1.5 border-y border-white/10 py-4">
-                  <span className="text-xs text-white/50">R$</span>
-                  <span className="text-4xl font-medium text-white tracking-tight">
-                    {plan.monthlyPrice.toLocaleString("pt-BR")}
-                  </span>
-                  <span className="text-sm text-white/50">/mês</span>
+                <div className="flex flex-col gap-1.5 border-y border-white/10 py-4">
+                  <div className="flex items-baseline gap-1.5">
+                    <span className="text-xs text-white/50">R$</span>
+                    <span className="text-4xl font-medium text-white tracking-tight">
+                      {plan.monthlyPrice.toLocaleString("pt-BR")}
+                    </span>
+                    <span className="text-sm text-white/50">/mês</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-[11px] font-mono text-white/45">
+                    <span className="line-through">
+                      {plan.retailNote ?? "Valor avulso"}: R$ {plan.retailPrice.toLocaleString("pt-BR")}
+                    </span>
+                  </div>
+                  <div className="text-[11px] font-mono text-care-green">
+                    {plan.savingsNote ?? "Economia no plano"}: R$ {plan.savings.toLocaleString("pt-BR")}
+                    {plan.savingsNote ? "+" : ""}
+                  </div>
                 </div>
                 <ul className="space-y-2 flex-1">
                   {plan.items.map((it) => (
