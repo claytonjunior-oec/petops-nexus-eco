@@ -204,8 +204,12 @@ function CarePage() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  to="/contato"
+                <a
+                  href={`https://wa.me/5511918967593?text=${encodeURIComponent(
+                    `Olá! Tenho interesse no ${plan.name} (R$ ${plan.monthlyPrice.toLocaleString("pt-BR")}/mês) da PetOps Care.\n\n${plan.capacity}.\n\nItens inclusos:\n${plan.items.map((it) => `• ${it}`).join("\n")}\n\nGostaria de mais informações para contratar.`,
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className={`mt-2 text-center font-mono text-[11px] uppercase tracking-widest px-6 py-3.5 rounded-sm font-semibold transition ${
                     plan.highlight
                       ? "bg-care-blue text-bg-base hover:opacity-90"
@@ -213,7 +217,7 @@ function CarePage() {
                   }`}
                 >
                   Quero esse plano
-                </Link>
+                </a>
               </article>
             ))}
           </div>
