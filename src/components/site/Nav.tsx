@@ -39,12 +39,22 @@ export function Nav() {
             ))}
           </div>
         </div>
-        <Link
-          to="/contato"
-          className="font-mono text-[11px] uppercase tracking-[0.18em] px-4 py-2 bg-white text-bg-base rounded-sm hover:bg-white/90 transition-all font-medium"
-        >
-          Agendar Demo
-        </Link>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://petops.organizeeconecta.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-[11px] uppercase tracking-[0.18em] px-4 py-2 border border-white/15 text-white/80 rounded-sm hover:text-white hover:border-white/40 transition-all"
+          >
+            Login
+          </a>
+          <Link
+            to="/contato"
+            className="font-mono text-[11px] uppercase tracking-[0.18em] px-4 py-2 bg-white text-bg-base rounded-sm hover:bg-white/90 transition-all font-medium"
+          >
+            Agendar Demo
+          </Link>
+        </div>
       </div>
     </nav>
   );
