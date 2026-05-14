@@ -26,6 +26,10 @@ export type CareSubscription = {
   tagline: string;
   capacity: string;
   monthlyPrice: number;
+  retailPrice: number;
+  savings: number;
+  savingsNote?: string;
+  retailNote?: string;
   highlight?: boolean;
   badge?: string;
   items: string[];
@@ -218,7 +222,9 @@ export const careSubscriptions: CareSubscription[] = [
     name: "Plano Start",
     tagline: "Para petshops começando a estruturar a operação.",
     capacity: "Ideal para 80–150 banhos/mês",
-    monthlyPrice: 890,
+    monthlyPrice: 990,
+    retailPrice: 1447,
+    savings: 457,
     items: [
       "2× Care Shampoo Pro 5L",
       "1× Care Condicionador Reparador 5L",
@@ -231,7 +237,11 @@ export const careSubscriptions: CareSubscription[] = [
     name: "Plano Pro",
     tagline: "O equilíbrio entre operação do salão e revenda no balcão.",
     capacity: "Ideal para 200–350 banhos/mês",
-    monthlyPrice: 1690,
+    monthlyPrice: 2490,
+    retailPrice: 3044,
+    savings: 554,
+    savingsNote: "Economia mínima no plano",
+    retailNote: "Valor avulso sem kits",
     highlight: true,
     badge: "Mais escolhido",
     items: [
@@ -248,7 +258,11 @@ export const careSubscriptions: CareSubscription[] = [
     name: "Plano Max",
     tagline: "Operações de alto volume ou múltiplas unidades.",
     capacity: "Ideal para 400+ banhos/mês",
-    monthlyPrice: 2890,
+    monthlyPrice: 4990,
+    retailPrice: 6088,
+    savings: 1098,
+    savingsNote: "Economia mínima no plano",
+    retailNote: "Valor avulso sem kits e Protect",
     items: [
       "8× Care Shampoo Pro 5L",
       "4× Care Condicionador Reparador 5L",
@@ -256,7 +270,9 @@ export const careSubscriptions: CareSubscription[] = [
       "24× Care Colônia Soft",
       "12× Care Hálito Fresh",
       "8× Kit Cuidado Diário",
-      "4× Care Protect Focinho + 4× Care Protect Patinhas",
+      "4× Care Protect Focinho",
+      "4× Care Protect Patinhas",
     ],
   },
+
 ];
