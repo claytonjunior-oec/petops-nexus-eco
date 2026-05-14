@@ -7,6 +7,7 @@ import heroTech from "@/assets/hero-tech.jpg";
 import heroCare from "@/assets/hero-care.jpg";
 import heroPetduo from "@/assets/hero-petduo.jpg";
 import { Heart, Sparkles, Star } from "lucide-react";
+import { careProducts } from "@/data/care-products";
 
 
 export const Route = createFileRoute("/")({
