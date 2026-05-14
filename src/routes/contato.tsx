@@ -168,7 +168,17 @@ function ContactPage() {
   );
 }
 
-function Field({ label, name, type = "text" }: { label: string; name: string; type?: string }) {
+function Field({
+  label,
+  name,
+  type = "text",
+  maxLength,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  maxLength?: number;
+}) {
   return (
     <div>
       <label className="font-mono text-[10px] uppercase tracking-widest text-white/40 block mb-2">
@@ -178,6 +188,7 @@ function Field({ label, name, type = "text" }: { label: string; name: string; ty
         type={type}
         name={name}
         required
+        maxLength={maxLength}
         className="w-full bg-bg-base border border-white/10 rounded-md px-4 py-3 text-white focus:outline-none focus:border-tech-cyan transition"
       />
     </div>
