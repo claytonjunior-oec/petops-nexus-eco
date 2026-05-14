@@ -2,6 +2,18 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { useState } from "react";
+import { z } from "zod";
+
+const WHATSAPP_NUMBER = "5511918967593";
+
+const contactSchema = z.object({
+  nome: z.string().trim().min(1, "Informe seu nome").max(100),
+  empresa: z.string().trim().min(1, "Informe a empresa").max(100),
+  email: z.string().trim().email("E-mail inválido").max(255),
+  telefone: z.string().trim().min(8, "Telefone inválido").max(30),
+  interesse: z.enum(["PetOps Tech", "PetOps Care", "Ecossistema completo"]),
+  msg: z.string().trim().max(1000).optional().default(""),
+});
 
 export const Route = createFileRoute("/contato")({
   head: () => ({
@@ -21,6 +33,37 @@ export const Route = createFileRoute("/contato")({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    const parsed = contactSchema.safeParse({
+      nome: fd.get("nome"),
+      empresa: fd.get("empresa"),
+      email: fd.get("email"),
+      telefone: fd.get("telefone"),
+      interesse: fd.get("interesse"),
+      msg: fd.get("msg") ?? "",
+    });
+    if (!parsed.success) {
+      setError(parsed.error.issues[0]?.message ?? "Verifique os campos");
+      return;
+    }
+    setError(null);
+    const d = parsed.data;
+    const text =
+      `Olá! Tenho interesse em *${d.interesse}*.\n\n` +
+      `*Nome:* ${d.nome}\n` +
+      `*Empresa:* ${d.empresa}\n` +
+      `*E-mail:* ${d.email}\n` +
+      `*Telefone:* ${d.telefone}\n` +
+      (d.msg ? `\n*Mensagem:*\n${d.msg}\n` : "");
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+    setSent(true);
+  };
+
   return (
     <div className="min-h-dvh bg-bg-base text-titanium">
       <Nav />
@@ -43,25 +86,24 @@ function ContactPage() {
                 <span className="text-gradient-brand">negócio pet.</span>
               </h1>
               <p className="mt-6 text-lg text-white/50 max-w-md leading-relaxed">
-                Conte um pouco sobre sua operação. Retornamos com a melhor frente
-                para você: Tech, Care ou ecossistema completo.
+                Conte um pouco sobre sua operação. Ao enviar, abrimos o WhatsApp
+                do nosso time com sua mensagem já preenchida.
               </p>
 
               <div className="mt-12 space-y-4 font-mono text-xs text-white/60">
                 <div className="flex items-center gap-3">
-                  <span className="text-tech-cyan">›</span> contato@petops.com.br
+                  <span className="text-tech-cyan">›</span>
+                  <span>contato@petops.com.br</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-care-blue">›</span> Atendimento em horário comercial
+                  <span className="text-care-blue">›</span>
+                  <span>Atendimento em horário comercial</span>
                 </div>
               </div>
             </div>
 
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSent(true);
-              }}
+              onSubmit={handleSubmit}
               className="rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-8 md:p-10 space-y-5"
             >
               {sent ? (
@@ -69,21 +111,25 @@ function ContactPage() {
                   <div className="size-12 mx-auto rounded-full bg-tech-neon/10 border border-tech-neon/30 flex items-center justify-center mb-6">
                     <span className="text-tech-neon text-xl">✓</span>
                   </div>
-                  <h3 className="text-2xl font-medium text-white mb-2">Mensagem enviada</h3>
-                  <p className="text-white/50">Retornamos em breve.</p>
+                  <h3 className="text-2xl font-medium text-white mb-2">WhatsApp aberto</h3>
+                  <p className="text-white/50">
+                    Conclua o envio da mensagem por lá. Se a janela não abriu,
+                    verifique o bloqueador de pop-ups.
+                  </p>
                 </div>
               ) : (
                 <>
-                  <Field label="Nome" name="nome" />
-                  <Field label="Empresa" name="empresa" />
-                  <Field label="E-mail" name="email" type="email" />
-                  <Field label="Telefone / WhatsApp" name="telefone" />
+                  <Field label="Nome" name="nome" maxLength={100} />
+                  <Field label="Empresa" name="empresa" maxLength={100} />
+                  <Field label="E-mail" name="email" type="email" maxLength={255} />
+                  <Field label="Telefone / WhatsApp" name="telefone" maxLength={30} />
                   <div>
                     <label className="font-mono text-[10px] uppercase tracking-widest text-white/40 block mb-2">
                       Interesse
                     </label>
                     <select
                       name="interesse"
+                      defaultValue="PetOps Tech"
                       className="w-full bg-bg-base border border-white/10 rounded-md px-4 py-3 text-white focus:outline-none focus:border-tech-cyan transition"
                     >
                       <option>PetOps Tech</option>
@@ -98,14 +144,18 @@ function ContactPage() {
                     <textarea
                       name="msg"
                       rows={4}
+                      maxLength={1000}
                       className="w-full bg-bg-base border border-white/10 rounded-md px-4 py-3 text-white focus:outline-none focus:border-tech-cyan transition resize-none"
                     />
                   </div>
+                  {error && (
+                    <p className="font-mono text-[11px] text-red-400">{error}</p>
+                  )}
                   <button
                     type="submit"
                     className="w-full font-mono text-[11px] uppercase tracking-widest px-6 py-4 bg-white text-bg-base rounded-sm font-semibold hover:bg-white/90 transition"
                   >
-                    Enviar mensagem
+                    Enviar via WhatsApp
                   </button>
                 </>
               )}
@@ -118,7 +168,17 @@ function ContactPage() {
   );
 }
 
-function Field({ label, name, type = "text" }: { label: string; name: string; type?: string }) {
+function Field({
+  label,
+  name,
+  type = "text",
+  maxLength,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  maxLength?: number;
+}) {
   return (
     <div>
       <label className="font-mono text-[10px] uppercase tracking-widest text-white/40 block mb-2">
@@ -128,6 +188,7 @@ function Field({ label, name, type = "text" }: { label: string; name: string; ty
         type={type}
         name={name}
         required
+        maxLength={maxLength}
         className="w-full bg-bg-base border border-white/10 rounded-md px-4 py-3 text-white focus:outline-none focus:border-tech-cyan transition"
       />
     </div>
