@@ -111,21 +111,25 @@ function ContactPage() {
                   <div className="size-12 mx-auto rounded-full bg-tech-neon/10 border border-tech-neon/30 flex items-center justify-center mb-6">
                     <span className="text-tech-neon text-xl">✓</span>
                   </div>
-                  <h3 className="text-2xl font-medium text-white mb-2">Mensagem enviada</h3>
-                  <p className="text-white/50">Retornamos em breve.</p>
+                  <h3 className="text-2xl font-medium text-white mb-2">WhatsApp aberto</h3>
+                  <p className="text-white/50">
+                    Conclua o envio da mensagem por lá. Se a janela não abriu,
+                    verifique o bloqueador de pop-ups.
+                  </p>
                 </div>
               ) : (
                 <>
-                  <Field label="Nome" name="nome" />
-                  <Field label="Empresa" name="empresa" />
-                  <Field label="E-mail" name="email" type="email" />
-                  <Field label="Telefone / WhatsApp" name="telefone" />
+                  <Field label="Nome" name="nome" maxLength={100} />
+                  <Field label="Empresa" name="empresa" maxLength={100} />
+                  <Field label="E-mail" name="email" type="email" maxLength={255} />
+                  <Field label="Telefone / WhatsApp" name="telefone" maxLength={30} />
                   <div>
                     <label className="font-mono text-[10px] uppercase tracking-widest text-white/40 block mb-2">
                       Interesse
                     </label>
                     <select
                       name="interesse"
+                      defaultValue="PetOps Tech"
                       className="w-full bg-bg-base border border-white/10 rounded-md px-4 py-3 text-white focus:outline-none focus:border-tech-cyan transition"
                     >
                       <option>PetOps Tech</option>
@@ -140,14 +144,18 @@ function ContactPage() {
                     <textarea
                       name="msg"
                       rows={4}
+                      maxLength={1000}
                       className="w-full bg-bg-base border border-white/10 rounded-md px-4 py-3 text-white focus:outline-none focus:border-tech-cyan transition resize-none"
                     />
                   </div>
+                  {error && (
+                    <p className="font-mono text-[11px] text-red-400">{error}</p>
+                  )}
                   <button
                     type="submit"
                     className="w-full font-mono text-[11px] uppercase tracking-widest px-6 py-4 bg-white text-bg-base rounded-sm font-semibold hover:bg-white/90 transition"
                   >
-                    Enviar mensagem
+                    Enviar via WhatsApp
                   </button>
                 </>
               )}
