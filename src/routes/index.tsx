@@ -384,15 +384,15 @@ function Stat({ label, color }: { label: string; color: string }) {
 
 /* ---------------- CARE SECTION ---------------- */
 function CareSection() {
-  const cats = ["Higiene", "Hidratação", "Odorização", "Limpeza de ambiente", "Cuidados complementares", "Linha profissional"];
+  const featured = careProducts.slice(0, 6);
   return (
     <section className="relative py-24 md:py-32 px-6 lg:px-10 overflow-hidden">
       <div className="absolute top-1/2 right-0 size-[600px] bg-care-blue/8 blur-[160px] rounded-full pointer-events-none" />
       <div className="relative max-w-[1440px] mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-16 items-center">
-        {/* Mock products */}
+        {/* Real Care products */}
         <div className="relative order-2 lg:order-1">
-          <div className="rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] glow-care">
-            <div className="flex items-center justify-between mb-8">
+          <div className="rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-6 md:p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] glow-care">
+            <div className="flex items-center justify-between mb-6">
               <div className="font-mono text-[10px] text-white/40 tracking-widest">
                 PETOPS · CARE
               </div>
@@ -400,22 +400,45 @@ function CareSection() {
                 LINHA PROFISSIONAL
               </div>
             </div>
-            <div className="grid grid-cols-3 gap-3">
-              {cats.map((c, i) => (
-                <div
-                  key={c}
-                  className="aspect-[3/4] rounded-lg border border-white/10 bg-gradient-to-b from-bg-base to-bg-elevated p-3 flex flex-col justify-between hover:border-care-blue/40 transition group relative overflow-hidden"
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              {featured.map((p) => (
+                <Link
+                  key={p.id}
+                  to="/care"
+                  className="group relative rounded-lg border border-white/10 bg-gradient-to-b from-bg-base to-bg-elevated p-3 flex flex-col hover:border-care-blue/40 transition overflow-hidden"
                 >
                   <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-care-blue/15 to-transparent opacity-50 group-hover:opacity-100 transition" />
-                  <div className="font-mono text-[9px] text-white/30 tracking-widest relative">
-                    {String(i + 1).padStart(2, "0")}
+                  <div className="font-mono text-[9px] text-white/30 tracking-widest relative mb-2">
+                    {p.code}
+                  </div>
+                  <div className="relative aspect-square rounded-md bg-white/[0.02] border border-white/5 flex items-center justify-center overflow-hidden mb-3">
+                    {p.image ? (
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        loading="lazy"
+                        className="size-full object-contain p-2 group-hover:scale-105 transition"
+                      />
+                    ) : (
+                      <div className="size-8 rounded bg-gradient-to-br from-care-blue/40 to-care-green/20" />
+                    )}
                   </div>
                   <div className="relative">
-                    <div className="size-8 rounded bg-gradient-to-br from-care-blue/40 to-care-green/20 mb-2" />
-                    <div className="text-[10px] text-white/80 font-medium leading-tight">{c}</div>
+                    <div className="text-[10px] text-care-blue/70 font-mono tracking-widest uppercase mb-1">
+                      {p.category}
+                    </div>
+                    <div className="text-[11px] text-white/85 font-medium leading-tight line-clamp-2">
+                      {p.name}
+                    </div>
                   </div>
-                </div>
+                </Link>
               ))}
+            </div>
+            <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between font-mono text-[10px] text-white/40 tracking-widest">
+              <span>{careProducts.length} produtos na linha</span>
+              <Link to="/care" className="text-care-blue hover:text-white transition">
+                Ver todos →
+              </Link>
             </div>
           </div>
           <div className="absolute -inset-4 bg-care-blue/5 blur-3xl -z-10 rounded-3xl" />
