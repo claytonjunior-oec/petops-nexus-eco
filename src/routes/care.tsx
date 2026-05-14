@@ -6,7 +6,7 @@ import { Link } from "@tanstack/react-router";
 import { ImageIcon, Leaf, FlaskConical, HeartHandshake } from "lucide-react";
 import careHeroProdutos from "@/assets/care-hero-produtos.png";
 import { ProductCard } from "@/components/site/ProductCard";
-import { careKits, careProducts, careSubscriptions } from "@/data/care-products";
+import { careProducts, careSubscriptions } from "@/data/care-products";
 import { Check, Repeat, ShieldCheck, Truck } from "lucide-react";
 
 export const Route = createFileRoute("/care")({
