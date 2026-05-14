@@ -47,7 +47,7 @@ function CarePage() {
         <section className="relative px-6 lg:px-10 pt-24 pb-24 overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern bg-grid-fade pointer-events-none" />
           <div className="absolute bottom-0 right-1/4 size-[600px] bg-care-blue/10 blur-[140px] rounded-full pointer-events-none" />
-          <div className="relative max-w-[1440px] mx-auto grid lg:grid-cols-[1fr_1fr] gap-12 items-center">
+          <div className="relative max-w-[1440px] mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-8 items-center">
             <div>
               <div className="flex items-center gap-3 mb-8">
                 <div className="size-1.5 bg-care-green rounded-full shadow-[0_0_10px_var(--color-care-green)]" />
@@ -80,11 +80,11 @@ function CarePage() {
                 </Link>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative lg:-mr-16 xl:-mr-32">
               <img
                 src={careHeroProdutos}
                 alt="Linha PetOps Care: Shampoo Pro, Condicionador Reparador, Desinfetante Bactericida e Colônias Soft"
-                className="w-full h-auto object-contain drop-shadow-[0_30px_60px_rgba(79,107,255,0.25)]"
+                className="w-full h-auto object-contain scale-110 lg:scale-125 origin-center drop-shadow-[0_30px_60px_rgba(79,107,255,0.25)]"
                 loading="eager"
               />
             </div>
