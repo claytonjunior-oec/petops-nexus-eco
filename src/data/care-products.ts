@@ -26,6 +26,10 @@ export type CareSubscription = {
   tagline: string;
   capacity: string;
   monthlyPrice: number;
+  retailPrice: number;
+  savings: number;
+  savingsNote?: string;
+  retailNote?: string;
   highlight?: boolean;
   badge?: string;
   items: string[];
