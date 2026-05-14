@@ -106,6 +106,115 @@ const selos = [
   { icon: ShieldCheck, label: "IA com modo conservador + handover humano" },
 ];
 
+const planos = [
+  {
+    id: "gratuito",
+    name: "Gratuito",
+    price: "R$ 0",
+    tagline: "Para começar a organizar a operação.",
+    users: "1 usuário",
+    limits: "Até 30 agendamentos · 50 clientes · 14 dias de teste",
+    highlight: false,
+    cta: "Começar grátis",
+    modulos: [
+      "Dashboard",
+      "Agenda básica",
+      "Clientes & Pets",
+      "Configurações",
+    ],
+  },
+  {
+    id: "essencial",
+    name: "Essencial",
+    price: "R$ 149",
+    tagline: "Recepção, loja e estoque rodando juntos.",
+    users: "Até 3 usuários",
+    limits: "Agenda ilimitada · Portal do Tutor",
+    highlight: false,
+    cta: "Assinar Essencial",
+    modulos: [
+      "Tudo do Gratuito",
+      "Atendimento WhatsApp",
+      "Agenda ilimitada",
+      "Comandas",
+      "PDV",
+      "Estoque",
+      "Financeiro básico",
+      "Serviços (cadastro/preços)",
+      "Painel TV",
+    ],
+  },
+  {
+    id: "profissional",
+    name: "Profissional",
+    price: "R$ 297",
+    tagline: "Clínica, hotel e gestão completa.",
+    users: "Até 8 usuários",
+    limits: "DRE · Assinaturas digitais · Lembretes",
+    highlight: true,
+    badge: "Mais escolhido",
+    cta: "Assinar Profissional",
+    modulos: [
+      "Tudo do Essencial",
+      "Clínica Vet (prontuário, vacinas, exames)",
+      "Creche & Hotel (reservas, check-in, fotos)",
+      "Assinaturas recorrentes",
+      "Lembretes (vacina, retorno, aniversário)",
+      "Relatórios & DRE",
+      "Recorrência de clientes",
+    ],
+  },
+  {
+    id: "premium",
+    name: "Premium",
+    price: "R$ 497",
+    tagline: "IA + automações no piloto automático.",
+    users: "Usuários ilimitados",
+    limits: "Suporte prioritário · Integração Make.com",
+    highlight: false,
+    cta: "Assinar Premium",
+    modulos: [
+      "Tudo do Profissional",
+      "Bot IA Haku (WhatsApp)",
+      "FAQs e calibração de estilo",
+      "Handover humano + agendamento por IA",
+      "Automações completas",
+      "Integração Make.com",
+      "Usuários ilimitados",
+    ],
+  },
+];
+
+const comparativo = [
+  { mod: "Dashboard", g: true, e: true, p: true, x: true },
+  { mod: "Agenda", g: "30", e: "ilim.", p: "ilim.", x: "ilim." },
+  { mod: "Clientes & Pets", g: "50", e: true, p: true, x: true },
+  { mod: "Configurações", g: true, e: true, p: true, x: true },
+  { mod: "Atendimento WhatsApp", g: false, e: true, p: true, x: true },
+  { mod: "Comandas", g: false, e: true, p: true, x: true },
+  { mod: "PDV", g: false, e: true, p: true, x: true },
+  { mod: "Estoque", g: false, e: true, p: true, x: true },
+  { mod: "Financeiro", g: false, e: true, p: true, x: true },
+  { mod: "Serviços (cadastro)", g: false, e: true, p: true, x: true },
+  { mod: "Painel TV", g: false, e: true, p: true, x: true },
+  { mod: "Clínica Vet", g: false, e: false, p: true, x: true },
+  { mod: "Creche & Hotel", g: false, e: false, p: true, x: true },
+  { mod: "Assinaturas", g: false, e: false, p: true, x: true },
+  { mod: "Lembretes", g: false, e: false, p: true, x: true },
+  { mod: "Relatórios / DRE", g: false, e: false, p: true, x: true },
+  { mod: "Recorrência", g: false, e: false, p: true, x: true },
+  { mod: "Bot IA (Haku)", g: false, e: false, p: false, x: true },
+  { mod: "Automações", g: false, e: false, p: false, x: true },
+  { mod: "Suporte / Academy", g: true, e: true, p: true, x: true },
+  { mod: "Máx. usuários", g: "1", e: "3", p: "8", x: "∞" },
+];
+
+function Cell({ v }: { v: boolean | string }) {
+  if (v === true) return <Check className="size-4 text-tech-cyan mx-auto" />;
+  if (v === false) return <Minus className="size-4 text-white/20 mx-auto" />;
+  return <span className="text-xs text-white/70 font-mono">{v}</span>;
+}
+
 function TechPage() {
   return (
     <div className="min-h-dvh bg-bg-base text-titanium">
