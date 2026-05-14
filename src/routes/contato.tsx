@@ -33,6 +33,37 @@ export const Route = createFileRoute("/contato")({
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    const parsed = contactSchema.safeParse({
+      nome: fd.get("nome"),
+      empresa: fd.get("empresa"),
+      email: fd.get("email"),
+      telefone: fd.get("telefone"),
+      interesse: fd.get("interesse"),
+      msg: fd.get("msg") ?? "",
+    });
+    if (!parsed.success) {
+      setError(parsed.error.issues[0]?.message ?? "Verifique os campos");
+      return;
+    }
+    setError(null);
+    const d = parsed.data;
+    const text =
+      `Olá! Tenho interesse em *${d.interesse}*.\n\n` +
+      `*Nome:* ${d.nome}\n` +
+      `*Empresa:* ${d.empresa}\n` +
+      `*E-mail:* ${d.email}\n` +
+      `*Telefone:* ${d.telefone}\n` +
+      (d.msg ? `\n*Mensagem:*\n${d.msg}\n` : "");
+    const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
+    setSent(true);
+  };
+
   return (
     <div className="min-h-dvh bg-bg-base text-titanium">
       <Nav />
@@ -55,25 +86,24 @@ function ContactPage() {
                 <span className="text-gradient-brand">negócio pet.</span>
               </h1>
               <p className="mt-6 text-lg text-white/50 max-w-md leading-relaxed">
-                Conte um pouco sobre sua operação. Retornamos com a melhor frente
-                para você: Tech, Care ou ecossistema completo.
+                Conte um pouco sobre sua operação. Ao enviar, abrimos o WhatsApp
+                do nosso time com sua mensagem já preenchida.
               </p>
 
               <div className="mt-12 space-y-4 font-mono text-xs text-white/60">
                 <div className="flex items-center gap-3">
-                  <span className="text-tech-cyan">›</span> contato@petops.com.br
+                  <span className="text-tech-cyan">›</span>
+                  <span>contato@petops.com.br</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <span className="text-care-blue">›</span> Atendimento em horário comercial
+                  <span className="text-care-blue">›</span>
+                  <span>Atendimento em horário comercial</span>
                 </div>
               </div>
             </div>
 
             <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSent(true);
-              }}
+              onSubmit={handleSubmit}
               className="rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-8 md:p-10 space-y-5"
             >
               {sent ? (
