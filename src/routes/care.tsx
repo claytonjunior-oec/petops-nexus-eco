@@ -146,59 +146,6 @@ function CarePage() {
           </div>
         </Section>
 
-        {/* Kits */}
-        <Section
-          eyebrow="Kits para revenda"
-          title="Aumente o ticket médio do seu petshop."
-          intro="Kits prontos para venda no balcão pós-banho ou para uso interno do salão. Recompra previsível, fidelização do tutor."
-        >
-          <div className="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
-            {careKits.map((k, i) => (
-              <article
-                key={k.id}
-                className="rounded-xl border border-white/10 bg-bg-surface overflow-hidden flex flex-col hover:border-care-blue/40 transition"
-              >
-                <div className="aspect-[4/3] w-full border-b border-white/10 flex items-center justify-center overflow-hidden bg-white">
-                  {k.image
-                    ? (
-                      <img
-                        src={k.image}
-                        alt={k.name}
-                        className="w-full h-full object-contain"
-                        loading="lazy"
-                      />
-                    )
-                    : (
-                      <div className="flex flex-col items-center gap-2 text-white/40">
-                        <ImageIcon className="size-7" />
-                        <span className="font-mono text-[10px] uppercase tracking-[0.25em]">
-                          Imagem em breve
-                        </span>
-                      </div>
-                    )}
-                </div>
-                <div className="p-6 flex flex-col gap-4 flex-1">
-                  <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-care-blue">
-                    KIT.{String(i + 1).padStart(2, "0")}
-                  </div>
-                  <h3 className="text-xl font-medium text-white">{k.name}</h3>
-                  <p className="text-sm text-white/60 leading-relaxed">{k.pitch}</p>
-                  <ul className="mt-auto space-y-1.5">
-                    {k.items.map((it) => (
-                      <li
-                        key={it}
-                        className="text-sm text-white/75 flex items-start gap-2"
-                      >
-                        <span className="text-tech-cyan font-mono">+</span>
-                        <span>{it}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
-          </div>
-        </Section>
 
         {/* Assinatura PetOps Care */}
         <Section
