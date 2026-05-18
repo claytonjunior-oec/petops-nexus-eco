@@ -489,7 +489,8 @@ function TechPage() {
                   ))}
                 </ul>
                 <Link
-                  to="/contato"
+                  to="/assinar"
+                  search={{ plano: p.id as "gratuito" | "essencial" | "profissional" | "premium" }}
                   className={`block text-center font-mono text-[11px] uppercase tracking-widest px-5 py-3 rounded-sm transition ${
                     p.highlight
                       ? "bg-tech-cyan text-bg-base hover:opacity-90 font-semibold"
