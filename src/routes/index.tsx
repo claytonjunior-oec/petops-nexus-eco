@@ -374,7 +374,7 @@ function Hero() {
 
             <h1 className="text-5xl md:text-6xl lg:text-[80px] font-medium tracking-tight text-white leading-[1.02] text-balance mb-6 [text-shadow:0_4px_30px_rgba(0,0,0,0.5)]">
               O futuro da operação pet{" "}
-              <span className="text-gradient-brand">começa aqui.</span>
+              <span className="text-gradient-brand">começa aqui</span>
             </h1>
 
             <p className="text-base md:text-xl text-white/70 max-w-2xl text-pretty font-light leading-relaxed mb-4 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">
