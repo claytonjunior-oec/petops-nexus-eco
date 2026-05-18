@@ -585,7 +585,7 @@ function Problema() {
   return (
     <Section
       eyebrow="O problema"
-      title={<>Operar pet hoje é apagar incêndio o dia inteiro.</>}
+      title={<>Operar pet hoje é apagar incêndio o dia inteiro</>}
       intro="Se algum desses pontos parece familiar, a sua operação está deixando dinheiro e cliente na mesa."
     >
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
