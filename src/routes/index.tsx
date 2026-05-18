@@ -138,7 +138,7 @@ function HomePage() {
   );
 }
 
-/* ---------------- ANTES / DEPOIS ---------------- */
+/* ---------------- MOBILE FLOATING CTA ---------------- */
 function MobileFloatingCTA() {
   return (
     <div className="fixed bottom-4 inset-x-4 z-50 md:hidden flex gap-2">
