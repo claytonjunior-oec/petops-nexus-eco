@@ -294,7 +294,7 @@ function TechPage() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.05] max-w-4xl text-balance">
               Automação e inteligência para{" "}
               <span className="text-tech-cyan">operar melhor</span>, vender mais
-              e perder menos tempo.
+              e perder menos tempo
             </h1>
             <p className="mt-8 text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed">
               A camada inteligente do seu negócio pet. Um sistema operacional
