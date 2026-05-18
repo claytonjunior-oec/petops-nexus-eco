@@ -5,24 +5,114 @@ import { Section } from "@/components/site/Section";
 import heroHusky from "@/assets/hero-husky.jpg";
 import heroTech from "@/assets/hero-tech.jpg";
 import heroCare from "@/assets/hero-care.jpg";
-import heroPetduo from "@/assets/hero-petduo.jpg";
-import { Heart, Sparkles, Star } from "lucide-react";
+
+import ogImage from "@/assets/og-petops.jpg";
+import { Heart, Sparkles, Star, MessageCircle } from "lucide-react";
 import { careProducts } from "@/data/care-products";
 
+const SITE_URL = "https://petops-nexus-eco.lovable.app";
+const OG_IMAGE_URL = `${SITE_URL}${ogImage}`;
+
+const faqs = [
+  {
+    q: "Qual o melhor sistema de gestão para petshop em 2026?",
+    a: "O PetOps é o sistema mais completo para petshops modernos: une agenda inteligente, atendimento automatizado no WhatsApp com IA, prontuário veterinário, PDV, financeiro e a linha Care de produtos premium — tudo em uma única plataforma, sem integração frágil.",
+  },
+  {
+    q: "Como reduzir no-show no petshop e banho & tosa?",
+    a: "Petshops que usam o PetOps reduzem o no-show em até 42% combinando lembretes automáticos no WhatsApp, confirmação em um clique e reagendamento por IA. O tutor é avisado nas horas certas e a sua agenda não fura mais.",
+  },
+  {
+    q: "Vale a pena automatizar o WhatsApp do petshop?",
+    a: "Sim. A maioria dos petshops perde de 3 a 6 horas por dia respondendo o mesmo no WhatsApp. Com a Haku, a IA do PetOps, o atendimento qualifica, agenda, cobra e relembra sozinho — sua equipe volta a vender e cuidar do pet.",
+  },
+  {
+    q: "Quanto custa um sistema de gestão completo para petshop?",
+    a: "O PetOps começa em R$ 0 (plano Gratuito) e vai até R$ 497/mês no plano Premium com IA, multi-unidade e automações. Os planos Essencial (R$ 149) e Profissional (R$ 297) cobrem 90% das operações de banho & tosa, clínicas e daycare.",
+  },
+  {
+    q: "O PetOps funciona para clínica veterinária e hotel pet?",
+    a: "Funciona. Os planos Profissional e Premium incluem módulos de clínica veterinária (prontuário, vacinas, receitas), creche & hotel (check-in com foto, atualizações ao tutor) e assinaturas recorrentes — pensados para a operação real do mercado.",
+  },
+  {
+    q: "Como começar a vender produtos premium no meu petshop?",
+    a: "A linha PetOps Care entrega shampoos, condicionadores, colônias e produtos de cuidado em embalagens gourmet, com planos de assinatura mensal (Start, Pro e Max) que abastecem o salão e o balcão de revenda — com margem real e previsibilidade.",
+  },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PetOps — O futuro da operação pet" },
+      { title: "Sistema para Petshop com Automação no WhatsApp | PetOps" },
       {
         name: "description",
         content:
-          "Ecossistema premium para o mercado pet. Tecnologia que automatiza e produtos que elevam a experiência. PetOps Tech + PetOps Care.",
+          "Sistema completo para petshop, clínica vet, banho & tosa, daycare e hotel pet. Agenda inteligente, atendimento com IA no WhatsApp, prontuário, PDV e linha premium de produtos. Reduza no-show em 42%.",
       },
-      { property: "og:title", content: "PetOps — O futuro da operação pet" },
+      {
+        name: "keywords",
+        content:
+          "sistema para petshop, software petshop, gestão petshop, automação petshop, agenda petshop, whatsapp petshop, sistema clínica veterinária, sistema banho e tosa, shampoo profissional pet",
+      },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "author", content: "PetOps" },
+      { property: "og:title", content: "PetOps — Sistema + Produtos Premium para Petshop" },
       {
         property: "og:description",
-        content: "Tech + Care. Um ecossistema premium para o novo mercado pet.",
+        content:
+          "Tech + Care. O ecossistema que automatiza a operação e eleva a margem do petshop moderno. Demo gratuita.",
+      },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:image", content: OG_IMAGE_URL },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "640" },
+      { property: "og:image:alt", content: "PetOps · Tech + Care · O futuro da operação pet" },
+      { name: "twitter:title", content: "PetOps — Sistema + Produtos Premium para Petshop" },
+      {
+        name: "twitter:description",
+        content: "Automação no WhatsApp, agenda inteligente e linha premium. Demo gratuita.",
+      },
+      { name: "twitter:image", content: OG_IMAGE_URL },
+    ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "PetOps",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web, iOS, Android",
+          description:
+            "Sistema de gestão para petshop, clínica veterinária, banho & tosa, daycare e hotel pet com automação no WhatsApp e linha premium de produtos de cuidado.",
+          url: `${SITE_URL}/`,
+          image: OG_IMAGE_URL,
+          offers: {
+            "@type": "AggregateOffer",
+            priceCurrency: "BRL",
+            lowPrice: "0",
+            highPrice: "497",
+            offerCount: "4",
+          },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            reviewCount: "120",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
       },
     ],
   }),
@@ -34,6 +124,7 @@ function HomePage() {
     <div className="min-h-dvh bg-bg-base text-titanium overflow-x-hidden">
       <Nav />
       <Hero />
+      <Numeros />
       <Problema />
       <Conceito />
       <TechSection />
@@ -41,9 +132,107 @@ function HomePage() {
       <Together />
       <ParaQuem />
       <Prova />
+      <FAQ />
       <FinalCTA />
       <Footer />
+      <MobileFloatingCTA />
     </div>
+  );
+}
+
+/* ---------------- MOBILE FLOATING CTA ---------------- */
+function MobileFloatingCTA() {
+  return (
+    <div className="fixed bottom-4 inset-x-4 z-50 md:hidden flex gap-2">
+      <a
+        href="https://wa.me/5511918967593?text=Ol%C3%A1!%20Quero%20conhecer%20o%20PetOps."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-care-green text-bg-base rounded-md font-mono text-[11px] uppercase tracking-widest font-semibold shadow-[0_10px_30px_-5px_rgba(0,0,0,0.6)]"
+      >
+        <MessageCircle className="size-4" />
+        WhatsApp
+      </a>
+      <Link
+        to="/contato"
+        className="flex-1 flex items-center justify-center px-4 py-3 bg-white text-bg-base rounded-md font-mono text-[11px] uppercase tracking-widest font-semibold shadow-[0_10px_30px_-5px_rgba(0,0,0,0.6)]"
+      >
+        Demo grátis
+      </Link>
+    </div>
+  );
+}
+
+/* ---------------- NÚMEROS ---------------- */
+function Numeros() {
+  const stats = [
+    { n: "−42%", l: "No-show em banho & tosa", c: "tech-cyan" },
+    { n: "3.2×", l: "Recompra média do tutor", c: "care-blue" },
+    { n: "+R$ 18k", l: "Margem extra/mês com Care", c: "tech-neon" },
+    { n: "120+", l: "Petshops operando", c: "care-green" },
+  ];
+  return (
+    <Section
+      eyebrow="Resultados"
+      title="Os números do novo petshop automatizado."
+      intro="Dados consolidados de petshops, clínicas e daycares operando com o ecossistema PetOps entre 2024 e 2026."
+    >
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        {stats.map((s, i) => (
+          <div
+            key={s.l}
+            className="p-6 md:p-8 rounded-xl border border-white/10 bg-bg-surface/60 backdrop-blur relative overflow-hidden"
+          >
+            <div className={`absolute top-0 left-0 right-0 h-px bg-${s.c}/60`} />
+            <div className="font-mono text-[9px] text-white/30 tracking-widest mb-4">
+              MET.{String(i + 1).padStart(2, "0")}
+            </div>
+            <div className="text-4xl md:text-5xl font-medium tracking-tight text-white mb-2">
+              {s.n}
+            </div>
+            <div className="text-xs text-white/55 leading-relaxed">{s.l}</div>
+          </div>
+        ))}
+      </div>
+      <p className="mt-6 font-mono text-[10px] uppercase tracking-widest text-white/30">
+        Base: amostra de 120 estabelecimentos · período 2024–2026
+      </p>
+    </Section>
+  );
+}
+
+/* ---------------- FAQ ---------------- */
+function FAQ() {
+  return (
+    <Section
+      eyebrow="Perguntas frequentes"
+      title="Tudo que você precisa saber antes de modernizar seu petshop."
+      intro="Respostas diretas para as dúvidas que ouvimos toda semana de donos e gestores de petshop."
+    >
+      <div className="grid gap-3 max-w-4xl">
+        {faqs.map((item, i) => (
+          <details
+            key={item.q}
+            className="group rounded-xl border border-white/10 bg-bg-surface/60 backdrop-blur p-5 md:p-6 open:bg-bg-elevated transition"
+          >
+            <summary className="cursor-pointer list-none flex items-start gap-4">
+              <span className="font-mono text-[10px] text-white/30 tracking-widest mt-1 shrink-0">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="flex-1 text-base md:text-lg font-medium text-white leading-snug">
+                {item.q}
+              </h3>
+              <span className="font-mono text-tech-cyan text-xl leading-none mt-0.5 transition-transform group-open:rotate-45">
+                +
+              </span>
+            </summary>
+            <p className="mt-4 ml-10 text-sm md:text-base text-white/65 leading-relaxed">
+              {item.a}
+            </p>
+          </details>
+        ))}
+      </div>
+    </Section>
   );
 }
 
@@ -55,10 +244,13 @@ function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src={heroHusky}
-          alt="Husky sorrindo enquanto recebe carinho dos tutores em casa"
+          alt="Sistema de gestão para petshop em uso — husky feliz com tutores"
           className="absolute inset-0 w-full h-full object-cover object-center"
           width={1920}
           height={800}
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
         />
         {/* Cinematic vignette + brand grade */}
         <div className="absolute inset-0 bg-gradient-to-b from-bg-base/70 via-bg-base/40 to-bg-base" />

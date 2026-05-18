@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://petops-nexus-eco.lovable.app/sitemap.xml
