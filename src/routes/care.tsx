@@ -186,7 +186,7 @@ function CarePage() {
         {/* Linha profissional */}
         <Section
           eyebrow="Linha Profissional"
-          title="Catálogo PetOps Care."
+          title="Catálogo PetOps Care"
           intro="Oito produtos pensados para o salão, a clínica e a prateleira do petshop. Fórmulas profissionais com identidade premium."
         >
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
