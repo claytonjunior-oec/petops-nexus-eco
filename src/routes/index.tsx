@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
@@ -877,43 +877,6 @@ function CareSection() {
 }
 
 /* ---------------- PROBLEMA ---------------- */
-function Problema() {
-  const dores = [
-    "Agenda bagunçada no WhatsApp",
-    "Cliente que some e ninguém percebe",
-    "Atendente respondendo o mesmo todo dia",
-    "Sem previsibilidade de receita no fim do mês",
-    "Ficha do pet em caderno e planilha",
-    "Tutor sem lembrete de vacina",
-  ];
-  return (
-    <Section
-      eyebrow="O problema"
-      title={<>Operar pet hoje é apagar incêndio o dia inteiro.</>}
-      intro="Se algum desses pontos parece familiar, a sua operação está deixando dinheiro e cliente na mesa."
-    >
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {dores.map((d, i) => (
-          <div
-            key={d}
-            className="flex items-start gap-3 p-5 rounded-lg border border-white/8 bg-bg-surface/50"
-          >
-            <div className="mt-1 size-1.5 rounded-full bg-red-400/60 shrink-0 shadow-[0_0_8px_rgba(248,113,113,0.4)]" />
-            <div>
-              <div className="font-mono text-[9px] text-white/30 tracking-widest mb-1">
-                DOR.{String(i + 1).padStart(2, "0")}
-              </div>
-              <div className="text-sm text-white/70 line-through decoration-white/15">
-                {d}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
 /* ---------------- TOGETHER ---------------- */
 function Together() {
   const steps = ["Captação", "Atendimento", "Agendamento", "Execução", "Pós-serviço", "Recompra"];
@@ -1002,101 +965,6 @@ function Together() {
 }
 
 /* ---------------- PARA QUEM ---------------- */
-function ParaQuem() {
-  const personas = [
-    {
-      tag: "Pet shop em expansão",
-      pain: "Equipe travada no WhatsApp e sem padrão entre lojas.",
-      solve: "Atendimento centralizado, multi-unidade e linha Care para revenda.",
-    },
-    {
-      tag: "Banho & tosa de bairro",
-      pain: "Agenda no caderno, no-show alto e cliente que some.",
-      solve: "Agenda inteligente, lembretes automáticos e reativação no WhatsApp.",
-    },
-    {
-      tag: "Clínica veterinária",
-      pain: "Prontuário disperso e tutor que esquece reforço de vacina.",
-      solve: "Prontuário digital, alerta de vacina automático e portal do tutor.",
-    },
-    {
-      tag: "Daycare / Hotel",
-      pain: "Pais ansiosos pedindo notícia do pet o dia todo.",
-      solve: "Check-in com foto, atualizações no WhatsApp e Care premium na hospedagem.",
-    },
-  ];
-  return (
-    <Section eyebrow="Para quem é" title="Construído para o novo negócio pet.">
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {personas.map((p, i) => (
-          <div
-            key={p.tag}
-            className="p-6 rounded-xl border border-white/10 bg-bg-surface hover:border-white/25 transition flex flex-col"
-          >
-            <div className="font-mono text-[10px] text-white/30 mb-3 tracking-widest">
-              T.{String(i + 1).padStart(2, "0")}
-            </div>
-            <div className="text-white font-medium leading-tight mb-4">{p.tag}</div>
-            <div className="space-y-3 mt-auto">
-              <div>
-                <div className="font-mono text-[9px] uppercase tracking-widest text-red-400/60 mb-1">Dor</div>
-                <p className="text-xs text-white/55 leading-relaxed">{p.pain}</p>
-              </div>
-              <div className="h-px bg-white/5" />
-              <div>
-                <div className="font-mono text-[9px] uppercase tracking-widest text-tech-neon/70 mb-1">PetOps</div>
-                <p className="text-xs text-white/75 leading-relaxed">{p.solve}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
-/* ---------------- PROVA ---------------- */
-function Prova() {
-  const pillars = [
-    {
-      t: "Construído por quem opera",
-      d: "Nasceu dentro de operações pet reais — cada módulo resolve uma dor que vivemos no balcão.",
-      c: "tech-cyan",
-    },
-    {
-      t: "Plataforma única, não um Frankenstein",
-      d: "Agenda, atendimento, financeiro, prontuário e produto no mesmo lugar. Sem integração frágil, sem retrabalho.",
-      c: "tech-neon",
-    },
-    {
-      t: "Pronto para escalar",
-      d: "Multi-unidade com dados isolados, app no celular online e offline e sistema seguro em nuvem.",
-      c: "care-blue",
-    },
-  ];
-  return (
-    <Section
-      eyebrow="Por que PetOps"
-      title="Três motivos para começar agora."
-    >
-      <div className="grid md:grid-cols-3 gap-4">
-        {pillars.map((p, i) => (
-          <div key={p.t} className="p-10 rounded-xl border border-white/10 bg-bg-surface relative">
-            <div className="font-mono text-[10px] text-white/30 tracking-widest mb-6">
-              {String(i + 1).padStart(2, "0")} / 03
-            </div>
-            <div className={`h-px w-10 bg-${p.c}/60 mb-6`} />
-            <div className="text-2xl font-medium text-white tracking-tight mb-3">
-              {p.t}
-            </div>
-            <p className="text-sm text-white/55 leading-relaxed">{p.d}</p>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
 /* ---------------- FINAL CTA ---------------- */
 function FinalCTA() {
   return (
