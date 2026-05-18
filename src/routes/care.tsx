@@ -296,7 +296,7 @@ function CarePage() {
 
         <Section
           eyebrow="Diferenciais"
-          title="O que torna a Care diferente do que existe na prateleira."
+          title="O que torna a Care diferente do que existe na prateleira"
         >
           <div className="grid sm:grid-cols-2 gap-4">
             {diferenciais.map((d, i) => (
