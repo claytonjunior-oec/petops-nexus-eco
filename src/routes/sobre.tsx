@@ -35,7 +35,7 @@ function AboutPage() {
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.02] max-w-4xl text-balance">
               Construído para quem quer{" "}
-              <span className="text-gradient-brand">evoluir o mercado pet.</span>
+              <span className="text-gradient-brand">evoluir o mercado pet</span>
             </h1>
           </div>
         </section>
