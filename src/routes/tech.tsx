@@ -623,7 +623,7 @@ function AntesDepois() {
   return (
     <Section
       eyebrow="Antes / Depois"
-      title="O salto da operação manual para a operação automatizada."
+      title="O salto da operação manual para a operação automatizada"
       intro="O que muda na rotina do petshop quando o PetOps Tech entra no lugar do improviso."
     >
       <div className="rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur overflow-hidden">
