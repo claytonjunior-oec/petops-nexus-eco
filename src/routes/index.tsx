@@ -244,10 +244,13 @@ function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <img
           src={heroHusky}
-          alt="Husky sorrindo enquanto recebe carinho dos tutores em casa"
+          alt="Sistema de gestão para petshop em uso — husky feliz com tutores"
           className="absolute inset-0 w-full h-full object-cover object-center"
           width={1920}
           height={800}
+          fetchPriority="high"
+          loading="eager"
+          decoding="async"
         />
         {/* Cinematic vignette + brand grade */}
         <div className="absolute inset-0 bg-gradient-to-b from-bg-base/70 via-bg-base/40 to-bg-base" />
