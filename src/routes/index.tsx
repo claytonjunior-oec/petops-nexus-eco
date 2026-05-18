@@ -438,7 +438,7 @@ function Conceito() {
   return (
     <Section
       eyebrow="Conceito"
-      title={<>Mais que uma marca. Um ecossistema para o mercado pet.</>}
+      title={<>Mais que uma marca. Um ecossistema para o mercado pet</>}
       intro="A PetOps integra tecnologia, automação e soluções de cuidado para transformar a rotina de negócios pet em operações mais inteligentes, mais lucrativas e mais desejadas pelos clientes."
     >
       <div className="grid md:grid-cols-3 gap-4">
