@@ -173,7 +173,7 @@ function Numeros() {
   return (
     <Section
       eyebrow="Resultados"
-      title="Os números do novo petshop automatizado."
+      title="Os números do novo petshop automatizado"
       intro="Dados consolidados de petshops, clínicas e daycares operando com o ecossistema PetOps entre 2024 e 2026."
     >
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
