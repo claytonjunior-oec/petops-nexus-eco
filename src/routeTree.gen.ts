@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TechRouteImport } from './routes/tech'
 import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as EcossistemaRouteImport } from './routes/ecossistema'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CareRouteImport } from './routes/care'
@@ -24,6 +25,11 @@ const TechRoute = TechRouteImport.update({
 const SobreRoute = SobreRouteImport.update({
   id: '/sobre',
   path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EcossistemaRoute = EcossistemaRouteImport.update({
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/care': typeof CareRoute
   '/contato': typeof ContatoRoute
   '/ecossistema': typeof EcossistemaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/tech': typeof TechRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/care': typeof CareRoute
   '/contato': typeof ContatoRoute
   '/ecossistema': typeof EcossistemaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/tech': typeof TechRoute
 }
@@ -69,20 +77,36 @@ export interface FileRoutesById {
   '/care': typeof CareRoute
   '/contato': typeof ContatoRoute
   '/ecossistema': typeof EcossistemaRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/tech': typeof TechRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/care' | '/contato' | '/ecossistema' | '/sobre' | '/tech'
+  fullPaths:
+    | '/'
+    | '/care'
+    | '/contato'
+    | '/ecossistema'
+    | '/sitemap.xml'
+    | '/sobre'
+    | '/tech'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/care' | '/contato' | '/ecossistema' | '/sobre' | '/tech'
+  to:
+    | '/'
+    | '/care'
+    | '/contato'
+    | '/ecossistema'
+    | '/sitemap.xml'
+    | '/sobre'
+    | '/tech'
   id:
     | '__root__'
     | '/'
     | '/care'
     | '/contato'
     | '/ecossistema'
+    | '/sitemap.xml'
     | '/sobre'
     | '/tech'
   fileRoutesById: FileRoutesById
@@ -92,6 +116,7 @@ export interface RootRouteChildren {
   CareRoute: typeof CareRoute
   ContatoRoute: typeof ContatoRoute
   EcossistemaRoute: typeof EcossistemaRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   TechRoute: typeof TechRoute
 }
@@ -110,6 +135,13 @@ declare module '@tanstack/react-router' {
       path: '/sobre'
       fullPath: '/sobre'
       preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ecossistema': {
@@ -148,6 +180,7 @@ const rootRouteChildren: RootRouteChildren = {
   CareRoute: CareRoute,
   ContatoRoute: ContatoRoute,
   EcossistemaRoute: EcossistemaRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   TechRoute: TechRoute,
 }
