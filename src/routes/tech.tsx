@@ -507,7 +507,7 @@ function TechPage() {
         {/* Comparativo */}
         <Section
           eyebrow="Comparativo"
-          title="Tudo que você ganha em cada plano."
+          title="Tudo que você ganha em cada plano"
           intro="Todos os módulos do sistema, lado a lado."
         >
           <div className="rounded-2xl border border-white/10 bg-bg-surface/40 overflow-hidden">
