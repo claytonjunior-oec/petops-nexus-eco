@@ -205,7 +205,7 @@ function FAQ() {
   return (
     <Section
       eyebrow="Perguntas frequentes"
-      title="Tudo que você precisa saber antes de modernizar seu petshop."
+      title="Tudo que você precisa saber antes de modernizar seu petshop"
       intro="Respostas diretas para as dúvidas que ouvimos toda semana de donos e gestores de petshop."
     >
       <div className="grid gap-3 max-w-4xl">
