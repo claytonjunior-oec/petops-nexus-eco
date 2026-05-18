@@ -819,82 +819,167 @@ function CareSection() {
 /* ---------------- TOGETHER ---------------- */
 function Together() {
   const steps = ["Captação", "Atendimento", "Agendamento", "Execução", "Pós-serviço", "Recompra"];
+  const { ref: cardsRef, inView: cardsInView } = useInView<HTMLDivElement>({ threshold: 0.25 });
+  const { ref: flowRef, inView: flowInView } = useInView<HTMLDivElement>({ threshold: 0.3 });
+
+  // Cycle the active step
+  const [activeStep, setActiveStep] = useState(0);
+  useEffect(() => {
+    if (!flowInView) return;
+    const id = setInterval(() => setActiveStep((s) => (s + 1) % steps.length), 1400);
+    return () => clearInterval(id);
+  }, [flowInView, steps.length]);
+
+  const cards = [
+    {
+      eyebrow: <span className="text-tech-cyan">PetOps Tech</span>,
+      title: "Reduz custo operacional",
+      desc: "Agenda, IA no WhatsApp, lembretes e gestão. Sua equipe para de digitar e volta a vender.",
+      border: "border-tech-cyan/20",
+      bg: "bg-bg-surface",
+      topBar: "bg-tech-cyan/40",
+      footer: null as React.ReactNode,
+      featured: false,
+    },
+    {
+      eyebrow: (
+        <>
+          <span className="text-tech-cyan">Tech</span>
+          <span className="text-white/40">+</span>
+          <span className="text-care-blue">Care</span>
+        </>
+      ),
+      title: "Multiplica o LTV do cliente",
+      desc: "Recompra automatizada, produto premium na sacola e tutor fidelizado por experiência — não por desconto.",
+      border: "border-white/15",
+      bg: "bg-gradient-to-br from-tech-cyan/10 via-bg-surface to-care-blue/10",
+      topBar: "bg-gradient-to-r from-tech-cyan to-care-blue",
+      footer: (
+        <div className="font-mono text-[10px] text-white/50 tracking-widest">1 + 1 = 3</div>
+      ),
+      featured: true,
+    },
+    {
+      eyebrow: <span className="text-care-blue">PetOps Care</span>,
+      title: "Eleva margem por serviço",
+      desc: "Linha premium de cuidado em embalagens que comunicam valor — para usar, vender e fidelizar.",
+      border: "border-care-blue/20",
+      bg: "bg-bg-surface",
+      topBar: "bg-care-blue/40",
+      footer: null as React.ReactNode,
+      featured: false,
+    },
+  ];
+
   return (
     <Section
       eyebrow="Tech + Care"
       title={<>Sozinhos, já entregam. Juntos, viram um <span className="text-gradient-brand">multiplicador</span>.</>}
       intro="Tech reduz o custo de operar. Care eleva a margem por serviço. No mesmo ecossistema, viram recompra automatizada com produto na sacola."
     >
-      <div className="grid md:grid-cols-3 gap-4 mb-10">
-        <div className="p-8 rounded-xl border border-tech-cyan/20 bg-bg-surface relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-px bg-tech-cyan/40" />
-          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-tech-cyan mb-4">
-            PetOps Tech
-          </div>
-          <div className="text-2xl font-medium text-white tracking-tight mb-2">
-            Reduz custo operacional
-          </div>
-          <p className="text-sm text-white/55 leading-relaxed">
-            Agenda, IA no WhatsApp, lembretes e gestão. Sua equipe para de
-            digitar e volta a vender.
-          </p>
-        </div>
+      <div ref={cardsRef} className="grid md:grid-cols-3 gap-4 mb-10">
+        {cards.map((c, i) => (
+          <div
+            key={i}
+            style={{ transitionDelay: cardsInView ? `${i * 140}ms` : "0ms" }}
+            className={`group relative p-8 rounded-xl border ${c.border} ${c.bg} overflow-hidden transition-all duration-[900ms] ease-out hover:-translate-y-1 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)] ${
+              c.featured ? "md:scale-105 md:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]" : ""
+            } ${
+              cardsInView
+                ? "opacity-100 translate-y-0 blur-0"
+                : "opacity-0 translate-y-8 blur-md"
+            }`}
+          >
+            <div className={`absolute top-0 left-0 right-0 h-px ${c.topBar}`} />
+            {/* shimmer sweep on hover */}
+            <div className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1400ms] ease-out bg-gradient-to-r from-transparent via-white/[0.06] to-transparent" />
+            {/* radial glow on hover */}
+            <div className="pointer-events-none absolute -inset-px opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.06),transparent_60%)]" />
 
-        <div className="p-8 rounded-xl border border-white/15 bg-gradient-to-br from-tech-cyan/10 via-bg-surface to-care-blue/10 relative overflow-hidden md:scale-105 md:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)]">
-          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-tech-cyan to-care-blue" />
-          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/80 mb-4 flex items-center gap-2">
-            <span className="text-tech-cyan">Tech</span>
-            <span className="text-white/40">+</span>
-            <span className="text-care-blue">Care</span>
+            <div className={`font-mono text-[10px] uppercase tracking-[0.25em] mb-4 flex items-center gap-2 ${c.featured ? "text-white/80" : ""}`}>
+              {c.eyebrow}
+            </div>
+            <div className="text-2xl font-medium text-white tracking-tight mb-2">
+              {c.title}
+            </div>
+            <p className={`text-sm leading-relaxed ${c.featured ? "text-white/70 mb-4" : "text-white/55"}`}>
+              {c.desc}
+            </p>
+            {c.footer}
           </div>
-          <div className="text-2xl font-medium text-white tracking-tight mb-2">
-            Multiplica o LTV do cliente
-          </div>
-          <p className="text-sm text-white/70 leading-relaxed mb-4">
-            Recompra automatizada, produto premium na sacola e tutor fidelizado
-            por experiência — não por desconto.
-          </p>
-          <div className="font-mono text-[10px] text-white/50 tracking-widest">
-            1 + 1 = 3
-          </div>
-        </div>
-
-        <div className="p-8 rounded-xl border border-care-blue/20 bg-bg-surface relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-px bg-care-blue/40" />
-          <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-care-blue mb-4">
-            PetOps Care
-          </div>
-          <div className="text-2xl font-medium text-white tracking-tight mb-2">
-            Eleva margem por serviço
-          </div>
-          <p className="text-sm text-white/55 leading-relaxed">
-            Linha premium de cuidado em embalagens que comunicam valor — para
-            usar, vender e fidelizar.
-          </p>
-        </div>
+        ))}
       </div>
 
-      <div className="relative rounded-2xl border border-white/10 bg-bg-surface/40 backdrop-blur p-6 md:p-8">
+      <div
+        ref={flowRef}
+        className={`relative rounded-2xl border border-white/10 bg-bg-surface/40 backdrop-blur p-6 md:p-8 transition-all duration-1000 ${
+          flowInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+        }`}
+      >
         <div className="font-mono text-[10px] text-white/40 tracking-widest mb-6 text-center">
           FLUXO UNIFICADO DA JORNADA DO TUTOR
         </div>
+
+        {/* Track */}
         <div className="absolute top-[60%] left-6 right-6 h-px bg-gradient-to-r from-tech-cyan/40 via-white/20 to-care-blue/40 hidden md:block" />
+
+        {/* Traveling packet */}
+        <div
+          className="hidden md:block absolute top-[60%] left-6 right-6 h-px pointer-events-none"
+          aria-hidden
+        >
+          <div
+            className="absolute -top-[3px] size-1.5 rounded-full bg-gradient-to-r from-tech-cyan to-care-blue shadow-[0_0_14px_var(--color-tech-cyan)] transition-[left] duration-[1300ms] ease-in-out"
+            style={{
+              left: `${(activeStep / Math.max(1, steps.length - 1)) * 100}%`,
+              transform: "translateX(-50%)",
+            }}
+          />
+        </div>
+
         <div className="grid grid-cols-2 md:grid-cols-6 gap-3 relative">
-          {steps.map((s, i) => (
-            <div key={s} className="flex flex-col items-center text-center group">
-              <div className="size-10 rounded-full border border-white/15 bg-bg-base flex items-center justify-center mb-2 backdrop-blur group-hover:border-white/40 transition relative z-10">
-                <div className="font-mono text-[9px] text-white/60">{String(i + 1).padStart(2, "0")}</div>
+          {steps.map((s, i) => {
+            const active = i === activeStep;
+            return (
+              <div
+                key={s}
+                style={{ transitionDelay: flowInView ? `${i * 110}ms` : "0ms" }}
+                className={`flex flex-col items-center text-center transition-all duration-700 ease-out ${
+                  flowInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+                }`}
+              >
+                <div
+                  className={`size-10 rounded-full border flex items-center justify-center mb-2 backdrop-blur relative z-10 transition-all duration-500 ${
+                    active
+                      ? "border-tech-cyan/70 bg-bg-base scale-110 shadow-[0_0_24px_-2px_var(--color-tech-cyan)]"
+                      : "border-white/15 bg-bg-base hover:border-white/40"
+                  }`}
+                >
+                  <div
+                    className={`font-mono text-[9px] transition-colors ${
+                      active ? "text-white" : "text-white/60"
+                    }`}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+                </div>
+                <div
+                  className={`text-xs font-medium transition-colors ${
+                    active ? "text-white" : "text-white/80"
+                  }`}
+                >
+                  {s}
+                </div>
               </div>
-              <div className="text-xs text-white/80 font-medium">{s}</div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
       <div className="mt-8 text-center">
         <Link
           to="/ecossistema"
-          className="inline-block font-mono text-[11px] uppercase tracking-widest px-6 py-3 border border-white/15 rounded-sm hover:bg-white/5 transition"
+          className="inline-block font-mono text-[11px] uppercase tracking-widest px-6 py-3 border border-white/15 rounded-sm hover:bg-white/5 hover:border-white/30 transition"
         >
           Ver ecossistema detalhado →
         </Link>
