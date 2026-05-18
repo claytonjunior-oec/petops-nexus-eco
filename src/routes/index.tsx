@@ -688,14 +688,25 @@ function LiveStat({
 /* ---------------- CARE SECTION ---------------- */
 function CareSection() {
   const featured = careProducts.slice(0, 6);
+  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.2 });
   return (
     <section className="relative py-24 md:py-32 px-6 lg:px-10 overflow-hidden">
       <div className="absolute top-1/2 right-0 size-[600px] bg-care-blue/8 blur-[160px] rounded-full pointer-events-none" />
       <div className="relative max-w-[1440px] mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-16 items-center">
         {/* Real Care products */}
-        <div className="relative order-2 lg:order-1">
-          <div className="rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-6 md:p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] glow-care">
-            <div className="flex items-center justify-between mb-6">
+        <div ref={ref} className="relative order-2 lg:order-1">
+          <div
+            className={`rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-6 md:p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] glow-care transition-all duration-[1200ms] ease-out ${
+              inView
+                ? "opacity-100 translate-y-0 blur-0"
+                : "opacity-0 translate-y-8 blur-md"
+            }`}
+          >
+            <div
+              className={`flex items-center justify-between mb-6 transition-all duration-700 delay-150 ${
+                inView ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"
+              }`}
+            >
               <div className="font-mono text-[10px] text-white/40 tracking-widest">
                 PETOPS · CARE
               </div>
@@ -704,23 +715,41 @@ function CareSection() {
               </div>
             </div>
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {featured.map((p) => (
+              {featured.map((p, i) => (
                 <Link
                   key={p.id}
                   to="/care"
-                  className="group relative rounded-lg border border-white/10 bg-gradient-to-b from-bg-base to-bg-elevated p-3 flex flex-col hover:border-care-blue/40 transition overflow-hidden"
+                  style={{
+                    transitionDelay: inView ? `${200 + i * 90}ms` : "0ms",
+                  }}
+                  className={`group relative rounded-lg border border-white/10 bg-gradient-to-b from-bg-base to-bg-elevated p-3 flex flex-col hover:border-care-blue/40 hover:-translate-y-0.5 overflow-hidden transition-all duration-700 ease-out ${
+                    inView
+                      ? "opacity-100 translate-y-0 blur-0"
+                      : "opacity-0 translate-y-6 blur-sm"
+                  }`}
                 >
                   <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-care-blue/15 to-transparent opacity-50 group-hover:opacity-100 transition" />
                   <div className="font-mono text-[9px] text-white/30 tracking-widest relative mb-2">
                     {p.code}
                   </div>
                   <div className="relative aspect-square rounded-md bg-white/[0.02] border border-white/5 flex items-center justify-center overflow-hidden mb-3">
+                    {/* shimmer sweep */}
+                    <div
+                      className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1100ms] ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                    />
                     {p.image ? (
                       <img
                         src={p.image}
                         alt={p.name}
                         loading="lazy"
-                        className="size-full object-contain p-2 group-hover:scale-105 transition"
+                        style={{
+                          transitionDelay: inView ? `${350 + i * 90}ms` : "0ms",
+                        }}
+                        className={`size-full object-contain p-2 transition-all duration-[1100ms] ease-out group-hover:scale-110 ${
+                          inView
+                            ? "opacity-100 scale-100 blur-0"
+                            : "opacity-0 scale-95 blur-sm"
+                        }`}
                       />
                     ) : (
                       <div className="size-8 rounded bg-gradient-to-br from-care-blue/40 to-care-green/20" />
@@ -737,7 +766,12 @@ function CareSection() {
                 </Link>
               ))}
             </div>
-            <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between font-mono text-[10px] text-white/40 tracking-widest">
+            <div
+              className={`mt-6 pt-4 border-t border-white/5 flex items-center justify-between font-mono text-[10px] text-white/40 tracking-widest transition-all duration-700 ${
+                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+              }`}
+              style={{ transitionDelay: inView ? "900ms" : "0ms" }}
+            >
               <span>{careProducts.length} produtos na linha</span>
               <Link to="/care" className="text-care-blue hover:text-white transition">
                 Ver todos →
