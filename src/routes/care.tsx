@@ -106,7 +106,7 @@ function CarePage() {
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.05] text-balance">
                 Linha profissional{" "}
                 <span className="text-care-blue">90% natural</span>{" "}
-                para elevar o cuidado pet.
+                para elevar o cuidado pet
               </h1>
               <p className="mt-8 text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed">
                 Produtos para banho, tosa, clínica e revenda. Fórmulas com base
