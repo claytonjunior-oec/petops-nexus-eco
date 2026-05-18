@@ -15,18 +15,77 @@ import atendimentoImg from "@/assets/petops-atendimento.png";
 import agendaImg from "@/assets/petops-agenda.png";
 import clientesImg from "@/assets/petops-clientes.png";
 
+const TECH_URL = "https://petops-nexus-eco.lovable.app/tech";
+const TECH_OG = "https://petops-nexus-eco.lovable.app/src/assets/og-petops.jpg";
+
 export const Route = createFileRoute("/tech")({
   head: () => ({
     meta: [
-      { title: "PetOps Tech — Sistema operacional para negócios pet" },
+      { title: "PetOps Tech — Sistema para Petshop com IA no WhatsApp" },
       {
         name: "description",
         content:
-          "Plataforma com agenda inteligente, WhatsApp com IA, PDV, financeiro, portal do tutor e automações para pet shops, clínicas, banho e tosa, daycare e hotel.",
+          "PetOps Tech: sistema completo para petshop, clínica vet, banho & tosa, daycare e hotel pet. Agenda inteligente, atendimento com IA no WhatsApp (Haku), PDV, financeiro, prontuário e automações. Planos a partir de R$ 0.",
       },
-      { property: "og:title", content: "PetOps Tech" },
-      { property: "og:description", content: "A camada inteligente do seu negócio pet." },
-      { property: "og:image", content: "/src/assets/petops-dashboard.png" },
+      {
+        name: "keywords",
+        content:
+          "sistema petshop, software petshop, gestão petshop, agenda petshop, whatsapp petshop com IA, PDV pet, sistema clínica veterinária, sistema banho e tosa, automação petshop",
+      },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: "PetOps Tech — Sistema operacional para o petshop moderno" },
+      {
+        property: "og:description",
+        content:
+          "Agenda inteligente, IA no WhatsApp, PDV, financeiro e portal do tutor. A camada inteligente do seu negócio pet.",
+      },
+      { property: "og:url", content: TECH_URL },
+      { property: "og:image", content: TECH_OG },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "640" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "PetOps Tech — Sistema para petshop com IA" },
+      {
+        name: "twitter:description",
+        content: "Agenda, WhatsApp com IA, PDV e financeiro em uma plataforma só.",
+      },
+      { name: "twitter:image", content: TECH_OG },
+    ],
+    links: [{ rel: "canonical", href: TECH_URL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "PetOps Tech",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web, iOS, Android",
+          description:
+            "Sistema operacional para petshops, clínicas veterinárias, banho & tosa, daycare e hotel pet com IA no WhatsApp.",
+          url: TECH_URL,
+          image: TECH_OG,
+          offers: {
+            "@type": "AggregateOffer",
+            priceCurrency: "BRL",
+            lowPrice: "0",
+            highPrice: "497",
+            offerCount: "4",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://petops-nexus-eco.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "Tech", item: TECH_URL },
+          ],
+        }),
+      },
     ],
   }),
   component: TechPage,

@@ -9,20 +9,68 @@ import { ProductCard } from "@/components/site/ProductCard";
 import { careProducts, careSubscriptions } from "@/data/care-products";
 import { Check, Repeat, ShieldCheck, Truck } from "lucide-react";
 
+const CARE_URL = "https://petops-nexus-eco.lovable.app/care";
+const CARE_OG = "https://petops-nexus-eco.lovable.app/src/assets/og-petops.jpg";
+
 export const Route = createFileRoute("/care")({
   head: () => ({
     meta: [
-      { title: "PetOps Care — Linha profissional 90% natural para pet" },
+      { title: "PetOps Care — Shampoo Profissional Pet 90% Natural" },
       {
         name: "description",
         content:
-          "Linha profissional PetOps Care: shampoos, condicionadores, colônias, cuidado bucal e bálsamos veganos. 90% natural, pensada para revenda no petshop.",
+          "PetOps Care: linha profissional para banho, tosa, clínica e revenda no petshop. Shampoos, condicionadores, colônias e cuidado bucal. 90% natural, 10% ciência, 0% crueldade. Assinatura mensal com preço travado.",
       },
-      { property: "og:title", content: "PetOps Care — Linha profissional pet" },
+      {
+        name: "keywords",
+        content:
+          "shampoo profissional pet, produtos pet premium, linha banho e tosa, revenda petshop, cosmético pet vegano, assinatura petshop, fornecedor petshop",
+      },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { property: "og:type", content: "website" },
+      { property: "og:title", content: "PetOps Care — Linha profissional 90% natural" },
       {
         property: "og:description",
         content:
-          "Produtos profissionais para banho, tosa, clínica e revenda. 90% natural, 10% ciência, 0% crueldade.",
+          "Produtos profissionais para banho, tosa, clínica e revenda. Assinatura mensal Start, Pro e Max.",
+      },
+      { property: "og:url", content: CARE_URL },
+      { property: "og:image", content: CARE_OG },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "640" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "PetOps Care — Linha profissional pet" },
+      {
+        name: "twitter:description",
+        content: "90% natural, 10% ciência, 0% crueldade. Pensada para revenda.",
+      },
+      { name: "twitter:image", content: CARE_OG },
+    ],
+    links: [{ rel: "canonical", href: CARE_URL }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProductGroup",
+          name: "PetOps Care",
+          description:
+            "Linha profissional de produtos pet: shampoos, condicionadores, colônias, cuidado bucal e bálsamos. 90% natural.",
+          url: CARE_URL,
+          image: CARE_OG,
+          brand: { "@type": "Brand", name: "PetOps" },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://petops-nexus-eco.lovable.app/" },
+            { "@type": "ListItem", position: 2, name: "Care", item: CARE_URL },
+          ],
+        }),
       },
     ],
   }),
