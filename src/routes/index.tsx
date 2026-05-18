@@ -5,7 +5,7 @@ import { Section } from "@/components/site/Section";
 import heroHusky from "@/assets/hero-husky.jpg";
 import heroTech from "@/assets/hero-tech.jpg";
 import heroCare from "@/assets/hero-care.jpg";
-import heroPetduo from "@/assets/hero-petduo.jpg";
+
 import ogImage from "@/assets/og-petops.jpg";
 import { Heart, Sparkles, Star, MessageCircle } from "lucide-react";
 import { careProducts } from "@/data/care-products";
