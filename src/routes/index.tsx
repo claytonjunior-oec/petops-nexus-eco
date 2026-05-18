@@ -1,4 +1,5 @@
 
+import { useEffect, useRef, useState } from "react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
@@ -502,71 +503,183 @@ function TechSection() {
           </div>
         </div>
 
-        {/* Mock dashboard */}
-        <div className="relative">
-          <div className="rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-6 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] glow-tech">
-            <div className="flex items-center justify-between mb-6">
-              <div className="flex items-center gap-2 font-mono text-[10px] text-white/40 tracking-widest">
-                <div className="size-1.5 bg-tech-neon rounded-full animate-pulse" />
-                PETOPS · TECH
-              </div>
-              <div className="flex gap-1.5">
-                <div className="size-2 rounded-full bg-white/10" />
-                <div className="size-2 rounded-full bg-white/10" />
-                <div className="size-2 rounded-full bg-white/10" />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-2 gap-3 mb-3">
-              <Stat label="Reativação" color="tech-neon" />
-              <Stat label="No-show" color="tech-cyan" />
-            </div>
-
-            <div className="rounded-lg border border-white/5 bg-bg-base/60 p-5">
-              <div className="font-mono text-[10px] text-white/40 tracking-widest mb-4">
-                FLUXO OPERACIONAL
-              </div>
-              <div className="flex items-end gap-2 h-24">
-                {[40, 60, 35, 80, 55, 95, 70].map((h, i) => (
-                  <div key={i} className="flex-1 relative">
-                    <div
-                      className={`w-full rounded-t-sm ${
-                        i === 5
-                          ? "bg-gradient-to-t from-tech-cyan to-tech-neon shadow-[0_0_15px_var(--color-tech-cyan)]"
-                          : "bg-white/10"
-                      }`}
-                      style={{ height: `${h}%` }}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="mt-3 grid grid-cols-3 gap-3">
-              {blocks.slice(0, 6).map((b) => (
-                <div
-                  key={b}
-                  className="p-3 rounded-md border border-white/5 bg-bg-base/40 font-mono text-[10px] text-white/60 tracking-wider truncate"
-                >
-                  {b}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="absolute -inset-4 bg-tech-cyan/5 blur-3xl -z-10 rounded-3xl" />
-        </div>
+        {/* Mock dashboard — live */}
+        <LiveTechPanel blocks={blocks} />
       </div>
     </section>
   );
 }
 
-function Stat({ label, color }: { label: string; color: string }) {
+function useInView<T extends Element>(options?: IntersectionObserverInit) {
+  const ref = useRef<T | null>(null);
+  const [inView, setInView] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setInView(true);
+        io.disconnect();
+      }
+    }, options ?? { threshold: 0.35 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+  return { ref, inView };
+}
+
+function useCountUp(target: number, active: boolean, duration = 1400) {
+  const [value, setValue] = useState(0);
+  useEffect(() => {
+    if (!active) return;
+    let raf = 0;
+    const start = performance.now();
+    const tick = (now: number) => {
+      const p = Math.min(1, (now - start) / duration);
+      const eased = 1 - Math.pow(1 - p, 3);
+      setValue(target * eased);
+      if (p < 1) raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [target, active, duration]);
+  return value;
+}
+
+function LiveTechPanel({ blocks }: { blocks: string[] }) {
+  const { ref, inView } = useInView<HTMLDivElement>();
+  const reativ = useCountUp(38, inView);
+  const noshow = useCountUp(42, inView);
+
+  // Rotating "active module" highlight
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    if (!inView) return;
+    const id = setInterval(() => setActive((a) => (a + 1) % blocks.length), 1600);
+    return () => clearInterval(id);
+  }, [inView, blocks.length]);
+
+  // Live-updating bars
+  const [bars, setBars] = useState<number[]>([40, 60, 35, 80, 55, 95, 70]);
+  useEffect(() => {
+    if (!inView) return;
+    const id = setInterval(() => {
+      setBars((prev) =>
+        prev.map((v) => {
+          const delta = (Math.random() - 0.5) * 22;
+          return Math.max(20, Math.min(100, v + delta));
+        }),
+      );
+    }, 1400);
+    return () => clearInterval(id);
+  }, [inView]);
+
+  const peakIndex = bars.indexOf(Math.max(...bars));
+
+  return (
+    <div ref={ref} className="relative">
+      <div className="rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-6 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] glow-tech">
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-2 font-mono text-[10px] text-white/40 tracking-widest">
+            <div className="size-1.5 bg-tech-neon rounded-full animate-pulse" />
+            PETOPS · TECH · LIVE
+          </div>
+          <div className="font-mono text-[9px] text-white/30 tracking-widest tabular-nums">
+            BENCHMARK · 412 PETSHOPS
+          </div>
+        </div>
+
+        <div className="grid grid-cols-2 gap-3 mb-3">
+          <LiveStat
+            label="Reativação"
+            value={`+${reativ.toFixed(0)}%`}
+            sub="vs. mês anterior"
+            color="tech-neon"
+            progress={Math.min(100, (reativ / 50) * 100)}
+          />
+          <LiveStat
+            label="No-show"
+            value={`−${noshow.toFixed(0)}%`}
+            sub="banho & tosa"
+            color="tech-cyan"
+            progress={Math.min(100, (noshow / 50) * 100)}
+          />
+        </div>
+
+        <div className="rounded-lg border border-white/5 bg-bg-base/60 p-5">
+          <div className="flex items-center justify-between mb-4">
+            <div className="font-mono text-[10px] text-white/40 tracking-widest">
+              FLUXO OPERACIONAL · 7 DIAS
+            </div>
+            <div className="flex items-center gap-1.5 font-mono text-[9px] text-tech-neon/80 tracking-widest">
+              <div className="size-1 rounded-full bg-tech-neon animate-pulse" />
+              AO VIVO
+            </div>
+          </div>
+          <div className="flex items-end gap-2 h-24">
+            {bars.map((h, i) => (
+              <div key={i} className="flex-1 relative group">
+                <div
+                  className={`w-full rounded-t-sm transition-[height,background] duration-700 ease-out ${
+                    i === peakIndex
+                      ? "bg-gradient-to-t from-tech-cyan to-tech-neon shadow-[0_0_15px_var(--color-tech-cyan)]"
+                      : "bg-white/10"
+                  }`}
+                  style={{ height: `${inView ? h : 0}%` }}
+                />
+              </div>
+            ))}
+          </div>
+          <div className="mt-3 flex justify-between font-mono text-[9px] text-white/30 tracking-widest">
+            {["SEG", "TER", "QUA", "QUI", "SEX", "SÁB", "DOM"].map((d) => (
+              <span key={d}>{d}</span>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-3 grid grid-cols-3 gap-3">
+          {blocks.slice(0, 6).map((b, i) => (
+            <div
+              key={b}
+              className={`p-3 rounded-md border font-mono text-[10px] tracking-wider truncate transition-all duration-500 ${
+                i === active
+                  ? "border-tech-cyan/50 bg-tech-cyan/10 text-white shadow-[0_0_20px_-5px_var(--color-tech-cyan)]"
+                  : "border-white/5 bg-bg-base/40 text-white/60"
+              }`}
+            >
+              {b}
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="absolute -inset-4 bg-tech-cyan/5 blur-3xl -z-10 rounded-3xl" />
+    </div>
+  );
+}
+
+function LiveStat({
+  label,
+  value,
+  sub,
+  color,
+  progress,
+}: {
+  label: string;
+  value: string;
+  sub: string;
+  color: string;
+  progress: number;
+}) {
   return (
     <div className="rounded-lg border border-white/5 bg-bg-base/60 p-4">
       <div className="font-mono text-[10px] text-white/40 tracking-widest mb-2">{label}</div>
-      <div className="flex items-end justify-between">
-        <div className="h-6 w-16 rounded bg-white/5" />
-        <div className={`h-1 w-8 rounded-full bg-${color}/40`} />
+      <div className={`text-2xl font-medium tabular-nums text-${color} leading-none`}>{value}</div>
+      <div className="font-mono text-[9px] text-white/35 tracking-wider mt-1">{sub}</div>
+      <div className="mt-3 h-1 w-full rounded-full bg-white/5 overflow-hidden">
+        <div
+          className={`h-full bg-${color} rounded-full transition-[width] duration-1000 ease-out`}
+          style={{ width: `${progress}%` }}
+        />
       </div>
     </div>
   );
