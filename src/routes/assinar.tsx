@@ -137,7 +137,7 @@ function AssinarPage() {
               </div>
               <h1 className="text-3xl md:text-4xl font-medium tracking-tight text-white leading-tight">
                 Você está a um passo de ativar o{" "}
-                <span className="text-tech-cyan">{selected.name}</span>.
+                <span className="text-tech-cyan">{selected.name}</span>
               </h1>
               <p className="mt-4 text-white/55 text-sm leading-relaxed">
                 Para garantir uma ativação correta, no início toda assinatura
