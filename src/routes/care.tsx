@@ -198,7 +198,7 @@ function CarePage() {
         {/* Assinatura PetOps Care */}
         <Section
           eyebrow="Assinatura · Care Subscription"
-          title="Nunca mais falte produto no seu salão."
+          title="Nunca mais falte produto no seu salão"
           intro="Receba todo mês o que seu petshop precisa pra operar e revender. Sem pedido manual, sem estoque parado, com preço travado por 12 meses."
         >
           <div className="grid md:grid-cols-3 gap-5 mb-10">
