@@ -450,7 +450,7 @@ function TechPage() {
         {/* Planos */}
         <Section
           eyebrow="Planos · PetOps Tech"
-          title="Escolha o plano que cabe no tamanho do seu negócio."
+          title="Escolha o plano que cabe no tamanho do seu negócio"
           intro="Do petshop começando a estruturar a operação à rede com múltiplas unidades. Todos os planos incluem suporte e Academy."
         >
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
