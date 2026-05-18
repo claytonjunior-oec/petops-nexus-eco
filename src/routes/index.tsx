@@ -126,16 +126,226 @@ function HomePage() {
       <Hero />
       <Numeros />
       <Problema />
+      <AntesDepois />
       <Conceito />
       <TechSection />
       <CareSection />
       <Together />
       <ParaQuem />
+      <CalculadoraROI />
       <Prova />
       <FAQ />
       <FinalCTA />
       <Footer />
       <MobileFloatingCTA />
+    </div>
+  );
+}
+
+/* ---------------- ANTES / DEPOIS ---------------- */
+function AntesDepois() {
+  const rows = [
+    { antes: "Agenda em caderno e WhatsApp", depois: "Agenda inteligente com IA" },
+    { antes: "No-show de 25–35%", depois: "No-show abaixo de 10%" },
+    { antes: "Atendente respondendo o mesmo todo dia", depois: "Haku IA responde, qualifica e agenda" },
+    { antes: "Cliente some e ninguém percebe", depois: "Reativação automática + recompra" },
+    { antes: "Margem fina em banho e tosa", depois: "Care premium na sacola eleva o ticket" },
+    { antes: "Receita imprevisível", depois: "Assinatura recorrente + DRE em tempo real" },
+  ];
+  return (
+    <Section
+      eyebrow="Antes / Depois"
+      title="O salto da operação manual para a operação automatizada."
+      intro="O que muda na rotina do petshop quando o ecossistema PetOps entra no lugar do improviso."
+    >
+      <div className="rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur overflow-hidden">
+        <div className="grid grid-cols-2">
+          <div className="p-5 md:p-6 border-r border-white/10 bg-red-500/5">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-red-400/70 flex items-center gap-2">
+              <div className="size-1.5 rounded-full bg-red-400/60" />
+              Antes
+            </div>
+          </div>
+          <div className="p-5 md:p-6 bg-tech-cyan/5">
+            <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-tech-cyan flex items-center gap-2">
+              <div className="size-1.5 rounded-full bg-tech-neon shadow-[0_0_8px_var(--color-tech-neon)]" />
+              Depois · com PetOps
+            </div>
+          </div>
+        </div>
+        {rows.map((r, i) => (
+          <div key={r.depois} className="grid grid-cols-2 border-t border-white/5">
+            <div className="p-5 md:p-6 border-r border-white/10 text-sm text-white/55 line-through decoration-white/15 flex items-start gap-3">
+              <span className="font-mono text-[9px] text-white/25 tracking-widest shrink-0 mt-1">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <span className="leading-relaxed">{r.antes}</span>
+            </div>
+            <div className="p-5 md:p-6 text-sm text-white font-medium flex items-start gap-3">
+              <span className="font-mono text-[9px] text-tech-cyan tracking-widest shrink-0 mt-1">
+                →
+              </span>
+              <span className="leading-relaxed">{r.depois}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* ---------------- CALCULADORA ROI ---------------- */
+function CalculadoraROI() {
+  const [banhos, setBanhos] = useState(200);
+  const [ticket, setTicket] = useState(80);
+  const [noshowAtual, setNoshowAtual] = useState(25);
+
+  const noshowAlvo = 8;
+  const perdaAtual = Math.round((banhos * (noshowAtual / 100)) * ticket);
+  const perdaPetops = Math.round((banhos * (noshowAlvo / 100)) * ticket);
+  const economiaMes = perdaAtual - perdaPetops;
+  const economiaAno = economiaMes * 12;
+  const fmt = (n: number) => n.toLocaleString("pt-BR");
+  const mensagem = encodeURIComponent(
+    `Olá! Calculei meu ROI no site da PetOps:\n\n• ${banhos} banhos/mês\n• Ticket médio R$ ${ticket}\n• No-show atual ${noshowAtual}%\n\nEconomia projetada: R$ ${fmt(economiaMes)}/mês (R$ ${fmt(economiaAno)}/ano).\n\nQuero ver uma demo.`,
+  );
+
+  return (
+    <Section
+      eyebrow="Calculadora · ROI"
+      title="Quanto o no-show está custando ao seu petshop?"
+      intro="Ajuste os controles abaixo com a realidade da sua operação e veja a economia projetada ao operar com o PetOps."
+    >
+      <div className="grid lg:grid-cols-[1fr_1.1fr] gap-6 rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur p-6 md:p-8">
+        {/* Inputs */}
+        <div className="space-y-7">
+          <RangeField
+            label="Banhos por mês"
+            value={banhos}
+            min={30}
+            max={1500}
+            step={10}
+            display={fmt(banhos)}
+            color="tech-cyan"
+            onChange={setBanhos}
+          />
+          <RangeField
+            label="Ticket médio (R$)"
+            value={ticket}
+            min={40}
+            max={300}
+            step={5}
+            display={`R$ ${fmt(ticket)}`}
+            color="care-blue"
+            onChange={setTicket}
+          />
+          <RangeField
+            label="No-show atual (%)"
+            value={noshowAtual}
+            min={5}
+            max={50}
+            step={1}
+            display={`${noshowAtual}%`}
+            color="tech-neon"
+            onChange={setNoshowAtual}
+          />
+        </div>
+
+        {/* Result */}
+        <div className="relative rounded-xl border border-tech-cyan/30 bg-gradient-to-br from-bg-base via-bg-surface to-tech-cyan/10 p-6 md:p-8 glow-tech overflow-hidden">
+          <div className="font-mono text-[10px] uppercase tracking-[0.3em] text-tech-cyan mb-6 flex items-center gap-2">
+            <div className="size-1.5 bg-tech-neon rounded-full animate-pulse" />
+            Projeção PetOps
+          </div>
+
+          <div className="space-y-5 mb-6">
+            <div>
+              <div className="font-mono text-[10px] text-white/40 tracking-widest mb-1">
+                Você está perdendo hoje
+              </div>
+              <div className="text-2xl md:text-3xl font-medium text-red-300/90 line-through decoration-red-300/30">
+                R$ {fmt(perdaAtual)} <span className="text-xs text-white/40 no-underline">/ mês</span>
+              </div>
+            </div>
+
+            <div>
+              <div className="font-mono text-[10px] text-tech-cyan tracking-widest mb-1">
+                Com PetOps (no-show ≤ 8%)
+              </div>
+              <div className="text-5xl md:text-6xl font-medium text-white tracking-tight leading-none">
+                R$ {fmt(economiaMes)}
+              </div>
+              <div className="text-xs text-white/50 mt-1">de economia projetada por mês</div>
+            </div>
+
+            <div className="pt-4 border-t border-white/10 flex items-baseline justify-between">
+              <span className="font-mono text-[10px] uppercase tracking-widest text-white/40">
+                Em 12 meses
+              </span>
+              <span className="text-2xl font-medium text-tech-neon">
+                R$ {fmt(economiaAno)}
+              </span>
+            </div>
+          </div>
+
+          <a
+            href={`https://wa.me/5511918967593?text=${mensagem}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block w-full text-center font-mono text-[11px] uppercase tracking-widest px-5 py-4 bg-white text-bg-base rounded-md font-semibold hover:bg-white/90 transition"
+          >
+            Quero esse ROI no meu petshop →
+          </a>
+          <p className="mt-3 font-mono text-[9px] uppercase tracking-widest text-white/30 text-center">
+            Cálculo estimado. Base: petshops PetOps 2024–2026.
+          </p>
+        </div>
+      </div>
+    </Section>
+  );
+}
+
+function RangeField({
+  label,
+  value,
+  min,
+  max,
+  step,
+  display,
+  color,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  min: number;
+  max: number;
+  step: number;
+  display: string;
+  color: string;
+  onChange: (v: number) => void;
+}) {
+  return (
+    <div>
+      <div className="flex items-baseline justify-between mb-3">
+        <label className="font-mono text-[10px] uppercase tracking-widest text-white/50">
+          {label}
+        </label>
+        <span className={`font-medium text-xl text-${color}`}>{display}</span>
+      </div>
+      <input
+        type="range"
+        min={min}
+        max={max}
+        step={step}
+        value={value}
+        onChange={(e) => onChange(Number(e.target.value))}
+        className="w-full accent-tech-cyan"
+        aria-label={label}
+      />
+      <div className="flex justify-between font-mono text-[9px] text-white/25 tracking-widest mt-1">
+        <span>{min}</span>
+        <span>{max}</span>
+      </div>
     </div>
   );
 }
