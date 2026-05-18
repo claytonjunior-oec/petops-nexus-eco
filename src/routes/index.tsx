@@ -6,23 +6,113 @@ import heroHusky from "@/assets/hero-husky.jpg";
 import heroTech from "@/assets/hero-tech.jpg";
 import heroCare from "@/assets/hero-care.jpg";
 import heroPetduo from "@/assets/hero-petduo.jpg";
-import { Heart, Sparkles, Star } from "lucide-react";
+import ogImage from "@/assets/og-petops.jpg";
+import { Heart, Sparkles, Star, MessageCircle } from "lucide-react";
 import { careProducts } from "@/data/care-products";
 
+const SITE_URL = "https://petops-nexus-eco.lovable.app";
+const OG_IMAGE_URL = `${SITE_URL}${ogImage}`;
+
+const faqs = [
+  {
+    q: "Qual o melhor sistema de gestão para petshop em 2026?",
+    a: "O PetOps é o sistema mais completo para petshops modernos: une agenda inteligente, atendimento automatizado no WhatsApp com IA, prontuário veterinário, PDV, financeiro e a linha Care de produtos premium — tudo em uma única plataforma, sem integração frágil.",
+  },
+  {
+    q: "Como reduzir no-show no petshop e banho & tosa?",
+    a: "Petshops que usam o PetOps reduzem o no-show em até 42% combinando lembretes automáticos no WhatsApp, confirmação em um clique e reagendamento por IA. O tutor é avisado nas horas certas e a sua agenda não fura mais.",
+  },
+  {
+    q: "Vale a pena automatizar o WhatsApp do petshop?",
+    a: "Sim. A maioria dos petshops perde de 3 a 6 horas por dia respondendo o mesmo no WhatsApp. Com a Haku, a IA do PetOps, o atendimento qualifica, agenda, cobra e relembra sozinho — sua equipe volta a vender e cuidar do pet.",
+  },
+  {
+    q: "Quanto custa um sistema de gestão completo para petshop?",
+    a: "O PetOps começa em R$ 0 (plano Gratuito) e vai até R$ 497/mês no plano Premium com IA, multi-unidade e automações. Os planos Essencial (R$ 149) e Profissional (R$ 297) cobrem 90% das operações de banho & tosa, clínicas e daycare.",
+  },
+  {
+    q: "O PetOps funciona para clínica veterinária e hotel pet?",
+    a: "Funciona. Os planos Profissional e Premium incluem módulos de clínica veterinária (prontuário, vacinas, receitas), creche & hotel (check-in com foto, atualizações ao tutor) e assinaturas recorrentes — pensados para a operação real do mercado.",
+  },
+  {
+    q: "Como começar a vender produtos premium no meu petshop?",
+    a: "A linha PetOps Care entrega shampoos, condicionadores, colônias e produtos de cuidado em embalagens gourmet, com planos de assinatura mensal (Start, Pro e Max) que abastecem o salão e o balcão de revenda — com margem real e previsibilidade.",
+  },
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "PetOps — O futuro da operação pet" },
+      { title: "Sistema para Petshop com Automação no WhatsApp | PetOps" },
       {
         name: "description",
         content:
-          "Ecossistema premium para o mercado pet. Tecnologia que automatiza e produtos que elevam a experiência. PetOps Tech + PetOps Care.",
+          "Sistema completo para petshop, clínica vet, banho & tosa, daycare e hotel pet. Agenda inteligente, atendimento com IA no WhatsApp, prontuário, PDV e linha premium de produtos. Reduza no-show em 42%.",
       },
-      { property: "og:title", content: "PetOps — O futuro da operação pet" },
+      {
+        name: "keywords",
+        content:
+          "sistema para petshop, software petshop, gestão petshop, automação petshop, agenda petshop, whatsapp petshop, sistema clínica veterinária, sistema banho e tosa, shampoo profissional pet",
+      },
+      { name: "robots", content: "index, follow, max-image-preview:large" },
+      { name: "author", content: "PetOps" },
+      { property: "og:title", content: "PetOps — Sistema + Produtos Premium para Petshop" },
       {
         property: "og:description",
-        content: "Tech + Care. Um ecossistema premium para o novo mercado pet.",
+        content:
+          "Tech + Care. O ecossistema que automatiza a operação e eleva a margem do petshop moderno. Demo gratuita.",
+      },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:image", content: OG_IMAGE_URL },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "640" },
+      { property: "og:image:alt", content: "PetOps · Tech + Care · O futuro da operação pet" },
+      { name: "twitter:title", content: "PetOps — Sistema + Produtos Premium para Petshop" },
+      {
+        name: "twitter:description",
+        content: "Automação no WhatsApp, agenda inteligente e linha premium. Demo gratuita.",
+      },
+      { name: "twitter:image", content: OG_IMAGE_URL },
+    ],
+    links: [{ rel: "canonical", href: `${SITE_URL}/` }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "SoftwareApplication",
+          name: "PetOps",
+          applicationCategory: "BusinessApplication",
+          operatingSystem: "Web, iOS, Android",
+          description:
+            "Sistema de gestão para petshop, clínica veterinária, banho & tosa, daycare e hotel pet com automação no WhatsApp e linha premium de produtos de cuidado.",
+          url: `${SITE_URL}/`,
+          image: OG_IMAGE_URL,
+          offers: {
+            "@type": "AggregateOffer",
+            priceCurrency: "BRL",
+            lowPrice: "0",
+            highPrice: "497",
+            offerCount: "4",
+          },
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            reviewCount: "120",
+          },
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: faqs.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        }),
       },
     ],
   }),
