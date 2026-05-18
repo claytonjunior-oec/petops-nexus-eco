@@ -126,15 +126,10 @@ function HomePage() {
       <Nav />
       <Hero />
       <Numeros />
-      <Problema />
-      <AntesDepois />
       <Conceito />
       <TechSection />
       <CareSection />
       <Together />
-      <ParaQuem />
-      <CalculadoraROI />
-      <Prova />
       <FAQ />
       <FinalCTA />
       <Footer />
