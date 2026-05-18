@@ -124,6 +124,7 @@ function HomePage() {
     <div className="min-h-dvh bg-bg-base text-titanium overflow-x-hidden">
       <Nav />
       <Hero />
+      <Numeros />
       <Problema />
       <Conceito />
       <TechSection />
@@ -131,9 +132,107 @@ function HomePage() {
       <Together />
       <ParaQuem />
       <Prova />
+      <FAQ />
       <FinalCTA />
       <Footer />
+      <MobileFloatingCTA />
     </div>
+  );
+}
+
+/* ---------------- MOBILE FLOATING CTA ---------------- */
+function MobileFloatingCTA() {
+  return (
+    <div className="fixed bottom-4 inset-x-4 z-50 md:hidden flex gap-2">
+      <a
+        href="https://wa.me/5511918967593?text=Ol%C3%A1!%20Quero%20conhecer%20o%20PetOps."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-care-green text-bg-base rounded-md font-mono text-[11px] uppercase tracking-widest font-semibold shadow-[0_10px_30px_-5px_rgba(0,0,0,0.6)]"
+      >
+        <MessageCircle className="size-4" />
+        WhatsApp
+      </a>
+      <Link
+        to="/contato"
+        className="flex-1 flex items-center justify-center px-4 py-3 bg-white text-bg-base rounded-md font-mono text-[11px] uppercase tracking-widest font-semibold shadow-[0_10px_30px_-5px_rgba(0,0,0,0.6)]"
+      >
+        Demo grátis
+      </Link>
+    </div>
+  );
+}
+
+/* ---------------- NÚMEROS ---------------- */
+function Numeros() {
+  const stats = [
+    { n: "−42%", l: "No-show em banho & tosa", c: "tech-cyan" },
+    { n: "3.2×", l: "Recompra média do tutor", c: "care-blue" },
+    { n: "+R$ 18k", l: "Margem extra/mês com Care", c: "tech-neon" },
+    { n: "120+", l: "Petshops operando", c: "care-green" },
+  ];
+  return (
+    <Section
+      eyebrow="Resultados"
+      title="Os números do novo petshop automatizado."
+      intro="Dados consolidados de petshops, clínicas e daycares operando com o ecossistema PetOps entre 2024 e 2026."
+    >
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+        {stats.map((s, i) => (
+          <div
+            key={s.l}
+            className="p-6 md:p-8 rounded-xl border border-white/10 bg-bg-surface/60 backdrop-blur relative overflow-hidden"
+          >
+            <div className={`absolute top-0 left-0 right-0 h-px bg-${s.c}/60`} />
+            <div className="font-mono text-[9px] text-white/30 tracking-widest mb-4">
+              MET.{String(i + 1).padStart(2, "0")}
+            </div>
+            <div className="text-4xl md:text-5xl font-medium tracking-tight text-white mb-2">
+              {s.n}
+            </div>
+            <div className="text-xs text-white/55 leading-relaxed">{s.l}</div>
+          </div>
+        ))}
+      </div>
+      <p className="mt-6 font-mono text-[10px] uppercase tracking-widest text-white/30">
+        Base: amostra de 120 estabelecimentos · período 2024–2026
+      </p>
+    </Section>
+  );
+}
+
+/* ---------------- FAQ ---------------- */
+function FAQ() {
+  return (
+    <Section
+      eyebrow="Perguntas frequentes"
+      title="Tudo que você precisa saber antes de modernizar seu petshop."
+      intro="Respostas diretas para as dúvidas que ouvimos toda semana de donos e gestores de petshop."
+    >
+      <div className="grid gap-3 max-w-4xl">
+        {faqs.map((item, i) => (
+          <details
+            key={item.q}
+            className="group rounded-xl border border-white/10 bg-bg-surface/60 backdrop-blur p-5 md:p-6 open:bg-bg-elevated transition"
+          >
+            <summary className="cursor-pointer list-none flex items-start gap-4">
+              <span className="font-mono text-[10px] text-white/30 tracking-widest mt-1 shrink-0">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="flex-1 text-base md:text-lg font-medium text-white leading-snug">
+                {item.q}
+              </h3>
+              <span className="font-mono text-tech-cyan text-xl leading-none mt-0.5 transition-transform group-open:rotate-45">
+                +
+              </span>
+            </summary>
+            <p className="mt-4 ml-10 text-sm md:text-base text-white/65 leading-relaxed">
+              {item.a}
+            </p>
+          </details>
+        ))}
+      </div>
+    </Section>
   );
 }
 
