@@ -321,7 +321,7 @@ function TechPage() {
         {/* Dores */}
         <Section
           eyebrow="Dores que resolvemos"
-          title={<>O dia a dia do pet shop não pode depender de planilha e memória.</>}
+          title={<>O dia a dia do pet shop não pode depender de planilha e memória</>}
         >
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {dores.map((d) => (
