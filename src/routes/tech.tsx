@@ -382,7 +382,7 @@ function TechPage() {
         {/* Veja na prática */}
         <Section
           eyebrow="Veja na prática"
-          title="Interface pensada para a rotina do pet shop."
+          title="Interface pensada para a rotina do pet shop"
           intro="Rápido, visual e intuitivo. Quem opera o caixa entende em minutos."
         >
           <div className="grid sm:grid-cols-2 gap-5">
