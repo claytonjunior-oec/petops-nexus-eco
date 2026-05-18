@@ -157,7 +157,7 @@ function Prova() {
     },
   ];
   return (
-    <Section eyebrow="Por que PetOps" title="Três motivos para começar agora.">
+    <Section eyebrow="Por que PetOps" title="Três motivos para começar agora">
       <div className="grid md:grid-cols-3 gap-4">
         {pillars.map((p, i) => (
           <div key={p.t} className="p-10 rounded-xl border border-white/10 bg-bg-surface relative">
