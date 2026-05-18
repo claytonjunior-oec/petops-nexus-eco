@@ -83,7 +83,7 @@ function ContactPage() {
               </div>
               <h1 className="text-5xl md:text-6xl font-medium tracking-tight text-white leading-[1.05] text-balance">
                 Escolha o próximo nível do seu{" "}
-                <span className="text-gradient-brand">negócio pet.</span>
+                <span className="text-gradient-brand">negócio pet</span>
               </h1>
               <p className="mt-6 text-lg text-white/50 max-w-md leading-relaxed">
                 Conte um pouco sobre sua operação. Ao enviar, abrimos o WhatsApp

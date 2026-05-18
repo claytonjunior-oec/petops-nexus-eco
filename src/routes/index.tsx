@@ -173,7 +173,7 @@ function Numeros() {
   return (
     <Section
       eyebrow="Resultados"
-      title="Os números do novo petshop automatizado."
+      title="Os números do novo petshop automatizado"
       intro="Dados consolidados de petshops, clínicas e daycares operando com o ecossistema PetOps entre 2024 e 2026."
     >
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
@@ -205,7 +205,7 @@ function FAQ() {
   return (
     <Section
       eyebrow="Perguntas frequentes"
-      title="Tudo que você precisa saber antes de modernizar seu petshop."
+      title="Tudo que você precisa saber antes de modernizar seu petshop"
       intro="Respostas diretas para as dúvidas que ouvimos toda semana de donos e gestores de petshop."
     >
       <div className="grid gap-3 max-w-4xl">
@@ -374,7 +374,7 @@ function Hero() {
 
             <h1 className="text-5xl md:text-6xl lg:text-[80px] font-medium tracking-tight text-white leading-[1.02] text-balance mb-6 [text-shadow:0_4px_30px_rgba(0,0,0,0.5)]">
               O futuro da operação pet{" "}
-              <span className="text-gradient-brand">começa aqui.</span>
+              <span className="text-gradient-brand">começa aqui</span>
             </h1>
 
             <p className="text-base md:text-xl text-white/70 max-w-2xl text-pretty font-light leading-relaxed mb-4 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">
@@ -438,7 +438,7 @@ function Conceito() {
   return (
     <Section
       eyebrow="Conceito"
-      title={<>Mais que uma marca. Um ecossistema para o mercado pet.</>}
+      title={<>Mais que uma marca. Um ecossistema para o mercado pet</>}
       intro="A PetOps integra tecnologia, automação e soluções de cuidado para transformar a rotina de negócios pet em operações mais inteligentes, mais lucrativas e mais desejadas pelos clientes."
     >
       <div className="grid md:grid-cols-3 gap-4">

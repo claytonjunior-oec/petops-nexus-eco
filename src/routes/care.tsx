@@ -106,7 +106,7 @@ function CarePage() {
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.05] text-balance">
                 Linha profissional{" "}
                 <span className="text-care-blue">90% natural</span>{" "}
-                para elevar o cuidado pet.
+                para elevar o cuidado pet
               </h1>
               <p className="mt-8 text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed">
                 Produtos para banho, tosa, clínica e revenda. Fórmulas com base
@@ -186,7 +186,7 @@ function CarePage() {
         {/* Linha profissional */}
         <Section
           eyebrow="Linha Profissional"
-          title="Catálogo PetOps Care."
+          title="Catálogo PetOps Care"
           intro="Oito produtos pensados para o salão, a clínica e a prateleira do petshop. Fórmulas profissionais com identidade premium."
         >
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
@@ -198,7 +198,7 @@ function CarePage() {
         {/* Assinatura PetOps Care */}
         <Section
           eyebrow="Assinatura · Care Subscription"
-          title="Nunca mais falte produto no seu salão."
+          title="Nunca mais falte produto no seu salão"
           intro="Receba todo mês o que seu petshop precisa pra operar e revender. Sem pedido manual, sem estoque parado, com preço travado por 12 meses."
         >
           <div className="grid md:grid-cols-3 gap-5 mb-10">
@@ -296,7 +296,7 @@ function CarePage() {
 
         <Section
           eyebrow="Diferenciais"
-          title="O que torna a Care diferente do que existe na prateleira."
+          title="O que torna a Care diferente do que existe na prateleira"
         >
           <div className="grid sm:grid-cols-2 gap-4">
             {diferenciais.map((d, i) => (

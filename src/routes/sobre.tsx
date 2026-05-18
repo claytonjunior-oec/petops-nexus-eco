@@ -35,7 +35,7 @@ function AboutPage() {
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.02] max-w-4xl text-balance">
               Construído para quem quer{" "}
-              <span className="text-gradient-brand">evoluir o mercado pet.</span>
+              <span className="text-gradient-brand">evoluir o mercado pet</span>
             </h1>
           </div>
         </section>
@@ -108,7 +108,7 @@ function ParaQuem() {
     },
   ];
   return (
-    <Section eyebrow="Para quem é" title="Construído para o novo negócio pet.">
+    <Section eyebrow="Para quem é" title="Construído para o novo negócio pet">
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
         {personas.map((p, i) => (
           <div
@@ -157,7 +157,7 @@ function Prova() {
     },
   ];
   return (
-    <Section eyebrow="Por que PetOps" title="Três motivos para começar agora.">
+    <Section eyebrow="Por que PetOps" title="Três motivos para começar agora">
       <div className="grid md:grid-cols-3 gap-4">
         {pillars.map((p, i) => (
           <div key={p.t} className="p-10 rounded-xl border border-white/10 bg-bg-surface relative">

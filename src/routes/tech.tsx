@@ -294,7 +294,7 @@ function TechPage() {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.05] max-w-4xl text-balance">
               Automação e inteligência para{" "}
               <span className="text-tech-cyan">operar melhor</span>, vender mais
-              e perder menos tempo.
+              e perder menos tempo
             </h1>
             <p className="mt-8 text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed">
               A camada inteligente do seu negócio pet. Um sistema operacional
@@ -321,7 +321,7 @@ function TechPage() {
         {/* Dores */}
         <Section
           eyebrow="Dores que resolvemos"
-          title={<>O dia a dia do pet shop não pode depender de planilha e memória.</>}
+          title={<>O dia a dia do pet shop não pode depender de planilha e memória</>}
         >
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {dores.map((d) => (
@@ -339,7 +339,7 @@ function TechPage() {
         {/* Frentes do sistema */}
         <Section
           eyebrow="O sistema"
-          title="Quatro frentes integradas, um só ecossistema."
+          title="Quatro frentes integradas, um só ecossistema"
           intro="Atendimento, agenda, operação e crescimento conversando entre si — sem retrabalho, sem planilha, sem boleto solto."
         >
           <div className="grid lg:grid-cols-2 gap-6">
@@ -382,7 +382,7 @@ function TechPage() {
         {/* Veja na prática */}
         <Section
           eyebrow="Veja na prática"
-          title="Interface pensada para a rotina do pet shop."
+          title="Interface pensada para a rotina do pet shop"
           intro="Rápido, visual e intuitivo. Quem opera o caixa entende em minutos."
         >
           <div className="grid sm:grid-cols-2 gap-5">
@@ -411,7 +411,7 @@ function TechPage() {
         {/* Automação */}
         <Section
           eyebrow="Automação"
-          title="Seu pet shop funcionando no piloto automático."
+          title="Seu pet shop funcionando no piloto automático"
           intro="O sistema cuida das tarefas repetitivas enquanto sua equipe foca no que importa: cuidar dos pets."
         >
           <div className="grid md:grid-cols-2 gap-4 max-w-4xl">
@@ -450,7 +450,7 @@ function TechPage() {
         {/* Planos */}
         <Section
           eyebrow="Planos · PetOps Tech"
-          title="Escolha o plano que cabe no tamanho do seu negócio."
+          title="Escolha o plano que cabe no tamanho do seu negócio"
           intro="Do petshop começando a estruturar a operação à rede com múltiplas unidades. Todos os planos incluem suporte e Academy."
         >
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -507,7 +507,7 @@ function TechPage() {
         {/* Comparativo */}
         <Section
           eyebrow="Comparativo"
-          title="Tudo que você ganha em cada plano."
+          title="Tudo que você ganha em cada plano"
           intro="Todos os módulos do sistema, lado a lado."
         >
           <div className="rounded-2xl border border-white/10 bg-bg-surface/40 overflow-hidden">
@@ -585,7 +585,7 @@ function Problema() {
   return (
     <Section
       eyebrow="O problema"
-      title={<>Operar pet hoje é apagar incêndio o dia inteiro.</>}
+      title={<>Operar pet hoje é apagar incêndio o dia inteiro</>}
       intro="Se algum desses pontos parece familiar, a sua operação está deixando dinheiro e cliente na mesa."
     >
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -623,7 +623,7 @@ function AntesDepois() {
   return (
     <Section
       eyebrow="Antes / Depois"
-      title="O salto da operação manual para a operação automatizada."
+      title="O salto da operação manual para a operação automatizada"
       intro="O que muda na rotina do petshop quando o PetOps Tech entra no lugar do improviso."
     >
       <div className="rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur overflow-hidden">

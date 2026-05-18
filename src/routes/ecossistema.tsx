@@ -50,7 +50,7 @@ function EcoPage() {
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.02] max-w-4xl text-balance">
               Uma operação mais inteligente. Uma experiência mais{" "}
-              <span className="text-gradient-brand">valiosa.</span>
+              <span className="text-gradient-brand">valiosa</span>
             </h1>
             <p className="mt-8 text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed">
               A nova geração de negócios pet não separa operação de experiência.
@@ -60,7 +60,7 @@ function EcoPage() {
         </section>
 
         {/* Flow */}
-        <Section eyebrow="Jornada conectada" title="Em cada etapa, Tech e Care entram juntas.">
+        <Section eyebrow="Jornada conectada" title="Em cada etapa, Tech e Care entram juntas">
           <div className="space-y-px bg-white/5 border border-white/10 rounded-xl overflow-hidden">
             {flow.map((f, i) => (
               <div
