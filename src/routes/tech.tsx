@@ -339,7 +339,7 @@ function TechPage() {
         {/* Frentes do sistema */}
         <Section
           eyebrow="O sistema"
-          title="Quatro frentes integradas, um só ecossistema."
+          title="Quatro frentes integradas, um só ecossistema"
           intro="Atendimento, agenda, operação e crescimento conversando entre si — sem retrabalho, sem planilha, sem boleto solto."
         >
           <div className="grid lg:grid-cols-2 gap-6">
