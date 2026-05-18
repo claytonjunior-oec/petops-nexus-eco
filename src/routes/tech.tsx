@@ -411,7 +411,7 @@ function TechPage() {
         {/* Automação */}
         <Section
           eyebrow="Automação"
-          title="Seu pet shop funcionando no piloto automático."
+          title="Seu pet shop funcionando no piloto automático"
           intro="O sistema cuida das tarefas repetitivas enquanto sua equipe foca no que importa: cuidar dos pets."
         >
           <div className="grid md:grid-cols-2 gap-4 max-w-4xl">
