@@ -108,7 +108,7 @@ function ParaQuem() {
     },
   ];
   return (
-    <Section eyebrow="Para quem é" title="Construído para o novo negócio pet.">
+    <Section eyebrow="Para quem é" title="Construído para o novo negócio pet">
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
         {personas.map((p, i) => (
           <div
