@@ -60,7 +60,7 @@ function EcoPage() {
         </section>
 
         {/* Flow */}
-        <Section eyebrow="Jornada conectada" title="Em cada etapa, Tech e Care entram juntas.">
+        <Section eyebrow="Jornada conectada" title="Em cada etapa, Tech e Care entram juntas">
           <div className="space-y-px bg-white/5 border border-white/10 rounded-xl overflow-hidden">
             {flow.map((f, i) => (
               <div
