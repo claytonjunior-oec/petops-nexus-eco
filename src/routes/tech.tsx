@@ -1,4 +1,4 @@
-import { useState } from "react";
+// removed: useState (moved to /vale-a-pena)
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   MessageSquare, Bot, UserCheck, Headphones,
