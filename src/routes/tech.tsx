@@ -624,9 +624,25 @@ function TechPage() {
           </div>
         </Section>
 
-        <Problema />
-        <AntesDepois />
-        <CalculadoraROI />
+        {/* CTA: Vale a pena? */}
+        <section className="px-6 lg:px-10 -mt-8 md:-mt-12">
+          <div className="max-w-[1440px] mx-auto">
+            <Link
+              to="/vale-a-pena"
+              className="group flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-tech-cyan/30 bg-tech-cyan/5 hover:bg-tech-cyan/10 backdrop-blur p-6 md:p-7 transition"
+            >
+              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-tech-cyan">
+                Em dúvida?
+              </span>
+              <span className="text-base md:text-lg text-white font-medium text-center">
+                Veja se vale a pena o investimento — calcule seu ROI em segundos
+              </span>
+              <span className="font-mono text-[11px] uppercase tracking-widest px-5 py-2.5 bg-tech-cyan text-bg-base rounded-sm font-semibold group-hover:opacity-90 transition">
+                Fazer as contas →
+              </span>
+            </Link>
+          </div>
+        </section>
 
         {/* CTA */}
         <Section align="center">
