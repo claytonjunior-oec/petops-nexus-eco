@@ -177,7 +177,12 @@ const selos = [
   { icon: Smartphone, label: "App online e offline no celular" },
   { icon: Send, label: "WhatsApp oficial integrado" },
   { icon: ShieldCheck, label: "IA com modo conservador + handover humano" },
+  { icon: Lock, label: "Conformidade com a LGPD" },
+  { icon: Database, label: "Backups automáticos diários" },
+  { icon: Activity, label: "Uptime 99,9% monitorado" },
+  { icon: Zap, label: "Atualizações contínuas sem custo extra" },
 ];
+
 
 const planos = [
   {
