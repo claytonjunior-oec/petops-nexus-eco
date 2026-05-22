@@ -17,6 +17,10 @@ import agendaImg from "@/assets/petops-agenda.png";
 import clientesImg from "@/assets/petops-clientes.png";
 import heroMockup from "@/assets/tech-hero-mockup.png";
 import painsMockup from "@/assets/tech-pains-mockup.png";
+import frenteAtendimento from "@/assets/frente-atendimento-t.png";
+import frenteAgenda from "@/assets/frente-agenda-t.png";
+import frenteOperacao from "@/assets/frente-operacao-t.png";
+import frenteCrescimento from "@/assets/frente-crescimento-t.png";
 
 const TECH_URL = "https://petops-nexus-eco.lovable.app/tech";
 const TECH_OG = "https://petops-nexus-eco.lovable.app/src/assets/og-petops.jpg";
@@ -106,6 +110,7 @@ const dores = [
 const frentes = [
   {
     label: "Atendimento",
+    icon: frenteAtendimento,
     title: "Recepção 24h sem ninguém na linha",
     items: [
       { icon: MessageSquare, name: "WhatsApp central", desc: "Todas as conversas em um painel único, com contexto e histórico." },
@@ -116,6 +121,7 @@ const frentes = [
   },
   {
     label: "Agenda & Serviço",
+    icon: frenteAgenda,
     title: "Lotação otimizada, zero conflito",
     items: [
       { icon: CalendarCheck, name: "Agenda multi-profissional", desc: "Visão diária e semanal, encaixe automático e bloqueios inteligentes." },
@@ -126,6 +132,7 @@ const frentes = [
   },
   {
     label: "Operação",
+    icon: frenteOperacao,
     title: "Caixa, estoque e equipe sem retrabalho",
     items: [
       { icon: ShoppingCart, name: "PDV & Comandas", desc: "Cada serviço vira receita automaticamente, sem dupla digitação." },
@@ -136,6 +143,7 @@ const frentes = [
   },
   {
     label: "Crescimento",
+    icon: frenteCrescimento,
     title: "Cliente voltando no piloto automático",
     items: [
       { icon: Bell, name: "Lembretes automáticos", desc: "Aviso pré-agendamento que reduz drasticamente o no-show." },
@@ -375,13 +383,21 @@ function TechPage() {
           title="Quatro frentes integradas, um só ecossistema"
           intro="Atendimento, agenda, operação e crescimento conversando entre si — sem retrabalho, sem planilha, sem boleto solto."
         >
-          <div className="grid lg:grid-cols-2 gap-6">
+          <div className="grid lg:grid-cols-2 gap-6 lg:gap-x-6 lg:gap-y-14 pt-10">
             {frentes.map((f, i) => (
               <div
                 key={f.label}
-                className="rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-sm p-8 hover:border-tech-cyan/30 transition-colors"
+                className="relative rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-sm p-8 pr-10 hover:border-tech-cyan/30 transition-colors"
               >
-                <div className="flex items-center gap-3 mb-2">
+                {/* Floating 3D icon — half in / half out top-right */}
+                <img
+                  src={f.icon}
+                  alt=""
+                  aria-hidden="true"
+                  loading="lazy"
+                  className="pointer-events-none absolute -top-10 -right-4 sm:-top-12 sm:-right-6 w-24 sm:w-28 lg:w-32 h-auto drop-shadow-[0_15px_30px_rgba(0,0,0,0.55)]"
+                />
+                <div className="flex items-center gap-3 mb-2 pr-16 sm:pr-20">
                   <span className="font-mono text-[10px] text-tech-cyan tracking-widest">
                     F.{String(i + 1).padStart(2, "0")}
                   </span>
@@ -389,7 +405,7 @@ function TechPage() {
                     {f.label}
                   </span>
                 </div>
-                <h3 className="text-2xl font-medium text-white mb-6 tracking-tight">
+                <h3 className="text-2xl font-medium text-white mb-6 tracking-tight pr-16 sm:pr-20">
                   {f.title}
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-4">
