@@ -17,6 +17,10 @@ import agendaImg from "@/assets/petops-agenda.png";
 import clientesImg from "@/assets/petops-clientes.png";
 import heroMockup from "@/assets/tech-hero-mockup.png";
 import painsMockup from "@/assets/tech-pains-mockup.png";
+import frenteAtendimento from "@/assets/frente-atendimento-t.png";
+import frenteAgenda from "@/assets/frente-agenda-t.png";
+import frenteOperacao from "@/assets/frente-operacao-t.png";
+import frenteCrescimento from "@/assets/frente-crescimento-t.png";
 
 const TECH_URL = "https://petops-nexus-eco.lovable.app/tech";
 const TECH_OG = "https://petops-nexus-eco.lovable.app/src/assets/og-petops.jpg";
@@ -106,6 +110,7 @@ const dores = [
 const frentes = [
   {
     label: "Atendimento",
+    icon: frenteAtendimento,
     title: "Recepção 24h sem ninguém na linha",
     items: [
       { icon: MessageSquare, name: "WhatsApp central", desc: "Todas as conversas em um painel único, com contexto e histórico." },
@@ -116,6 +121,7 @@ const frentes = [
   },
   {
     label: "Agenda & Serviço",
+    icon: frenteAgenda,
     title: "Lotação otimizada, zero conflito",
     items: [
       { icon: CalendarCheck, name: "Agenda multi-profissional", desc: "Visão diária e semanal, encaixe automático e bloqueios inteligentes." },
@@ -126,6 +132,7 @@ const frentes = [
   },
   {
     label: "Operação",
+    icon: frenteOperacao,
     title: "Caixa, estoque e equipe sem retrabalho",
     items: [
       { icon: ShoppingCart, name: "PDV & Comandas", desc: "Cada serviço vira receita automaticamente, sem dupla digitação." },
@@ -136,6 +143,7 @@ const frentes = [
   },
   {
     label: "Crescimento",
+    icon: frenteCrescimento,
     title: "Cliente voltando no piloto automático",
     items: [
       { icon: Bell, name: "Lembretes automáticos", desc: "Aviso pré-agendamento que reduz drasticamente o no-show." },
