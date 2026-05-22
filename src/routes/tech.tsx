@@ -330,22 +330,43 @@ function TechPage() {
         </section>
 
         {/* Dores */}
-        <Section
-          eyebrow="Dores que resolvemos"
-          title={<>O dia a dia do pet shop não pode depender de planilha e memória</>}
-        >
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {dores.map((d) => (
-              <div
-                key={d}
-                className="p-6 rounded-lg border border-white/10 bg-bg-surface/50 backdrop-blur-sm flex items-start gap-3"
-              >
-                <div className="font-mono text-[10px] text-tech-cyan/70 mt-1">×</div>
-                <p className="text-white/80 text-sm leading-relaxed">{d}</p>
+        <section className="relative py-24 md:py-32 px-6 lg:px-10">
+          <div className="max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Esquerda — imagem */}
+            <div className="relative order-2 lg:order-1">
+              <div className="rounded-2xl border border-white/10 bg-bg-surface/40 aspect-[4/3] flex items-center justify-center overflow-hidden">
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
+                  Imagem
+                </span>
               </div>
-            ))}
+              <div className="absolute -inset-4 bg-tech-cyan/10 blur-[80px] rounded-full pointer-events-none -z-10" />
+            </div>
+
+            {/* Direita — texto e cards */}
+            <div className="order-1 lg:order-2">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="h-px w-8 bg-white/30" />
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/60">
+                  Dores que resolvemos
+                </span>
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-[56px] font-medium tracking-tight text-white leading-[1.05] text-balance">
+                O dia a dia do pet shop não pode depender de planilha e memória
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-4 mt-10">
+                {dores.map((d) => (
+                  <div
+                    key={d}
+                    className="p-5 rounded-lg border border-white/10 bg-bg-surface/50 backdrop-blur-sm flex items-start gap-3"
+                  >
+                    <div className="font-mono text-[10px] text-tech-cyan/70 mt-1">×</div>
+                    <p className="text-white/80 text-sm leading-relaxed">{d}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-        </Section>
+        </section>
 
         {/* Frentes do sistema */}
         <Section
