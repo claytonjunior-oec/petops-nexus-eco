@@ -15,6 +15,7 @@ import dashboardImg from "@/assets/petops-dashboard.png";
 import atendimentoImg from "@/assets/petops-atendimento.png";
 import agendaImg from "@/assets/petops-agenda.png";
 import clientesImg from "@/assets/petops-clientes.png";
+import heroMockup from "@/assets/tech-hero-mockup.png";
 
 const TECH_URL = "https://petops-nexus-eco.lovable.app/tech";
 const TECH_OG = "https://petops-nexus-eco.lovable.app/src/assets/og-petops.jpg";
@@ -284,36 +285,46 @@ function TechPage() {
         <section className="relative px-6 lg:px-10 pt-24 pb-32 overflow-hidden">
           <div className="absolute inset-0 bg-grid-pattern bg-grid-fade pointer-events-none" />
           <div className="absolute top-1/3 left-1/4 size-[600px] bg-tech-cyan/10 blur-[140px] rounded-full pointer-events-none" />
-          <div className="relative max-w-[1440px] mx-auto">
-            <div className="flex items-center gap-3 mb-8">
-              <div className="size-1.5 bg-tech-neon rounded-full shadow-[0_0_10px_var(--color-tech-neon)] animate-pulse" />
-              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-tech-cyan">
-                MÓDULO 01 · TECH
-              </span>
+          <div className="relative max-w-[1440px] mx-auto grid lg:grid-cols-[1fr_1.05fr] gap-10 lg:gap-14 items-center">
+            <div>
+              <div className="flex items-center gap-3 mb-8">
+                <div className="size-1.5 bg-tech-neon rounded-full shadow-[0_0_10px_var(--color-tech-neon)] animate-pulse" />
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-tech-cyan">
+                  MÓDULO 01 · TECH
+                </span>
+              </div>
+              <h1 className="text-5xl md:text-6xl lg:text-[64px] font-medium tracking-tight text-white leading-[1.05] text-balance">
+                Automação e inteligência para{" "}
+                <span className="text-tech-cyan">operar melhor</span>, vender mais
+                e perder menos tempo
+              </h1>
+              <p className="mt-8 text-lg md:text-xl text-white/50 max-w-xl leading-relaxed">
+                A camada inteligente do seu negócio pet. Um sistema operacional
+                completo para automatizar a rotina, organizar a operação e
+                destravar crescimento.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-3">
+                <Link
+                  to="/contato"
+                  className="font-mono text-[11px] uppercase tracking-widest px-6 py-3.5 bg-tech-cyan text-bg-base rounded-sm hover:opacity-90 transition font-semibold"
+                >
+                  Agendar demonstração
+                </Link>
+                <Link
+                  to="/ecossistema"
+                  className="font-mono text-[11px] uppercase tracking-widest px-6 py-3.5 border border-white/15 rounded-sm hover:bg-white/5 transition"
+                >
+                  Ver ecossistema
+                </Link>
+              </div>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.05] max-w-4xl text-balance">
-              Automação e inteligência para{" "}
-              <span className="text-tech-cyan">operar melhor</span>, vender mais
-              e perder menos tempo
-            </h1>
-            <p className="mt-8 text-lg md:text-xl text-white/50 max-w-2xl leading-relaxed">
-              A camada inteligente do seu negócio pet. Um sistema operacional
-              completo para automatizar a rotina, organizar a operação e
-              destravar crescimento.
-            </p>
-            <div className="mt-10 flex flex-wrap gap-3">
-              <Link
-                to="/contato"
-                className="font-mono text-[11px] uppercase tracking-widest px-6 py-3.5 bg-tech-cyan text-bg-base rounded-sm hover:opacity-90 transition font-semibold"
-              >
-                Agendar demonstração
-              </Link>
-              <Link
-                to="/ecossistema"
-                className="font-mono text-[11px] uppercase tracking-widest px-6 py-3.5 border border-white/15 rounded-sm hover:bg-white/5 transition"
-              >
-                Ver ecossistema
-              </Link>
+            <div className="relative">
+              <div className="absolute -inset-10 bg-tech-cyan/15 blur-[100px] rounded-full pointer-events-none" />
+              <img
+                src={heroMockup}
+                alt="PetOps Tech — dashboard, agenda e atendimento com IA"
+                className="relative w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)] animate-[float_6s_ease-in-out_infinite]"
+              />
             </div>
           </div>
         </section>
