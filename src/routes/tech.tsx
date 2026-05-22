@@ -16,6 +16,7 @@ import atendimentoImg from "@/assets/petops-atendimento.png";
 import agendaImg from "@/assets/petops-agenda.png";
 import clientesImg from "@/assets/petops-clientes.png";
 import heroMockup from "@/assets/tech-hero-mockup.png";
+import painsMockup from "@/assets/tech-pains-mockup.png";
 
 const TECH_URL = "https://petops-nexus-eco.lovable.app/tech";
 const TECH_OG = "https://petops-nexus-eco.lovable.app/src/assets/og-petops.jpg";
@@ -334,12 +335,12 @@ function TechPage() {
           <div className="max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Esquerda — imagem */}
             <div className="relative order-2 lg:order-1">
-              <div className="rounded-2xl border border-white/10 bg-bg-surface/40 aspect-[4/3] flex items-center justify-center overflow-hidden">
-                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/30">
-                  Imagem
-                </span>
-              </div>
-              <div className="absolute -inset-4 bg-tech-cyan/10 blur-[80px] rounded-full pointer-events-none -z-10" />
+              <div className="absolute -inset-10 bg-tech-cyan/15 blur-[100px] rounded-full pointer-events-none" />
+              <img
+                src={painsMockup}
+                alt="PetOps Tech — agenda, WhatsApp e automações do petshop"
+                className="relative w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)] animate-[float_6s_ease-in-out_infinite]"
+              />
             </div>
 
             {/* Direita — texto e cards */}
