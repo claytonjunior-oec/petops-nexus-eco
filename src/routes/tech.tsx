@@ -6,6 +6,7 @@ import {
   ShoppingCart, Boxes, Wallet, Building2,
   Bell, RefreshCw, Image as ImageIcon, Syringe, BarChart3,
   Cloud, Smartphone, Send, ShieldCheck,
+  Lock, Database, Zap, Activity,
   Check, Minus,
 } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
@@ -17,10 +18,12 @@ import agendaImg from "@/assets/veja-agenda-raw.png";
 import clientesImg from "@/assets/veja-clientes-raw.png";
 import heroMockup from "@/assets/tech-hero-mockup.png";
 import painsMockup from "@/assets/tech-pains-mockup.png";
+import automacaoMockup from "@/assets/tech-automacao.png";
 import frenteAtendimento from "@/assets/frente-atendimento-t.png";
 import frenteAgenda from "@/assets/frente-agenda-t.png";
 import frenteOperacao from "@/assets/frente-operacao-t.png";
 import frenteCrescimento from "@/assets/frente-crescimento-t.png";
+
 
 const TECH_URL = "https://petops-nexus-eco.lovable.app/tech";
 const TECH_OG = "https://petops-nexus-eco.lovable.app/src/assets/og-petops.jpg";
@@ -174,7 +177,12 @@ const selos = [
   { icon: Smartphone, label: "App online e offline no celular" },
   { icon: Send, label: "WhatsApp oficial integrado" },
   { icon: ShieldCheck, label: "IA com modo conservador + handover humano" },
+  { icon: Lock, label: "Conformidade com a LGPD" },
+  { icon: Database, label: "Backups automáticos diários" },
+  { icon: Activity, label: "Uptime 99,9% monitorado" },
+  { icon: Zap, label: "Atualizações contínuas sem custo extra" },
 ];
+
 
 const planos = [
   {
@@ -338,8 +346,32 @@ function TechPage() {
           </div>
         </section>
 
+        {/* Marquee — Confiança técnica */}
+        <section
+          aria-label="Confiança técnica"
+          className="relative border-y border-white/10 bg-bg-surface/40 backdrop-blur-sm overflow-hidden"
+        >
+          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-bg-base to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-bg-base to-transparent z-10 pointer-events-none" />
+          <div className="flex w-max animate-marquee py-5">
+            {[...selos, ...selos].map((s, i) => (
+              <div
+                key={`${s.label}-${i}`}
+                className="flex items-center gap-3 px-8 shrink-0"
+              >
+                <s.icon className="size-5 text-tech-cyan shrink-0" />
+                <span className="text-sm text-white/85 whitespace-nowrap">
+                  {s.label}
+                </span>
+                <span className="ml-8 size-1 rounded-full bg-tech-cyan/40" aria-hidden="true" />
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Dores */}
         <section className="relative py-24 md:py-32 px-6 lg:px-10">
+
           <div className="max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Esquerda — imagem */}
             <div className="relative order-2 lg:order-1">
@@ -463,38 +495,36 @@ function TechPage() {
           title="Seu pet shop funcionando no piloto automático"
           intro="O sistema cuida das tarefas repetitivas enquanto sua equipe foca no que importa: cuidar dos pets."
         >
-          <div className="grid md:grid-cols-2 gap-4 max-w-4xl">
-            {automacoes.map((a) => (
-              <div
-                key={a.title}
-                className="flex gap-4 p-5 rounded-xl border border-white/10 bg-bg-surface/50 hover:bg-bg-surface transition"
-              >
-                <div className="size-10 rounded-lg bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center shrink-0">
-                  <a.icon className="size-5 text-tech-cyan" />
+          <div className="grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
+            <div className="grid sm:grid-cols-2 gap-4">
+              {automacoes.map((a) => (
+                <div
+                  key={a.title}
+                  className="flex gap-4 p-5 rounded-xl border border-white/10 bg-bg-surface/50 hover:bg-bg-surface transition"
+                >
+                  <div className="size-10 rounded-lg bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center shrink-0">
+                    <a.icon className="size-5 text-tech-cyan" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-white">{a.title}</div>
+                    <p className="text-xs text-white/55 leading-relaxed mt-1">{a.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-sm font-medium text-white">{a.title}</div>
-                  <p className="text-xs text-white/55 leading-relaxed mt-1">{a.desc}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div className="relative">
+              <div className="absolute -inset-10 bg-tech-cyan/15 blur-[100px] rounded-full pointer-events-none" />
+              <img
+                src={automacaoMockup}
+                alt="PetOps Tech — automações conectando dashboard, agenda, WhatsApp e relatórios"
+                loading="lazy"
+                className="relative w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)] animate-[float_6s_ease-in-out_infinite]"
+              />
+            </div>
           </div>
         </Section>
 
-        {/* Selos */}
-        <Section eyebrow="Confiança técnica">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {selos.map((s) => (
-              <div
-                key={s.label}
-                className="p-5 rounded-lg border border-white/10 bg-bg-surface/40 flex items-center gap-3"
-              >
-                <s.icon className="size-5 text-tech-cyan shrink-0" />
-                <span className="text-sm text-white/80 leading-tight">{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </Section>
+
 
         {/* Planos */}
         <Section
