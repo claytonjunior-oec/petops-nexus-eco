@@ -346,8 +346,32 @@ function TechPage() {
           </div>
         </section>
 
+        {/* Marquee — Confiança técnica */}
+        <section
+          aria-label="Confiança técnica"
+          className="relative border-y border-white/10 bg-bg-surface/40 backdrop-blur-sm overflow-hidden"
+        >
+          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-bg-base to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-bg-base to-transparent z-10 pointer-events-none" />
+          <div className="flex w-max animate-marquee py-5">
+            {[...selos, ...selos].map((s, i) => (
+              <div
+                key={`${s.label}-${i}`}
+                className="flex items-center gap-3 px-8 shrink-0"
+              >
+                <s.icon className="size-5 text-tech-cyan shrink-0" />
+                <span className="text-sm text-white/85 whitespace-nowrap">
+                  {s.label}
+                </span>
+                <span className="ml-8 size-1 rounded-full bg-tech-cyan/40" aria-hidden="true" />
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Dores */}
         <section className="relative py-24 md:py-32 px-6 lg:px-10">
+
           <div className="max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Esquerda — imagem */}
             <div className="relative order-2 lg:order-1">
