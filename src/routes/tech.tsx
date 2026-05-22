@@ -495,38 +495,36 @@ function TechPage() {
           title="Seu pet shop funcionando no piloto automático"
           intro="O sistema cuida das tarefas repetitivas enquanto sua equipe foca no que importa: cuidar dos pets."
         >
-          <div className="grid md:grid-cols-2 gap-4 max-w-4xl">
-            {automacoes.map((a) => (
-              <div
-                key={a.title}
-                className="flex gap-4 p-5 rounded-xl border border-white/10 bg-bg-surface/50 hover:bg-bg-surface transition"
-              >
-                <div className="size-10 rounded-lg bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center shrink-0">
-                  <a.icon className="size-5 text-tech-cyan" />
+          <div className="grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
+            <div className="grid sm:grid-cols-2 gap-4">
+              {automacoes.map((a) => (
+                <div
+                  key={a.title}
+                  className="flex gap-4 p-5 rounded-xl border border-white/10 bg-bg-surface/50 hover:bg-bg-surface transition"
+                >
+                  <div className="size-10 rounded-lg bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center shrink-0">
+                    <a.icon className="size-5 text-tech-cyan" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-white">{a.title}</div>
+                    <p className="text-xs text-white/55 leading-relaxed mt-1">{a.desc}</p>
+                  </div>
                 </div>
-                <div>
-                  <div className="text-sm font-medium text-white">{a.title}</div>
-                  <p className="text-xs text-white/55 leading-relaxed mt-1">{a.desc}</p>
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div className="relative">
+              <div className="absolute -inset-10 bg-tech-cyan/15 blur-[100px] rounded-full pointer-events-none" />
+              <img
+                src={automacaoMockup}
+                alt="PetOps Tech — automações conectando dashboard, agenda, WhatsApp e relatórios"
+                loading="lazy"
+                className="relative w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)] animate-[float_6s_ease-in-out_infinite]"
+              />
+            </div>
           </div>
         </Section>
 
-        {/* Selos */}
-        <Section eyebrow="Confiança técnica">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {selos.map((s) => (
-              <div
-                key={s.label}
-                className="p-5 rounded-lg border border-white/10 bg-bg-surface/40 flex items-center gap-3"
-              >
-                <s.icon className="size-5 text-tech-cyan shrink-0" />
-                <span className="text-sm text-white/80 leading-tight">{s.label}</span>
-              </div>
-            ))}
-          </div>
-        </Section>
+
 
         {/* Planos */}
         <Section
