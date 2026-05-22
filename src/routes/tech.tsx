@@ -11,10 +11,10 @@ import {
 import { Nav } from "@/components/site/Nav";
 import { Footer } from "@/components/site/Footer";
 import { Section } from "@/components/site/Section";
-import dashboardImg from "@/assets/veja-dashboard-t.png";
-import atendimentoImg from "@/assets/veja-atendimento-t.png";
-import agendaImg from "@/assets/veja-agenda-t.png";
-import clientesImg from "@/assets/veja-clientes-t.png";
+import dashboardImg from "@/assets/veja-dashboard-raw.png";
+import atendimentoImg from "@/assets/veja-atendimento-raw.png";
+import agendaImg from "@/assets/veja-agenda-raw.png";
+import clientesImg from "@/assets/veja-clientes-raw.png";
 import heroMockup from "@/assets/tech-hero-mockup.png";
 import painsMockup from "@/assets/tech-pains-mockup.png";
 import frenteAtendimento from "@/assets/frente-atendimento-t.png";
@@ -434,18 +434,18 @@ function TechPage() {
           title="Interface pensada para a rotina do pet shop"
           intro="Rápido, visual e intuitivo. Quem opera o caixa entende em minutos."
         >
-          <div className="grid sm:grid-cols-2 gap-8">
+          <div className="grid sm:grid-cols-2 gap-6">
             {screens.map((s) => (
               <div
                 key={s.label}
-                className="group relative rounded-2xl p-4 transition-transform duration-500 hover:scale-[1.06] hover:z-10"
+                className="group relative rounded-2xl transition-transform duration-500 hover:scale-[1.06] hover:z-10"
               >
-                <div className="aspect-video flex items-center justify-center overflow-visible">
+                <div className="rounded-2xl overflow-hidden bg-white border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                   <img
                     src={s.img}
                     alt={`PetOps — ${s.label}`}
                     loading="lazy"
-                    className="w-full h-full object-contain drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)] transition-transform duration-500"
+                    className="w-full h-auto object-contain"
                   />
                 </div>
                 <div className="px-2 pt-4 text-center">
