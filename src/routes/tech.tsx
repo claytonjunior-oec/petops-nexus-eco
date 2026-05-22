@@ -339,7 +339,7 @@ function TechPage() {
               <img
                 src={painsMockup}
                 alt="PetOps Tech — agenda, WhatsApp e automações do petshop"
-                className="relative w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)] animate-[float_6s_ease-in-out_infinite] scale-x-[-1]"
+                className="relative w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)] animate-[float_6s_ease-in-out_infinite]"
               />
             </div>
 
