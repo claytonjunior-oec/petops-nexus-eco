@@ -6,6 +6,7 @@ import {
   ShoppingCart, Boxes, Wallet, Building2,
   Bell, RefreshCw, Image as ImageIcon, Syringe, BarChart3,
   Cloud, Smartphone, Send, ShieldCheck,
+  Lock, Database, Zap, Activity,
   Check, Minus,
 } from "lucide-react";
 import { Nav } from "@/components/site/Nav";
@@ -17,10 +18,12 @@ import agendaImg from "@/assets/veja-agenda-raw.png";
 import clientesImg from "@/assets/veja-clientes-raw.png";
 import heroMockup from "@/assets/tech-hero-mockup.png";
 import painsMockup from "@/assets/tech-pains-mockup.png";
+import automacaoMockup from "@/assets/tech-automacao.png";
 import frenteAtendimento from "@/assets/frente-atendimento-t.png";
 import frenteAgenda from "@/assets/frente-agenda-t.png";
 import frenteOperacao from "@/assets/frente-operacao-t.png";
 import frenteCrescimento from "@/assets/frente-crescimento-t.png";
+
 
 const TECH_URL = "https://petops-nexus-eco.lovable.app/tech";
 const TECH_OG = "https://petops-nexus-eco.lovable.app/src/assets/og-petops.jpg";
