@@ -393,12 +393,12 @@ function Hero() {
                   Conhecer Tech
                 </span>
               </Link>
-              <Link
+              {/* <Link
                 to="/ecossistema"
                 className="px-6 py-4 bg-white text-bg-base rounded-md hover:bg-white/90 font-mono text-[11px] uppercase tracking-widest font-semibold transition text-center"
               >
                 Ver o ecossistema completo
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
@@ -966,14 +966,14 @@ function Together() {
         </div>
       </div>
 
-      <div className="mt-8 text-center">
+      {/* <div className="mt-8 text-center">
         <Link
           to="/ecossistema"
           className="inline-block font-mono text-[11px] uppercase tracking-widest px-6 py-3 border border-white/15 rounded-sm hover:bg-white/5 hover:border-white/30 transition"
         >
           Ver ecossistema detalhado →
         </Link>
-      </div>
+      </div> */}
     </Section>
   );
 }
