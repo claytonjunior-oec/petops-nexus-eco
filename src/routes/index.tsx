@@ -6,11 +6,9 @@ import { Footer } from "@/components/site/Footer";
 import { Section } from "@/components/site/Section";
 import heroHusky from "@/assets/hero-husky.jpg";
 import heroTech from "@/assets/hero-tech.jpg";
-import heroCare from "@/assets/hero-care.jpg";
 
 import ogImage from "@/assets/og-petops.jpg";
 import { Heart, Sparkles, Star, MessageCircle } from "lucide-react";
-import { careProducts } from "@/data/care-products";
 
 const SITE_URL = "https://petops-nexus-eco.lovable.app";
 const OG_IMAGE_URL = `${SITE_URL}${ogImage}`;
@@ -18,7 +16,7 @@ const OG_IMAGE_URL = `${SITE_URL}${ogImage}`;
 const faqs = [
   {
     q: "Qual o melhor sistema de gestão para petshop em 2026?",
-    a: "O PetOps é o sistema mais completo para petshops modernos: une agenda inteligente, atendimento automatizado no WhatsApp com IA, prontuário veterinário, PDV, financeiro e a linha Care de produtos premium — tudo em uma única plataforma, sem integração frágil.",
+    a: "O PetOps é o sistema mais completo para petshops modernos: une agenda inteligente, atendimento automatizado no WhatsApp com IA, prontuário veterinário, PDV e financeiro — tudo em uma única plataforma, sem integração frágil.",
   },
   {
     q: "Como reduzir no-show no petshop e banho & tosa?",
@@ -37,8 +35,8 @@ const faqs = [
     a: "Funciona. Os planos Profissional e Premium incluem módulos de clínica veterinária (prontuário, vacinas, receitas), creche & hotel (check-in com foto, atualizações ao tutor) e assinaturas recorrentes — pensados para a operação real do mercado.",
   },
   {
-    q: "Como começar a vender produtos premium no meu petshop?",
-    a: "A linha PetOps Care entrega shampoos, condicionadores, colônias e produtos de cuidado em embalagens gourmet, com planos de assinatura mensal (Start, Pro e Max) que abastecem o salão e o balcão de revenda — com margem real e previsibilidade.",
+    q: "O PetOps substitui planilhas e cadernos de anotação?",
+    a: "Sim. O prontuário digital, agenda inteligente e controle financeiro integrado eliminam planilhas, cadernos e anotações soltas. Tudo fica centralizado, acessível de qualquer dispositivo e protegido na nuvem.",
   },
 ];
 
@@ -49,7 +47,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Sistema completo para petshop, clínica vet, banho & tosa, daycare e hotel pet. Agenda inteligente, atendimento com IA no WhatsApp, prontuário, PDV e linha premium de produtos. Reduza no-show em 42%.",
+          "Sistema completo para petshop, clínica vet, banho & tosa, daycare e hotel pet. Agenda inteligente, atendimento com IA no WhatsApp, prontuário, PDV e financeiro. Reduza no-show em 42%.",
       },
       {
         name: "keywords",
@@ -62,13 +60,13 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Tech + Care. O ecossistema que automatiza a operação e eleva a margem do petshop moderno. Demo gratuita.",
+          "O sistema que automatiza a operação e eleva a margem do petshop moderno. Demo gratuita.",
       },
       { property: "og:url", content: `${SITE_URL}/` },
       { property: "og:image", content: OG_IMAGE_URL },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "640" },
-      { property: "og:image:alt", content: "PetOps · Tech + Care · O futuro da operação pet" },
+      { property: "og:image:alt", content: "PetOps · Sistema completo · O futuro da operação pet" },
       { name: "twitter:title", content: "PetOps — Sistema + Produtos Premium para Petshop" },
       {
         name: "twitter:description",
@@ -87,7 +85,7 @@ export const Route = createFileRoute("/")({
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web, iOS, Android",
           description:
-            "Sistema de gestão para petshop, clínica veterinária, banho & tosa, daycare e hotel pet com automação no WhatsApp e linha premium de produtos de cuidado.",
+            "Sistema de gestão para petshop, clínica veterinária, banho & tosa, daycare e hotel pet com automação no WhatsApp e inteligência artificial.",
           url: `${SITE_URL}/`,
           image: OG_IMAGE_URL,
           offers: {
@@ -147,7 +145,7 @@ function MobileFloatingCTA() {
         href="https://wa.me/5511918967593?text=Ol%C3%A1!%20Quero%20conhecer%20o%20PetOps."
         target="_blank"
         rel="noopener noreferrer"
-        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-care-green text-bg-base rounded-md font-mono text-[11px] uppercase tracking-widest font-semibold shadow-[0_10px_30px_-5px_rgba(0,0,0,0.6)]"
+        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-tech-neon text-bg-base rounded-md font-mono text-[11px] uppercase tracking-widest font-semibold shadow-[0_10px_30px_-5px_rgba(0,0,0,0.6)]"
       >
         <MessageCircle className="size-4" />
         WhatsApp
@@ -166,15 +164,15 @@ function MobileFloatingCTA() {
 function Numeros() {
   const stats = [
     { n: "−42%", l: "No-show em banho & tosa", c: "tech-cyan" },
-    { n: "3.2×", l: "Recompra média do tutor", c: "care-blue" },
-    { n: "+R$ 18k", l: "Margem extra/mês com Care", c: "tech-neon" },
-    { n: "120+", l: "Petshops operando", c: "care-green" },
+    { n: "3.2×", l: "Retenção de tutores", c: "tech-cyan" },
+    { n: "+R$ 12k", l: "Economia operacional/mês", c: "tech-neon" },
+    { n: "120+", l: "Petshops operando", c: "tech-neon" },
   ];
   return (
     <Section
       eyebrow="Resultados"
       title="Os números do novo petshop automatizado"
-      intro="Dados consolidados de petshops, clínicas e daycares operando com o ecossistema PetOps entre 2024 e 2026."
+      intro="Dados consolidados de petshops, clínicas e daycares operando com o PetOps entre 2024 e 2026."
     >
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         {stats.map((s, i) => (
@@ -295,8 +293,8 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right — Care (image) */}
-        <div className="w-1/2 relative overflow-hidden hidden">
+        {/* Right — Care (image) desativado */}
+        {/* <div className="w-1/2 relative overflow-hidden hidden">
           <img
             src={heroCare}
             alt="Cachorro branco fofinho enrolado em toalha após o banho, segurado pela tutora"
@@ -310,13 +308,13 @@ function Hero() {
           <div className="absolute bottom-1/4 -right-1/4 size-[700px] bg-care-blue/15 blur-[140px] rounded-full pointer-events-none" />
 
           {/* Top label */}
-          <div className="absolute top-8 right-8 font-mono text-[10px] text-care-blue tracking-[0.25em] z-10 flex items-center gap-2">
+          {/* <div className="absolute top-8 right-8 font-mono text-[10px] text-care-blue tracking-[0.25em] z-10 flex items-center gap-2">
             CARE · CUIDADO
             <div className="size-1.5 bg-care-green rounded-full shadow-[0_0_8px_var(--color-care-green)]" />
-          </div>
+          </div> */}
 
           {/* Floating product/rating card */}
-          <div className="absolute top-24 right-8 z-10 rounded-lg border border-white/10 bg-bg-base/70 backdrop-blur-md px-4 py-3 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
+          {/* <div className="absolute top-24 right-8 z-10 rounded-lg border border-white/10 bg-bg-base/70 backdrop-blur-md px-4 py-3 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
             <div className="font-mono text-[9px] uppercase tracking-widest text-white/50 mb-1">
               Recompra
             </div>
@@ -324,8 +322,8 @@ function Hero() {
               <span className="text-2xl font-medium text-white">3.2×</span>
               <Heart className="size-3 text-care-blue fill-care-blue" />
             </div>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
 
         {/* Mobile background handled by full-bleed husky above */}
 
@@ -364,11 +362,11 @@ function Hero() {
           <div className="max-w-4xl w-full flex flex-col items-center text-center">
             <div className="flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/10 bg-bg-base/80 backdrop-blur-xl mb-10">
               <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/70">
-                Ecossistema Unificado
+                Tecnologia para Petshop
               </span>
               <div className="w-px h-3 bg-white/20" />
               <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
-                Tech + Care
+                Automação Inteligente
               </span>
             </div>
 
@@ -378,7 +376,7 @@ function Hero() {
             </h1>
 
             <p className="text-base md:text-xl text-white/70 max-w-2xl text-pretty font-light leading-relaxed mb-4 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">
-              Menos no-show, mais recompra e a sua equipe livre do WhatsApp manual. Tecnologia que opera sozinha + uma linha premium de cuidado que eleva a sua margem.
+              Menos no-show, mais recompra e a sua equipe livre do WhatsApp manual. Tecnologia que opera sozinha para você focar no que importa: o pet e o tutor.
             </p>
             <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/45 mb-10">
               Pet shops · Clínicas · Banho &amp; tosa · Daycare · Hotel
@@ -405,7 +403,7 @@ function Hero() {
 
         {/* Bottom UI bar */}
         <div className="absolute bottom-0 inset-x-0 h-12 border-t border-white/5 bg-bg-base/60 backdrop-blur items-center justify-between px-6 lg:px-10 z-40 hidden md:flex">
-          <div className="font-mono text-[10px] text-white/40 tracking-widest">// PETOPS · ECOSSISTEMA</div>
+          <div className="font-mono text-[10px] text-white/40 tracking-widest">// PETOPS · TECH</div>
           <div className="flex gap-1">
             <div className="w-8 h-1 bg-white/30 rounded-full" />
             <div className="w-2 h-1 bg-white/10 rounded-full" />
@@ -422,14 +420,14 @@ function Hero() {
 function Conceito() {
   const cards = [
     { t: "Automatize sua operação", d: "Agenda, WhatsApp, lembretes e gestão funcionando sozinhos." },
-    { t: "Eleve a experiência do cliente", d: "Cuidado premium em cada toque, da recepção ao pós-serviço." },
-    { t: "Gere mais valor com tecnologia e produtos", d: "Tech reduz custo. Care eleva margem. Juntos, multiplicam." },
+    { t: "Eleve a experiência do cliente", d: "Comunicação personalizada, lembretes automáticos e atendimento que encanta." },
+    { t: "Gere mais valor com tecnologia", d: "Tech reduz custo, aumenta produtividade e libera sua equipe para vender mais." },
   ];
   return (
     <Section
       eyebrow="Conceito"
-      title={<>Mais que uma marca. Um ecossistema para o mercado pet</>}
-      intro="A PetOps integra tecnologia, automação e soluções de cuidado para transformar a rotina de negócios pet em operações mais inteligentes, mais lucrativas e mais desejadas pelos clientes."
+      title={<>Mais que uma marca. Uma <span className="text-gradient-brand">plataforma</span> para o mercado pet</>}
+      intro="A PetOps integra tecnologia e automação para transformar a rotina de negócios pet em operações mais inteligentes, mais lucrativas e mais desejadas pelos clientes."
     >
       <div className="grid md:grid-cols-3 gap-4">
         {cards.map((c, i) => (
@@ -676,134 +674,134 @@ function LiveStat({
 }
 
 /* ---------------- CARE SECTION ---------------- */
-function CareSection() {
-  const featured = careProducts.slice(0, 6);
-  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.2 });
-  return (
-    <section className="relative py-24 md:py-32 px-6 lg:px-10 overflow-hidden">
-      <div className="absolute top-1/2 right-0 size-[600px] bg-care-blue/8 blur-[160px] rounded-full pointer-events-none" />
-      <div className="relative max-w-[1440px] mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-16 items-center">
-        {/* Real Care products */}
-        <div ref={ref} className="relative order-2 lg:order-1">
-          <div
-            className={`rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-6 md:p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] glow-care transition-all duration-[1200ms] ease-out ${
-              inView
-                ? "opacity-100 translate-y-0 blur-0"
-                : "opacity-0 translate-y-8 blur-md"
-            }`}
-          >
-            <div
-              className={`flex items-center justify-between mb-6 transition-all duration-700 delay-150 ${
-                inView ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"
-              }`}
-            >
-              <div className="font-mono text-[10px] text-white/40 tracking-widest">
-                PETOPS · CARE
-              </div>
-              <div className="font-mono text-[10px] text-care-blue/70 tracking-widest">
-                LINHA PROFISSIONAL
-              </div>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {featured.map((p, i) => (
-                <Link
-                  key={p.id}
-                  to="/care"
-                  style={{
-                    transitionDelay: inView ? `${200 + i * 90}ms` : "0ms",
-                  }}
-                  className={`group relative rounded-lg border border-white/10 bg-gradient-to-b from-bg-base to-bg-elevated p-3 flex flex-col hover:border-care-blue/40 hover:-translate-y-0.5 overflow-hidden transition-all duration-700 ease-out ${
-                    inView
-                      ? "opacity-100 translate-y-0 blur-0"
-                      : "opacity-0 translate-y-6 blur-sm"
-                  }`}
-                >
-                  <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-care-blue/15 to-transparent opacity-50 group-hover:opacity-100 transition" />
-                  <div className="font-mono text-[9px] text-white/30 tracking-widest relative mb-2">
-                    {p.code}
-                  </div>
-                  <div className="relative aspect-square rounded-md bg-white/[0.02] border border-white/5 flex items-center justify-center overflow-hidden mb-3">
-                    {/* shimmer sweep */}
-                    <div
-                      className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1100ms] ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                    />
-                    {p.image ? (
-                      <img
-                        src={p.image}
-                        alt={p.name}
-                        loading="lazy"
-                        style={{
-                          transitionDelay: inView ? `${350 + i * 90}ms` : "0ms",
-                        }}
-                        className={`size-full object-contain p-2 transition-all duration-[1100ms] ease-out group-hover:scale-110 ${
-                          inView
-                            ? "opacity-100 scale-100 blur-0"
-                            : "opacity-0 scale-95 blur-sm"
-                        }`}
-                      />
-                    ) : (
-                      <div className="size-8 rounded bg-gradient-to-br from-care-blue/40 to-care-green/20" />
-                    )}
-                  </div>
-                  <div className="relative">
-                    <div className="text-[10px] text-care-blue/70 font-mono tracking-widest uppercase mb-1">
-                      {p.category}
-                    </div>
-                    <div className="text-[11px] text-white/85 font-medium leading-tight line-clamp-2">
-                      {p.name}
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-            <div
-              className={`mt-6 pt-4 border-t border-white/5 flex items-center justify-between font-mono text-[10px] text-white/40 tracking-widest transition-all duration-700 ${
-                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-              }`}
-              style={{ transitionDelay: inView ? "900ms" : "0ms" }}
-            >
-              <span>{careProducts.length} produtos na linha</span>
-              <Link to="/care" className="text-care-blue hover:text-white transition">
-                Ver todos →
-              </Link>
-            </div>
-          </div>
-          <div className="absolute -inset-4 bg-care-blue/5 blur-3xl -z-10 rounded-3xl" />
-        </div>
-
-        <div className="order-1 lg:order-2">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-px w-8 bg-care-blue/40" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-care-blue">
-              MÓDULO 02 · PETOPS CARE
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-white leading-tight mb-6">
-            Produtos para elevar o cuidado e o valor percebido.
-          </h2>
-          <p className="text-white/55 text-lg leading-relaxed mb-8">
-            Linha premium pensada para banho, tosa, clínica e revenda. Fórmulas
-            de alta qualidade em embalagens que comunicam valor.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              to="/care"
-              className="font-mono text-[11px] uppercase tracking-widest px-5 py-3 bg-care-blue text-bg-base rounded-sm font-semibold hover:opacity-90 transition"
-            >
-              Conhecer linha Care
-            </Link>
-            <Link
-              to="/contato"
-              className="font-mono text-[11px] uppercase tracking-widest px-5 py-3 border border-white/15 rounded-sm hover:bg-white/5 transition"
-            >
-              Quero revender
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+// function CareSection() { // desativado
+//   const featured = careProducts.slice(0, 6);
+//   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.2 });
+//   return (
+//     <section className="relative py-24 md:py-32 px-6 lg:px-10 overflow-hidden">
+//       <div className="absolute top-1/2 right-0 size-[600px] bg-care-blue/8 blur-[160px] rounded-full pointer-events-none" />
+//       <div className="relative max-w-[1440px] mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-16 items-center">
+//         {/* Real Care products */}
+//         <div ref={ref} className="relative order-2 lg:order-1">
+//           <div
+//             className={`rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-6 md:p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] glow-care transition-all duration-[1200ms] ease-out ${
+//               inView
+//                 ? "opacity-100 translate-y-0 blur-0"
+//                 : "opacity-0 translate-y-8 blur-md"
+//             }`}
+//           >
+//             <div
+//               className={`flex items-center justify-between mb-6 transition-all duration-700 delay-150 ${
+//                 inView ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"
+//               }`}
+//             >
+//               <div className="font-mono text-[10px] text-white/40 tracking-widest">
+//                 PETOPS · CARE
+//               </div>
+//               <div className="font-mono text-[10px] text-care-blue/70 tracking-widest">
+//                 LINHA PROFISSIONAL
+//               </div>
+//             </div>
+//             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+//               {featured.map((p, i) => (
+//                 <Link
+//                   key={p.id}
+//                   to="/care"
+//                   style={{
+//                     transitionDelay: inView ? `${200 + i * 90}ms` : "0ms",
+//                   }}
+//                   className={`group relative rounded-lg border border-white/10 bg-gradient-to-b from-bg-base to-bg-elevated p-3 flex flex-col hover:border-care-blue/40 hover:-translate-y-0.5 overflow-hidden transition-all duration-700 ease-out ${
+//                     inView
+//                       ? "opacity-100 translate-y-0 blur-0"
+//                       : "opacity-0 translate-y-6 blur-sm"
+//                   }`}
+//                 >
+//                   <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-care-blue/15 to-transparent opacity-50 group-hover:opacity-100 transition" />
+//                   <div className="font-mono text-[9px] text-white/30 tracking-widest relative mb-2">
+//                     {p.code}
+//                   </div>
+//                   <div className="relative aspect-square rounded-md bg-white/[0.02] border border-white/5 flex items-center justify-center overflow-hidden mb-3">
+//                     {/* shimmer sweep */}
+//                     <div
+//                       className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1100ms] ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent"
+//                     />
+//                     {p.image ? (
+//                       <img
+//                         src={p.image}
+//                         alt={p.name}
+//                         loading="lazy"
+//                         style={{
+//                           transitionDelay: inView ? `${350 + i * 90}ms` : "0ms",
+//                         }}
+//                         className={`size-full object-contain p-2 transition-all duration-[1100ms] ease-out group-hover:scale-110 ${
+//                           inView
+//                             ? "opacity-100 scale-100 blur-0"
+//                             : "opacity-0 scale-95 blur-sm"
+//                         }`}
+//                       />
+//                     ) : (
+//                       <div className="size-8 rounded bg-gradient-to-br from-care-blue/40 to-care-green/20" />
+//                     )}
+//                   </div>
+//                   <div className="relative">
+//                     <div className="text-[10px] text-care-blue/70 font-mono tracking-widest uppercase mb-1">
+//                       {p.category}
+//                     </div>
+//                     <div className="text-[11px] text-white/85 font-medium leading-tight line-clamp-2">
+//                       {p.name}
+//                     </div>
+//                   </div>
+//                 </Link>
+//               ))}
+//             </div>
+//             <div
+//               className={`mt-6 pt-4 border-t border-white/5 flex items-center justify-between font-mono text-[10px] text-white/40 tracking-widest transition-all duration-700 ${
+//                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+//               }`}
+//               style={{ transitionDelay: inView ? "900ms" : "0ms" }}
+//             >
+//               <span>{careProducts.length} produtos na linha</span>
+//               <Link to="/care" className="text-care-blue hover:text-white transition">
+//                 Ver todos →
+//               </Link>
+//             </div>
+//           </div>
+//           <div className="absolute -inset-4 bg-care-blue/5 blur-3xl -z-10 rounded-3xl" />
+//         </div>
+//
+//         <div className="order-1 lg:order-2">
+//           <div className="flex items-center gap-3 mb-6">
+//             <div className="h-px w-8 bg-care-blue/40" />
+//             <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-care-blue">
+//               MÓDULO 02 · PETOPS CARE
+//             </span>
+//           </div>
+//           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-white leading-tight mb-6">
+//             Produtos para elevar o cuidado e o valor percebido.
+//           </h2>
+//           <p className="text-white/55 text-lg leading-relaxed mb-8">
+//             Linha premium pensada para banho, tosa, clínica e revenda. Fórmulas
+//             de alta qualidade em embalagens que comunicam valor.
+//           </p>
+//           <div className="flex flex-wrap gap-3">
+//             <Link
+//               to="/care"
+//               className="font-mono text-[11px] uppercase tracking-widest px-5 py-3 bg-care-blue text-bg-base rounded-sm font-semibold hover:opacity-90 transition"
+//             >
+//               Conhecer linha Care
+//             </Link>
+//             <Link
+//               to="/contato"
+//               className="font-mono text-[11px] uppercase tracking-widest px-5 py-3 border border-white/15 rounded-sm hover:bg-white/5 transition"
+//             >
+//               Quero revender
+//             </Link>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 /* ---------------- PROBLEMA ---------------- */
 /* ---------------- TOGETHER ---------------- */
@@ -836,26 +834,26 @@ function Together() {
         <>
           <span className="text-tech-cyan">Tech</span>
           <span className="text-white/40">+</span>
-          <span className="text-care-blue">Care</span>
+          <span className="text-tech-neon">Resultado</span>
         </>
       ),
       title: "Multiplica o LTV do cliente",
-      desc: "Recompra automatizada, produto premium na sacola e tutor fidelizado por experiência — não por desconto.",
+      desc: "Recompra automatizada, lembretes inteligentes e tutor fidelizado por experiência — não por desconto.",
       border: "border-white/15",
-      bg: "bg-gradient-to-br from-tech-cyan/10 via-bg-surface to-care-blue/10",
-      topBar: "bg-gradient-to-r from-tech-cyan to-care-blue",
+      bg: "bg-gradient-to-br from-tech-cyan/10 via-bg-surface to-tech-neon/10",
+      topBar: "bg-gradient-to-r from-tech-cyan to-tech-neon",
       footer: (
         <div className="font-mono text-[10px] text-white/50 tracking-widest">1 + 1 = 3</div>
       ),
       featured: true,
     },
     {
-      eyebrow: <span className="text-care-blue">PetOps Care</span>,
-      title: "Eleva margem por serviço",
-      desc: "Linha premium de cuidado em embalagens que comunicam valor — para usar, vender e fidelizar.",
-      border: "border-care-blue/20",
+      eyebrow: <span className="text-tech-neon">Automação Total</span>,
+      title: "Operação sem atrito",
+      desc: "Do agendamento ao pós-serviço, tudo conectado. Sua equipe para de reagir e começa a criar valor.",
+      border: "border-tech-neon/20",
       bg: "bg-bg-surface",
-      topBar: "bg-care-blue/40",
+      topBar: "bg-tech-neon/40",
       footer: null as React.ReactNode,
       featured: false,
     },
@@ -863,9 +861,9 @@ function Together() {
 
   return (
     <Section
-      eyebrow="Tech + Care"
+      eyebrow="Automação + Resultado"
       title={<>Sozinhos, já entregam. Juntos, viram um <span className="text-gradient-brand">multiplicador</span>.</>}
-      intro="Tech reduz o custo de operar. Care eleva a margem por serviço. No mesmo ecossistema, viram recompra automatizada com produto na sacola."
+      intro="Automação reduz o custo de operar. Inteligência artificial eleva a retenção. No mesmo sistema, viram recompra automatizada e tutor fidelizado."
     >
       <div ref={cardsRef} className="grid md:grid-cols-3 gap-4 mb-10">
         {cards.map((c, i) => (
@@ -985,7 +983,7 @@ function FinalCTA() {
     <section className="relative py-32 px-6 lg:px-10 overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern bg-grid-fade pointer-events-none" />
       <div className="absolute top-1/2 left-1/4 size-[500px] bg-tech-cyan/10 blur-[140px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 size-[500px] bg-care-blue/10 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 size-[500px] bg-tech-cyan/10 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="relative max-w-4xl mx-auto text-center">
         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/10 bg-bg-base/80 backdrop-blur mb-8">
@@ -999,7 +997,7 @@ function FinalCTA() {
           <span className="text-gradient-brand">próximo nível?</span>
         </h2>
         <p className="text-lg text-white/50 max-w-xl mx-auto mb-10">
-          Em 20 minutos a gente mostra como o ecossistema PetOps se encaixa na
+          Em 20 minutos a gente mostra como o PetOps se encaixa na
           sua operação — sem compromisso.
         </p>
 
