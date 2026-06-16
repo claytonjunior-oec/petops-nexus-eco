@@ -6,11 +6,9 @@ import { Footer } from "@/components/site/Footer";
 import { Section } from "@/components/site/Section";
 import heroHusky from "@/assets/hero-husky.jpg";
 import heroTech from "@/assets/hero-tech.jpg";
-import heroCare from "@/assets/hero-care.jpg";
 
 import ogImage from "@/assets/og-petops.jpg";
 import { Heart, Sparkles, Star, MessageCircle } from "lucide-react";
-import { careProducts } from "@/data/care-products";
 
 const SITE_URL = "https://petops-nexus-eco.lovable.app";
 const OG_IMAGE_URL = `${SITE_URL}${ogImage}`;
@@ -147,7 +145,7 @@ function MobileFloatingCTA() {
         href="https://wa.me/5511918967593?text=Ol%C3%A1!%20Quero%20conhecer%20o%20PetOps."
         target="_blank"
         rel="noopener noreferrer"
-        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-care-green text-bg-base rounded-md font-mono text-[11px] uppercase tracking-widest font-semibold shadow-[0_10px_30px_-5px_rgba(0,0,0,0.6)]"
+        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-tech-neon text-bg-base rounded-md font-mono text-[11px] uppercase tracking-widest font-semibold shadow-[0_10px_30px_-5px_rgba(0,0,0,0.6)]"
       >
         <MessageCircle className="size-4" />
         WhatsApp
@@ -985,7 +983,7 @@ function FinalCTA() {
     <section className="relative py-32 px-6 lg:px-10 overflow-hidden">
       <div className="absolute inset-0 bg-grid-pattern bg-grid-fade pointer-events-none" />
       <div className="absolute top-1/2 left-1/4 size-[500px] bg-tech-cyan/10 blur-[140px] rounded-full pointer-events-none" />
-      <div className="absolute top-1/2 right-1/4 size-[500px] bg-care-blue/10 blur-[140px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 right-1/4 size-[500px] bg-tech-cyan/10 blur-[140px] rounded-full pointer-events-none" />
 
       <div className="relative max-w-4xl mx-auto text-center">
         <div className="inline-flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/10 bg-bg-base/80 backdrop-blur mb-8">
