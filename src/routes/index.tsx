@@ -18,7 +18,7 @@ const OG_IMAGE_URL = `${SITE_URL}${ogImage}`;
 const faqs = [
   {
     q: "Qual o melhor sistema de gestão para petshop em 2026?",
-    a: "O PetOps é o sistema mais completo para petshops modernos: une agenda inteligente, atendimento automatizado no WhatsApp com IA, prontuário veterinário, PDV, financeiro e a linha Care de produtos premium — tudo em uma única plataforma, sem integração frágil.",
+    a: "O PetOps é o sistema mais completo para petshops modernos: une agenda inteligente, atendimento automatizado no WhatsApp com IA, prontuário veterinário, PDV e financeiro — tudo em uma única plataforma, sem integração frágil.",
   },
   {
     q: "Como reduzir no-show no petshop e banho & tosa?",
@@ -37,8 +37,8 @@ const faqs = [
     a: "Funciona. Os planos Profissional e Premium incluem módulos de clínica veterinária (prontuário, vacinas, receitas), creche & hotel (check-in com foto, atualizações ao tutor) e assinaturas recorrentes — pensados para a operação real do mercado.",
   },
   {
-    q: "Como começar a vender produtos premium no meu petshop?",
-    a: "A linha PetOps Care entrega shampoos, condicionadores, colônias e produtos de cuidado em embalagens gourmet, com planos de assinatura mensal (Start, Pro e Max) que abastecem o salão e o balcão de revenda — com margem real e previsibilidade.",
+    q: "O PetOps substitui planilhas e cadernos de anotação?",
+    a: "Sim. O prontuário digital, agenda inteligente e controle financeiro integrado eliminam planilhas, cadernos e anotações soltas. Tudo fica centralizado, acessível de qualquer dispositivo e protegido na nuvem.",
   },
 ];
 
@@ -49,7 +49,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Sistema completo para petshop, clínica vet, banho & tosa, daycare e hotel pet. Agenda inteligente, atendimento com IA no WhatsApp, prontuário, PDV e linha premium de produtos. Reduza no-show em 42%.",
+          "Sistema completo para petshop, clínica vet, banho & tosa, daycare e hotel pet. Agenda inteligente, atendimento com IA no WhatsApp, prontuário, PDV e financeiro. Reduza no-show em 42%.",
       },
       {
         name: "keywords",
@@ -62,13 +62,13 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Tech + Care. O ecossistema que automatiza a operação e eleva a margem do petshop moderno. Demo gratuita.",
+          "O sistema que automatiza a operação e eleva a margem do petshop moderno. Demo gratuita.",
       },
       { property: "og:url", content: `${SITE_URL}/` },
       { property: "og:image", content: OG_IMAGE_URL },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "640" },
-      { property: "og:image:alt", content: "PetOps · Tech + Care · O futuro da operação pet" },
+      { property: "og:image:alt", content: "PetOps · Sistema completo · O futuro da operação pet" },
       { name: "twitter:title", content: "PetOps — Sistema + Produtos Premium para Petshop" },
       {
         name: "twitter:description",
@@ -87,7 +87,7 @@ export const Route = createFileRoute("/")({
           applicationCategory: "BusinessApplication",
           operatingSystem: "Web, iOS, Android",
           description:
-            "Sistema de gestão para petshop, clínica veterinária, banho & tosa, daycare e hotel pet com automação no WhatsApp e linha premium de produtos de cuidado.",
+            "Sistema de gestão para petshop, clínica veterinária, banho & tosa, daycare e hotel pet com automação no WhatsApp e inteligência artificial.",
           url: `${SITE_URL}/`,
           image: OG_IMAGE_URL,
           offers: {
