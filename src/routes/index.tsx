@@ -293,8 +293,8 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right — Care (image) */}
-        <div className="w-1/2 relative overflow-hidden hidden">
+        {/* Right — Care (image) desativado */}
+        {/* <div className="w-1/2 relative overflow-hidden hidden">
           <img
             src={heroCare}
             alt="Cachorro branco fofinho enrolado em toalha após o banho, segurado pela tutora"
@@ -308,13 +308,13 @@ function Hero() {
           <div className="absolute bottom-1/4 -right-1/4 size-[700px] bg-care-blue/15 blur-[140px] rounded-full pointer-events-none" />
 
           {/* Top label */}
-          <div className="absolute top-8 right-8 font-mono text-[10px] text-care-blue tracking-[0.25em] z-10 flex items-center gap-2">
+          {/* <div className="absolute top-8 right-8 font-mono text-[10px] text-care-blue tracking-[0.25em] z-10 flex items-center gap-2">
             CARE · CUIDADO
             <div className="size-1.5 bg-care-green rounded-full shadow-[0_0_8px_var(--color-care-green)]" />
-          </div>
+          </div> */}
 
           {/* Floating product/rating card */}
-          <div className="absolute top-24 right-8 z-10 rounded-lg border border-white/10 bg-bg-base/70 backdrop-blur-md px-4 py-3 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
+          {/* <div className="absolute top-24 right-8 z-10 rounded-lg border border-white/10 bg-bg-base/70 backdrop-blur-md px-4 py-3 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
             <div className="font-mono text-[9px] uppercase tracking-widest text-white/50 mb-1">
               Recompra
             </div>
@@ -322,8 +322,8 @@ function Hero() {
               <span className="text-2xl font-medium text-white">3.2×</span>
               <Heart className="size-3 text-care-blue fill-care-blue" />
             </div>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
 
         {/* Mobile background handled by full-bleed husky above */}
 
