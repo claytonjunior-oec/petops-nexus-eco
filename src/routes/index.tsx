@@ -428,8 +428,8 @@ function Conceito() {
   return (
     <Section
       eyebrow="Conceito"
-      title={<>Mais que uma marca. Um ecossistema para o mercado pet</>}
-      intro="A PetOps integra tecnologia, automação e soluções de cuidado para transformar a rotina de negócios pet em operações mais inteligentes, mais lucrativas e mais desejadas pelos clientes."
+      title={<>Mais que uma marca. Uma <span className="text-gradient-brand">plataforma</span> para o mercado pet</>}
+      intro="A PetOps integra tecnologia e automação para transformar a rotina de negócios pet em operações mais inteligentes, mais lucrativas e mais desejadas pelos clientes."
     >
       <div className="grid md:grid-cols-3 gap-4">
         {cards.map((c, i) => (
@@ -836,26 +836,26 @@ function Together() {
         <>
           <span className="text-tech-cyan">Tech</span>
           <span className="text-white/40">+</span>
-          <span className="text-care-blue">Care</span>
+          <span className="text-tech-neon">Resultado</span>
         </>
       ),
       title: "Multiplica o LTV do cliente",
-      desc: "Recompra automatizada, produto premium na sacola e tutor fidelizado por experiência — não por desconto.",
+      desc: "Recompra automatizada, lembretes inteligentes e tutor fidelizado por experiência — não por desconto.",
       border: "border-white/15",
-      bg: "bg-gradient-to-br from-tech-cyan/10 via-bg-surface to-care-blue/10",
-      topBar: "bg-gradient-to-r from-tech-cyan to-care-blue",
+      bg: "bg-gradient-to-br from-tech-cyan/10 via-bg-surface to-tech-neon/10",
+      topBar: "bg-gradient-to-r from-tech-cyan to-tech-neon",
       footer: (
         <div className="font-mono text-[10px] text-white/50 tracking-widest">1 + 1 = 3</div>
       ),
       featured: true,
     },
     {
-      eyebrow: <span className="text-care-blue">PetOps Care</span>,
-      title: "Eleva margem por serviço",
-      desc: "Linha premium de cuidado em embalagens que comunicam valor — para usar, vender e fidelizar.",
-      border: "border-care-blue/20",
+      eyebrow: <span className="text-tech-neon">Automação Total</span>,
+      title: "Operação sem atrito",
+      desc: "Do agendamento ao pós-serviço, tudo conectado. Sua equipe para de reagir e começa a criar valor.",
+      border: "border-tech-neon/20",
       bg: "bg-bg-surface",
-      topBar: "bg-care-blue/40",
+      topBar: "bg-tech-neon/40",
       footer: null as React.ReactNode,
       featured: false,
     },
@@ -863,9 +863,9 @@ function Together() {
 
   return (
     <Section
-      eyebrow="Tech + Care"
+      eyebrow="Automação + Resultado"
       title={<>Sozinhos, já entregam. Juntos, viram um <span className="text-gradient-brand">multiplicador</span>.</>}
-      intro="Tech reduz o custo de operar. Care eleva a margem por serviço. No mesmo ecossistema, viram recompra automatizada com produto na sacola."
+      intro="Automação reduz o custo de operar. Inteligência artificial eleva a retenção. No mesmo sistema, viram recompra automatizada e tutor fidelizado."
     >
       <div ref={cardsRef} className="grid md:grid-cols-3 gap-4 mb-10">
         {cards.map((c, i) => (
@@ -999,7 +999,7 @@ function FinalCTA() {
           <span className="text-gradient-brand">próximo nível?</span>
         </h2>
         <p className="text-lg text-white/50 max-w-xl mx-auto mb-10">
-          Em 20 minutos a gente mostra como o ecossistema PetOps se encaixa na
+          Em 20 minutos a gente mostra como o PetOps se encaixa na
           sua operação — sem compromisso.
         </p>
 
