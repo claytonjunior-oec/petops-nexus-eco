@@ -422,8 +422,8 @@ function Hero() {
 function Conceito() {
   const cards = [
     { t: "Automatize sua operação", d: "Agenda, WhatsApp, lembretes e gestão funcionando sozinhos." },
-    { t: "Eleve a experiência do cliente", d: "Cuidado premium em cada toque, da recepção ao pós-serviço." },
-    { t: "Gere mais valor com tecnologia e produtos", d: "Tech reduz custo. Care eleva margem. Juntos, multiplicam." },
+    { t: "Eleve a experiência do cliente", d: "Comunicação personalizada, lembretes automáticos e atendimento que encanta." },
+    { t: "Gere mais valor com tecnologia", d: "Tech reduz custo, aumenta produtividade e libera sua equipe para vender mais." },
   ];
   return (
     <Section
