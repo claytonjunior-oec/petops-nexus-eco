@@ -166,15 +166,15 @@ function MobileFloatingCTA() {
 function Numeros() {
   const stats = [
     { n: "−42%", l: "No-show em banho & tosa", c: "tech-cyan" },
-    { n: "3.2×", l: "Recompra média do tutor", c: "care-blue" },
-    { n: "+R$ 18k", l: "Margem extra/mês com Care", c: "tech-neon" },
-    { n: "120+", l: "Petshops operando", c: "care-green" },
+    { n: "3.2×", l: "Retenção de tutores", c: "tech-cyan" },
+    { n: "+R$ 12k", l: "Economia operacional/mês", c: "tech-neon" },
+    { n: "120+", l: "Petshops operando", c: "tech-neon" },
   ];
   return (
     <Section
       eyebrow="Resultados"
       title="Os números do novo petshop automatizado"
-      intro="Dados consolidados de petshops, clínicas e daycares operando com o ecossistema PetOps entre 2024 e 2026."
+      intro="Dados consolidados de petshops, clínicas e daycares operando com o PetOps entre 2024 e 2026."
     >
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
         {stats.map((s, i) => (
@@ -364,11 +364,11 @@ function Hero() {
           <div className="max-w-4xl w-full flex flex-col items-center text-center">
             <div className="flex items-center gap-3 px-4 py-1.5 rounded-full border border-white/10 bg-bg-base/80 backdrop-blur-xl mb-10">
               <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/70">
-                Ecossistema Unificado
+                Tecnologia para Petshop
               </span>
               <div className="w-px h-3 bg-white/20" />
               <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/40">
-                Tech + Care
+                Automação Inteligente
               </span>
             </div>
 
@@ -378,7 +378,7 @@ function Hero() {
             </h1>
 
             <p className="text-base md:text-xl text-white/70 max-w-2xl text-pretty font-light leading-relaxed mb-4 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">
-              Menos no-show, mais recompra e a sua equipe livre do WhatsApp manual. Tecnologia que opera sozinha + uma linha premium de cuidado que eleva a sua margem.
+              Menos no-show, mais recompra e a sua equipe livre do WhatsApp manual. Tecnologia que opera sozinha para você focar no que importa: o pet e o tutor.
             </p>
             <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/45 mb-10">
               Pet shops · Clínicas · Banho &amp; tosa · Daycare · Hotel
@@ -405,7 +405,7 @@ function Hero() {
 
         {/* Bottom UI bar */}
         <div className="absolute bottom-0 inset-x-0 h-12 border-t border-white/5 bg-bg-base/60 backdrop-blur items-center justify-between px-6 lg:px-10 z-40 hidden md:flex">
-          <div className="font-mono text-[10px] text-white/40 tracking-widest">// PETOPS · ECOSSISTEMA</div>
+          <div className="font-mono text-[10px] text-white/40 tracking-widest">// PETOPS · TECH</div>
           <div className="flex gap-1">
             <div className="w-8 h-1 bg-white/30 rounded-full" />
             <div className="w-2 h-1 bg-white/10 rounded-full" />
