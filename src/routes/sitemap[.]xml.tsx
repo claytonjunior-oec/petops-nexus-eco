@@ -20,6 +20,9 @@ export const Route = createFileRoute("/sitemap.xml")({
           // { path: "/ecossistema", changefreq: "monthly", priority: "0.8" }, // desativado
           { path: "/sobre", changefreq: "monthly", priority: "0.6" },
           { path: "/contato", changefreq: "monthly", priority: "0.7" },
+          { path: "/sistema-para-petshop", changefreq: "weekly", priority: "0.9" },
+          { path: "/sistema-banho-e-tosa", changefreq: "weekly", priority: "0.9" },
+          { path: "/whatsapp-para-petshop", changefreq: "weekly", priority: "0.9" },
         ];
 
         const urls = entries
