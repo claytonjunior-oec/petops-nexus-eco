@@ -327,12 +327,12 @@ function TechPage() {
                 >
                   Agendar demonstração
                 </Link>
-                <Link
+                {/* <Link
                   to="/ecossistema"
                   className="font-mono text-[11px] uppercase tracking-widest px-6 py-3.5 border border-white/15 rounded-sm hover:bg-white/5 transition"
                 >
                   Ver ecossistema
-                </Link>
+                </Link> */}
               </div>
             </div>
             <div className="relative">
