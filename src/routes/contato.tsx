@@ -11,7 +11,7 @@ const contactSchema = z.object({
   empresa: z.string().trim().min(1, "Informe a empresa").max(100),
   email: z.string().trim().email("E-mail inválido").max(255),
   telefone: z.string().trim().min(8, "Telefone inválido").max(30),
-  interesse: z.enum(["PetOps Tech", "PetOps Care", "Ecossistema completo"]),
+  interesse: z.enum(["PetOps Tech", "Ecossistema completo"]),
   msg: z.string().trim().max(1000).optional().default(""),
 });
 
@@ -133,7 +133,6 @@ function ContactPage() {
                       className="w-full bg-bg-base border border-white/10 rounded-md px-4 py-3 text-white focus:outline-none focus:border-tech-cyan transition"
                     >
                       <option>PetOps Tech</option>
-                      <option>PetOps Care</option>
                       <option>Ecossistema completo</option>
                     </select>
                   </div>

@@ -129,7 +129,7 @@ function HomePage() {
       <Numeros />
       <Conceito />
       <TechSection />
-      <CareSection />
+      {/* <CareSection /> desativado */}
       <Together />
       <FAQ />
       <FinalCTA />
@@ -385,27 +385,17 @@ function Hero() {
             </p>
 
             <div className="flex flex-col gap-3 w-full max-w-md">
-              <div className="grid grid-cols-2 gap-3">
-                <Link
-                  to="/tech"
-                  className="group relative px-5 py-4 bg-bg-surface/80 backdrop-blur-md border border-tech-cyan/30 rounded-md hover:border-tech-cyan hover:shadow-[0_0_24px_-4px_var(--color-tech-cyan)] transition-all"
-                >
-                  <span className="font-mono text-[11px] uppercase tracking-widest text-tech-cyan">
-                    Conhecer Tech
-                  </span>
-                </Link>
-                <Link
-                  to="/care"
-                  className="group relative px-5 py-4 bg-bg-surface/80 backdrop-blur-md border border-care-blue/30 rounded-md hover:border-care-blue hover:shadow-[0_0_24px_-4px_var(--color-care-blue)] transition-all"
-                >
-                  <span className="font-mono text-[11px] uppercase tracking-widest text-care-blue">
-                    Conhecer Care
-                  </span>
-                </Link>
-              </div>
+              <Link
+                to="/tech"
+                className="group relative px-5 py-4 bg-bg-surface/80 backdrop-blur-md border border-tech-cyan/30 rounded-md hover:border-tech-cyan hover:shadow-[0_0_24px_-4px_var(--color-tech-cyan)] transition-all text-center"
+              >
+                <span className="font-mono text-[11px] uppercase tracking-widest text-tech-cyan">
+                  Conhecer Tech
+                </span>
+              </Link>
               <Link
                 to="/ecossistema"
-                className="px-6 py-4 bg-white text-bg-base rounded-md hover:bg-white/90 font-mono text-[11px] uppercase tracking-widest font-semibold transition"
+                className="px-6 py-4 bg-white text-bg-base rounded-md hover:bg-white/90 font-mono text-[11px] uppercase tracking-widest font-semibold transition text-center"
               >
                 Ver o ecossistema completo
               </Link>
@@ -1029,14 +1019,7 @@ function FinalCTA() {
               to="/tech"
               className="font-mono text-[11px] uppercase tracking-widest text-tech-cyan/80 hover:text-tech-cyan transition"
             >
-              ← Ver a Tech
-            </Link>
-            <div className="w-px h-3 bg-white/15" />
-            <Link
-              to="/care"
-              className="font-mono text-[11px] uppercase tracking-widest text-care-blue/80 hover:text-care-blue transition"
-            >
-              Ver a Care →
+              Ver a Tech →
             </Link>
           </div>
         </div>
