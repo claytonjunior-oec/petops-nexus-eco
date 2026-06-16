@@ -674,134 +674,134 @@ function LiveStat({
 }
 
 /* ---------------- CARE SECTION ---------------- */
-function CareSection() {
-  const featured = careProducts.slice(0, 6);
-  const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.2 });
-  return (
-    <section className="relative py-24 md:py-32 px-6 lg:px-10 overflow-hidden">
-      <div className="absolute top-1/2 right-0 size-[600px] bg-care-blue/8 blur-[160px] rounded-full pointer-events-none" />
-      <div className="relative max-w-[1440px] mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-16 items-center">
-        {/* Real Care products */}
-        <div ref={ref} className="relative order-2 lg:order-1">
-          <div
-            className={`rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-6 md:p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] glow-care transition-all duration-[1200ms] ease-out ${
-              inView
-                ? "opacity-100 translate-y-0 blur-0"
-                : "opacity-0 translate-y-8 blur-md"
-            }`}
-          >
-            <div
-              className={`flex items-center justify-between mb-6 transition-all duration-700 delay-150 ${
-                inView ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"
-              }`}
-            >
-              <div className="font-mono text-[10px] text-white/40 tracking-widest">
-                PETOPS · CARE
-              </div>
-              <div className="font-mono text-[10px] text-care-blue/70 tracking-widest">
-                LINHA PROFISSIONAL
-              </div>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-              {featured.map((p, i) => (
-                <Link
-                  key={p.id}
-                  to="/care"
-                  style={{
-                    transitionDelay: inView ? `${200 + i * 90}ms` : "0ms",
-                  }}
-                  className={`group relative rounded-lg border border-white/10 bg-gradient-to-b from-bg-base to-bg-elevated p-3 flex flex-col hover:border-care-blue/40 hover:-translate-y-0.5 overflow-hidden transition-all duration-700 ease-out ${
-                    inView
-                      ? "opacity-100 translate-y-0 blur-0"
-                      : "opacity-0 translate-y-6 blur-sm"
-                  }`}
-                >
-                  <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-care-blue/15 to-transparent opacity-50 group-hover:opacity-100 transition" />
-                  <div className="font-mono text-[9px] text-white/30 tracking-widest relative mb-2">
-                    {p.code}
-                  </div>
-                  <div className="relative aspect-square rounded-md bg-white/[0.02] border border-white/5 flex items-center justify-center overflow-hidden mb-3">
-                    {/* shimmer sweep */}
-                    <div
-                      className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1100ms] ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                    />
-                    {p.image ? (
-                      <img
-                        src={p.image}
-                        alt={p.name}
-                        loading="lazy"
-                        style={{
-                          transitionDelay: inView ? `${350 + i * 90}ms` : "0ms",
-                        }}
-                        className={`size-full object-contain p-2 transition-all duration-[1100ms] ease-out group-hover:scale-110 ${
-                          inView
-                            ? "opacity-100 scale-100 blur-0"
-                            : "opacity-0 scale-95 blur-sm"
-                        }`}
-                      />
-                    ) : (
-                      <div className="size-8 rounded bg-gradient-to-br from-care-blue/40 to-care-green/20" />
-                    )}
-                  </div>
-                  <div className="relative">
-                    <div className="text-[10px] text-care-blue/70 font-mono tracking-widest uppercase mb-1">
-                      {p.category}
-                    </div>
-                    <div className="text-[11px] text-white/85 font-medium leading-tight line-clamp-2">
-                      {p.name}
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-            <div
-              className={`mt-6 pt-4 border-t border-white/5 flex items-center justify-between font-mono text-[10px] text-white/40 tracking-widest transition-all duration-700 ${
-                inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
-              }`}
-              style={{ transitionDelay: inView ? "900ms" : "0ms" }}
-            >
-              <span>{careProducts.length} produtos na linha</span>
-              <Link to="/care" className="text-care-blue hover:text-white transition">
-                Ver todos →
-              </Link>
-            </div>
-          </div>
-          <div className="absolute -inset-4 bg-care-blue/5 blur-3xl -z-10 rounded-3xl" />
-        </div>
-
-        <div className="order-1 lg:order-2">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="h-px w-8 bg-care-blue/40" />
-            <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-care-blue">
-              MÓDULO 02 · PETOPS CARE
-            </span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-white leading-tight mb-6">
-            Produtos para elevar o cuidado e o valor percebido.
-          </h2>
-          <p className="text-white/55 text-lg leading-relaxed mb-8">
-            Linha premium pensada para banho, tosa, clínica e revenda. Fórmulas
-            de alta qualidade em embalagens que comunicam valor.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              to="/care"
-              className="font-mono text-[11px] uppercase tracking-widest px-5 py-3 bg-care-blue text-bg-base rounded-sm font-semibold hover:opacity-90 transition"
-            >
-              Conhecer linha Care
-            </Link>
-            <Link
-              to="/contato"
-              className="font-mono text-[11px] uppercase tracking-widest px-5 py-3 border border-white/15 rounded-sm hover:bg-white/5 transition"
-            >
-              Quero revender
-            </Link>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+// function CareSection() { // desativado
+//   const featured = careProducts.slice(0, 6);
+//   const { ref, inView } = useInView<HTMLDivElement>({ threshold: 0.2 });
+//   return (
+//     <section className="relative py-24 md:py-32 px-6 lg:px-10 overflow-hidden">
+//       <div className="absolute top-1/2 right-0 size-[600px] bg-care-blue/8 blur-[160px] rounded-full pointer-events-none" />
+//       <div className="relative max-w-[1440px] mx-auto grid lg:grid-cols-[1.1fr_1fr] gap-16 items-center">
+//         {/* Real Care products */}
+//         <div ref={ref} className="relative order-2 lg:order-1">
+//           <div
+//             className={`rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-xl p-6 md:p-8 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] glow-care transition-all duration-[1200ms] ease-out ${
+//               inView
+//                 ? "opacity-100 translate-y-0 blur-0"
+//                 : "opacity-0 translate-y-8 blur-md"
+//             }`}
+//           >
+//             <div
+//               className={`flex items-center justify-between mb-6 transition-all duration-700 delay-150 ${
+//                 inView ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-1"
+//               }`}
+//             >
+//               <div className="font-mono text-[10px] text-white/40 tracking-widest">
+//                 PETOPS · CARE
+//               </div>
+//               <div className="font-mono text-[10px] text-care-blue/70 tracking-widest">
+//                 LINHA PROFISSIONAL
+//               </div>
+//             </div>
+//             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+//               {featured.map((p, i) => (
+//                 <Link
+//                   key={p.id}
+//                   to="/care"
+//                   style={{
+//                     transitionDelay: inView ? `${200 + i * 90}ms` : "0ms",
+//                   }}
+//                   className={`group relative rounded-lg border border-white/10 bg-gradient-to-b from-bg-base to-bg-elevated p-3 flex flex-col hover:border-care-blue/40 hover:-translate-y-0.5 overflow-hidden transition-all duration-700 ease-out ${
+//                     inView
+//                       ? "opacity-100 translate-y-0 blur-0"
+//                       : "opacity-0 translate-y-6 blur-sm"
+//                   }`}
+//                 >
+//                   <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-care-blue/15 to-transparent opacity-50 group-hover:opacity-100 transition" />
+//                   <div className="font-mono text-[9px] text-white/30 tracking-widest relative mb-2">
+//                     {p.code}
+//                   </div>
+//                   <div className="relative aspect-square rounded-md bg-white/[0.02] border border-white/5 flex items-center justify-center overflow-hidden mb-3">
+//                     {/* shimmer sweep */}
+//                     <div
+//                       className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-[1100ms] ease-out bg-gradient-to-r from-transparent via-white/10 to-transparent"
+//                     />
+//                     {p.image ? (
+//                       <img
+//                         src={p.image}
+//                         alt={p.name}
+//                         loading="lazy"
+//                         style={{
+//                           transitionDelay: inView ? `${350 + i * 90}ms` : "0ms",
+//                         }}
+//                         className={`size-full object-contain p-2 transition-all duration-[1100ms] ease-out group-hover:scale-110 ${
+//                           inView
+//                             ? "opacity-100 scale-100 blur-0"
+//                             : "opacity-0 scale-95 blur-sm"
+//                         }`}
+//                       />
+//                     ) : (
+//                       <div className="size-8 rounded bg-gradient-to-br from-care-blue/40 to-care-green/20" />
+//                     )}
+//                   </div>
+//                   <div className="relative">
+//                     <div className="text-[10px] text-care-blue/70 font-mono tracking-widest uppercase mb-1">
+//                       {p.category}
+//                     </div>
+//                     <div className="text-[11px] text-white/85 font-medium leading-tight line-clamp-2">
+//                       {p.name}
+//                     </div>
+//                   </div>
+//                 </Link>
+//               ))}
+//             </div>
+//             <div
+//               className={`mt-6 pt-4 border-t border-white/5 flex items-center justify-between font-mono text-[10px] text-white/40 tracking-widest transition-all duration-700 ${
+//                 inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+//               }`}
+//               style={{ transitionDelay: inView ? "900ms" : "0ms" }}
+//             >
+//               <span>{careProducts.length} produtos na linha</span>
+//               <Link to="/care" className="text-care-blue hover:text-white transition">
+//                 Ver todos →
+//               </Link>
+//             </div>
+//           </div>
+//           <div className="absolute -inset-4 bg-care-blue/5 blur-3xl -z-10 rounded-3xl" />
+//         </div>
+//
+//         <div className="order-1 lg:order-2">
+//           <div className="flex items-center gap-3 mb-6">
+//             <div className="h-px w-8 bg-care-blue/40" />
+//             <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-care-blue">
+//               MÓDULO 02 · PETOPS CARE
+//             </span>
+//           </div>
+//           <h2 className="text-4xl md:text-5xl font-medium tracking-tight text-white leading-tight mb-6">
+//             Produtos para elevar o cuidado e o valor percebido.
+//           </h2>
+//           <p className="text-white/55 text-lg leading-relaxed mb-8">
+//             Linha premium pensada para banho, tosa, clínica e revenda. Fórmulas
+//             de alta qualidade em embalagens que comunicam valor.
+//           </p>
+//           <div className="flex flex-wrap gap-3">
+//             <Link
+//               to="/care"
+//               className="font-mono text-[11px] uppercase tracking-widest px-5 py-3 bg-care-blue text-bg-base rounded-sm font-semibold hover:opacity-90 transition"
+//             >
+//               Conhecer linha Care
+//             </Link>
+//             <Link
+//               to="/contato"
+//               className="font-mono text-[11px] uppercase tracking-widest px-5 py-3 border border-white/15 rounded-sm hover:bg-white/5 transition"
+//             >
+//               Quero revender
+//             </Link>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 /* ---------------- PROBLEMA ---------------- */
 /* ---------------- TOGETHER ---------------- */
