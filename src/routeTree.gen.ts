@@ -9,16 +9,24 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WhatsappParaPetshopRouteImport } from './routes/whatsapp-para-petshop'
 import { Route as ValeAPenaRouteImport } from './routes/vale-a-pena'
 import { Route as TechRouteImport } from './routes/tech'
 import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as SistemaParaPetshopRouteImport } from './routes/sistema-para-petshop'
+import { Route as SistemaBanhoETosaRouteImport } from './routes/sistema-banho-e-tosa'
 import { Route as EcossistemaRouteImport } from './routes/ecossistema'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CareRouteImport } from './routes/care'
 import { Route as AssinarRouteImport } from './routes/assinar'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WhatsappParaPetshopRoute = WhatsappParaPetshopRouteImport.update({
+  id: '/whatsapp-para-petshop',
+  path: '/whatsapp-para-petshop',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ValeAPenaRoute = ValeAPenaRouteImport.update({
   id: '/vale-a-pena',
   path: '/vale-a-pena',
@@ -37,6 +45,16 @@ const SobreRoute = SobreRouteImport.update({
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SistemaParaPetshopRoute = SistemaParaPetshopRouteImport.update({
+  id: '/sistema-para-petshop',
+  path: '/sistema-para-petshop',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SistemaBanhoETosaRoute = SistemaBanhoETosaRouteImport.update({
+  id: '/sistema-banho-e-tosa',
+  path: '/sistema-banho-e-tosa',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EcossistemaRoute = EcossistemaRouteImport.update({
@@ -71,10 +89,13 @@ export interface FileRoutesByFullPath {
   '/care': typeof CareRoute
   '/contato': typeof ContatoRoute
   '/ecossistema': typeof EcossistemaRoute
+  '/sistema-banho-e-tosa': typeof SistemaBanhoETosaRoute
+  '/sistema-para-petshop': typeof SistemaParaPetshopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/tech': typeof TechRoute
   '/vale-a-pena': typeof ValeAPenaRoute
+  '/whatsapp-para-petshop': typeof WhatsappParaPetshopRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -82,10 +103,13 @@ export interface FileRoutesByTo {
   '/care': typeof CareRoute
   '/contato': typeof ContatoRoute
   '/ecossistema': typeof EcossistemaRoute
+  '/sistema-banho-e-tosa': typeof SistemaBanhoETosaRoute
+  '/sistema-para-petshop': typeof SistemaParaPetshopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/tech': typeof TechRoute
   '/vale-a-pena': typeof ValeAPenaRoute
+  '/whatsapp-para-petshop': typeof WhatsappParaPetshopRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -94,10 +118,13 @@ export interface FileRoutesById {
   '/care': typeof CareRoute
   '/contato': typeof ContatoRoute
   '/ecossistema': typeof EcossistemaRoute
+  '/sistema-banho-e-tosa': typeof SistemaBanhoETosaRoute
+  '/sistema-para-petshop': typeof SistemaParaPetshopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/sobre': typeof SobreRoute
   '/tech': typeof TechRoute
   '/vale-a-pena': typeof ValeAPenaRoute
+  '/whatsapp-para-petshop': typeof WhatsappParaPetshopRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -107,10 +134,13 @@ export interface FileRouteTypes {
     | '/care'
     | '/contato'
     | '/ecossistema'
+    | '/sistema-banho-e-tosa'
+    | '/sistema-para-petshop'
     | '/sitemap.xml'
     | '/sobre'
     | '/tech'
     | '/vale-a-pena'
+    | '/whatsapp-para-petshop'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -118,10 +148,13 @@ export interface FileRouteTypes {
     | '/care'
     | '/contato'
     | '/ecossistema'
+    | '/sistema-banho-e-tosa'
+    | '/sistema-para-petshop'
     | '/sitemap.xml'
     | '/sobre'
     | '/tech'
     | '/vale-a-pena'
+    | '/whatsapp-para-petshop'
   id:
     | '__root__'
     | '/'
@@ -129,10 +162,13 @@ export interface FileRouteTypes {
     | '/care'
     | '/contato'
     | '/ecossistema'
+    | '/sistema-banho-e-tosa'
+    | '/sistema-para-petshop'
     | '/sitemap.xml'
     | '/sobre'
     | '/tech'
     | '/vale-a-pena'
+    | '/whatsapp-para-petshop'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -141,14 +177,24 @@ export interface RootRouteChildren {
   CareRoute: typeof CareRoute
   ContatoRoute: typeof ContatoRoute
   EcossistemaRoute: typeof EcossistemaRoute
+  SistemaBanhoETosaRoute: typeof SistemaBanhoETosaRoute
+  SistemaParaPetshopRoute: typeof SistemaParaPetshopRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   SobreRoute: typeof SobreRoute
   TechRoute: typeof TechRoute
   ValeAPenaRoute: typeof ValeAPenaRoute
+  WhatsappParaPetshopRoute: typeof WhatsappParaPetshopRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/whatsapp-para-petshop': {
+      id: '/whatsapp-para-petshop'
+      path: '/whatsapp-para-petshop'
+      fullPath: '/whatsapp-para-petshop'
+      preLoaderRoute: typeof WhatsappParaPetshopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/vale-a-pena': {
       id: '/vale-a-pena'
       path: '/vale-a-pena'
@@ -175,6 +221,20 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sistema-para-petshop': {
+      id: '/sistema-para-petshop'
+      path: '/sistema-para-petshop'
+      fullPath: '/sistema-para-petshop'
+      preLoaderRoute: typeof SistemaParaPetshopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sistema-banho-e-tosa': {
+      id: '/sistema-banho-e-tosa'
+      path: '/sistema-banho-e-tosa'
+      fullPath: '/sistema-banho-e-tosa'
+      preLoaderRoute: typeof SistemaBanhoETosaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/ecossistema': {
@@ -221,10 +281,13 @@ const rootRouteChildren: RootRouteChildren = {
   CareRoute: CareRoute,
   ContatoRoute: ContatoRoute,
   EcossistemaRoute: EcossistemaRoute,
+  SistemaBanhoETosaRoute: SistemaBanhoETosaRoute,
+  SistemaParaPetshopRoute: SistemaParaPetshopRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   SobreRoute: SobreRoute,
   TechRoute: TechRoute,
   ValeAPenaRoute: ValeAPenaRoute,
+  WhatsappParaPetshopRoute: WhatsappParaPetshopRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
