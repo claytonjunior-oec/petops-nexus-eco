@@ -204,7 +204,7 @@ const planos = [
   {
     id: "essencial",
     name: "Essencial",
-    price: "R$ 149",
+    price: "R$ 197",
     tagline: "Recepção, loja e estoque rodando juntos.",
     users: "Até 3 usuários",
     limits: "Agenda ilimitada · Portal do Tutor",
@@ -225,7 +225,7 @@ const planos = [
   {
     id: "profissional",
     name: "Profissional",
-    price: "R$ 297",
+    price: "R$ 257",
     tagline: "Clínica, hotel e gestão completa.",
     users: "Até 8 usuários",
     limits: "DRE · Assinaturas digitais · Lembretes",
@@ -614,8 +614,8 @@ function TechPage() {
                   <tr className="bg-bg-surface/60">
                     <td className="text-white/80 px-5 py-4 font-medium">Preço/mês</td>
                     <td className="text-center px-3 py-4 text-white font-mono text-sm">R$ 0</td>
-                    <td className="text-center px-3 py-4 text-white font-mono text-sm">R$ 149</td>
-                    <td className="text-center px-3 py-4 text-tech-cyan font-mono text-sm font-semibold bg-tech-cyan/[0.05]">R$ 297</td>
+                    <td className="text-center px-3 py-4 text-white font-mono text-sm">R$ 197</td>
+                    <td className="text-center px-3 py-4 text-tech-cyan font-mono text-sm font-semibold bg-tech-cyan/[0.05]">R$ 257</td>
                     <td className="text-center px-3 py-4 text-white font-mono text-sm">R$ 497</td>
                   </tr>
                 </tbody>
