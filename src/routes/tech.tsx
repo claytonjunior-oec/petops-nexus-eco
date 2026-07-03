@@ -377,6 +377,7 @@ function TechPage() {
 
             {planos.map((p) => (
               <div
+                id={`plano-${p.id}`}
                 key={p.id}
                 className={`relative rounded-2xl border p-7 flex flex-col ${
                   p.highlight
