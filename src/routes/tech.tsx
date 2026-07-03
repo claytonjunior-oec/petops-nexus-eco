@@ -31,7 +31,7 @@ const TECH_OG = "https://petops-nexus-eco.lovable.app/src/assets/og-petops.jpg";
 export const Route = createFileRoute("/tech")({
   head: () => ({
     meta: [
-      { title: "PetOps Tech — Sistema para Petshop com IA no WhatsApp" },
+      { title: "Conheça o Sistema PetOps — Automação e IA para Petshop" },
       {
         name: "description",
         content:
@@ -307,7 +307,7 @@ function TechPage() {
               <div className="flex items-center gap-3 mb-8">
                 <div className="size-1.5 bg-tech-neon rounded-full shadow-[0_0_10px_var(--color-tech-neon)] animate-pulse" />
                 <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-tech-cyan">
-                  MÓDULO 01 · TECH
+                  CONHEÇA O SISTEMA
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-[64px] font-medium tracking-tight text-white leading-[1.05] text-balance">
@@ -346,65 +346,35 @@ function TechPage() {
           </div>
         </section>
 
-        {/* Planos */}
+        {/* Veja na prática */}
         <Section
-          eyebrow="Planos · PetOps Tech"
-          title="Escolha seu plano"
-          intro="Sem fidelidade. Cancele quando quiser."
+          eyebrow="Veja na prática"
+          title="O sistema em ação"
+          intro="Interface rápida, visual e intuitiva. Quem opera o caixa entende em minutos."
         >
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-
-            {planos.map((p) => (
+          <div className="grid sm:grid-cols-2 gap-6">
+            {screens.map((s) => (
               <div
-                id={`plano-${p.id}`}
-                key={p.id}
-                className={`relative rounded-2xl border p-7 flex flex-col ${
-                  p.highlight
-                    ? "border-tech-cyan/50 bg-bg-surface glow-tech"
-                    : "border-white/10 bg-bg-surface/60"
-                }`}
+                key={s.label}
+                className="group relative rounded-2xl transition-transform duration-500 hover:scale-[1.03] hover:z-10"
               >
-                {p.highlight && p.badge && (
-                  <span className="absolute -top-3 left-7 font-mono text-[10px] uppercase tracking-widest px-2.5 py-1 bg-tech-cyan text-bg-base rounded-sm font-semibold">
-                    {p.badge}
-                  </span>
-                )}
-                <div className="flex items-baseline gap-2">
-                  <h3 className="text-2xl font-medium text-white tracking-tight">{p.name}</h3>
+                <div className="rounded-2xl overflow-hidden bg-white border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+                  <img
+                    src={s.img}
+                    alt={`PetOps — ${s.label}`}
+                    loading="lazy"
+                    className="w-full h-auto object-contain"
+                  />
                 </div>
-                <p className="text-xs text-white/50 mt-1.5 leading-relaxed min-h-[32px]">{p.tagline}</p>
-                <div className="mt-5 mb-5">
-                  <div className="flex items-baseline gap-1">
-                    <span className="text-4xl font-medium text-white tracking-tight">{p.price}</span>
-                    <span className="text-xs text-white/40">/mês</span>
-                  </div>
-                  <div className="font-mono text-[10px] uppercase tracking-widest text-tech-cyan mt-2">{p.users}</div>
-                  <div className="text-xs text-white/45 mt-1">{p.limits}</div>
+                <div className="px-2 pt-4 text-center">
+                  <div className="text-sm font-medium text-white">{s.label}</div>
+                  <div className="text-xs text-white/50 mt-0.5">{s.desc}</div>
                 </div>
-                <ul className="space-y-2 mb-6 flex-1">
-                  {p.modulos.map((m) => (
-                    <li key={m} className="flex gap-2 text-sm text-white/75 leading-snug">
-                      <Check className="size-4 text-tech-cyan shrink-0 mt-0.5" />
-                      <span>{m}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link
-                  to="/assinar"
-                  search={{ plano: p.id as "gratuito" | "essencial" | "profissional" | "premium" }}
-                  className={`block text-center font-mono text-[11px] uppercase tracking-widest px-5 py-3 rounded-sm transition ${
-                    p.highlight
-                      ? "bg-tech-cyan text-bg-base hover:opacity-90 font-semibold"
-                      : "border border-white/15 text-white hover:bg-white/5"
-                  }`}
-                >
-                  {p.cta}
-                </Link>
               </div>
             ))}
           </div>
         </Section>
+
 
 
         {/* CTA */}
