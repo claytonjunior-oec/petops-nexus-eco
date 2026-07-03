@@ -352,26 +352,6 @@ function TechPage() {
           title="Escolha seu plano"
           intro="Sem fidelidade. Cancele quando quiser."
         >
-          {/* Barra de preços no topo */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
-            {planos.map((p) => (
-              <a
-                key={`price-${p.id}`}
-                href={`#plano-${p.id}`}
-                className={`rounded-xl border p-5 text-center transition hover:-translate-y-0.5 ${
-                  p.highlight
-                    ? "border-tech-cyan/60 bg-tech-cyan/10"
-                    : "border-white/10 bg-bg-surface/60 hover:border-tech-cyan/30"
-                }`}
-              >
-                <div className="font-mono text-[10px] uppercase tracking-widest text-white/50 mb-1">
-                  {p.name}
-                </div>
-                <div className="text-3xl font-medium text-white tracking-tight">{p.price}</div>
-                <div className="text-[10px] text-white/40 font-mono">/mês</div>
-              </a>
-            ))}
-          </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
 

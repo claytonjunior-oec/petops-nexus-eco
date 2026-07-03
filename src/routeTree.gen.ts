@@ -16,6 +16,7 @@ import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as SistemaParaPetshopRouteImport } from './routes/sistema-para-petshop'
 import { Route as SistemaBanhoETosaRouteImport } from './routes/sistema-banho-e-tosa'
+import { Route as PlanosRouteImport } from './routes/planos'
 import { Route as EcossistemaRouteImport } from './routes/ecossistema'
 import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CareRouteImport } from './routes/care'
@@ -57,6 +58,11 @@ const SistemaBanhoETosaRoute = SistemaBanhoETosaRouteImport.update({
   path: '/sistema-banho-e-tosa',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PlanosRoute = PlanosRouteImport.update({
+  id: '/planos',
+  path: '/planos',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EcossistemaRoute = EcossistemaRouteImport.update({
   id: '/ecossistema',
   path: '/ecossistema',
@@ -89,6 +95,7 @@ export interface FileRoutesByFullPath {
   '/care': typeof CareRoute
   '/contato': typeof ContatoRoute
   '/ecossistema': typeof EcossistemaRoute
+  '/planos': typeof PlanosRoute
   '/sistema-banho-e-tosa': typeof SistemaBanhoETosaRoute
   '/sistema-para-petshop': typeof SistemaParaPetshopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -103,6 +110,7 @@ export interface FileRoutesByTo {
   '/care': typeof CareRoute
   '/contato': typeof ContatoRoute
   '/ecossistema': typeof EcossistemaRoute
+  '/planos': typeof PlanosRoute
   '/sistema-banho-e-tosa': typeof SistemaBanhoETosaRoute
   '/sistema-para-petshop': typeof SistemaParaPetshopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -118,6 +126,7 @@ export interface FileRoutesById {
   '/care': typeof CareRoute
   '/contato': typeof ContatoRoute
   '/ecossistema': typeof EcossistemaRoute
+  '/planos': typeof PlanosRoute
   '/sistema-banho-e-tosa': typeof SistemaBanhoETosaRoute
   '/sistema-para-petshop': typeof SistemaParaPetshopRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -134,6 +143,7 @@ export interface FileRouteTypes {
     | '/care'
     | '/contato'
     | '/ecossistema'
+    | '/planos'
     | '/sistema-banho-e-tosa'
     | '/sistema-para-petshop'
     | '/sitemap.xml'
@@ -148,6 +158,7 @@ export interface FileRouteTypes {
     | '/care'
     | '/contato'
     | '/ecossistema'
+    | '/planos'
     | '/sistema-banho-e-tosa'
     | '/sistema-para-petshop'
     | '/sitemap.xml'
@@ -162,6 +173,7 @@ export interface FileRouteTypes {
     | '/care'
     | '/contato'
     | '/ecossistema'
+    | '/planos'
     | '/sistema-banho-e-tosa'
     | '/sistema-para-petshop'
     | '/sitemap.xml'
@@ -177,6 +189,7 @@ export interface RootRouteChildren {
   CareRoute: typeof CareRoute
   ContatoRoute: typeof ContatoRoute
   EcossistemaRoute: typeof EcossistemaRoute
+  PlanosRoute: typeof PlanosRoute
   SistemaBanhoETosaRoute: typeof SistemaBanhoETosaRoute
   SistemaParaPetshopRoute: typeof SistemaParaPetshopRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -237,6 +250,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SistemaBanhoETosaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/planos': {
+      id: '/planos'
+      path: '/planos'
+      fullPath: '/planos'
+      preLoaderRoute: typeof PlanosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/ecossistema': {
       id: '/ecossistema'
       path: '/ecossistema'
@@ -281,6 +301,7 @@ const rootRouteChildren: RootRouteChildren = {
   CareRoute: CareRoute,
   ContatoRoute: ContatoRoute,
   EcossistemaRoute: EcossistemaRoute,
+  PlanosRoute: PlanosRoute,
   SistemaBanhoETosaRoute: SistemaBanhoETosaRoute,
   SistemaParaPetshopRoute: SistemaParaPetshopRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

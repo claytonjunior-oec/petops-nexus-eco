@@ -181,7 +181,7 @@ function AssinarPage() {
               </ul>
 
               <Link
-                to="/tech"
+                to="/planos"
                 className="inline-block mt-6 font-mono text-[10px] uppercase tracking-widest text-white/50 hover:text-white transition"
               >
                 ← Comparar planos
