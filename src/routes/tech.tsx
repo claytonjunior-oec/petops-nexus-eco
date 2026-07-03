@@ -31,7 +31,7 @@ const TECH_OG = "https://petops-nexus-eco.lovable.app/src/assets/og-petops.jpg";
 export const Route = createFileRoute("/tech")({
   head: () => ({
     meta: [
-      { title: "PetOps Tech — Sistema para Petshop com IA no WhatsApp" },
+      { title: "Conheça o Sistema PetOps — Automação e IA para Petshop" },
       {
         name: "description",
         content:
@@ -307,7 +307,7 @@ function TechPage() {
               <div className="flex items-center gap-3 mb-8">
                 <div className="size-1.5 bg-tech-neon rounded-full shadow-[0_0_10px_var(--color-tech-neon)] animate-pulse" />
                 <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-tech-cyan">
-                  MÓDULO 01 · TECH
+                  CONHEÇA O SISTEMA
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl lg:text-[64px] font-medium tracking-tight text-white leading-[1.05] text-balance">
