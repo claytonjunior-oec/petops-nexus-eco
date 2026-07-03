@@ -15,13 +15,13 @@ const planos = {
   },
   essencial: {
     name: "Essencial",
-    price: "R$ 149/mês",
+    price: "R$ 197/mês",
     tagline: "Recepção, loja e estoque rodando juntos.",
     cta: "Assinar Essencial",
   },
   profissional: {
     name: "Profissional",
-    price: "R$ 297/mês",
+    price: "R$ 257/mês",
     tagline: "Clínica, hotel e gestão completa.",
     cta: "Assinar Profissional",
   },
