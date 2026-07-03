@@ -583,66 +583,6 @@ function TechPage() {
           </div>
         </Section>
 
-        {/* Comparativo */}
-        <Section
-          eyebrow="Comparativo"
-          title="Tudo que você ganha em cada plano"
-          intro="Todos os módulos do sistema, lado a lado."
-        >
-          <div className="rounded-2xl border border-white/10 bg-bg-surface/40 overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm min-w-[640px]">
-                <thead>
-                  <tr className="border-b border-white/10 bg-bg-surface/60">
-                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-white/50 px-5 py-4">Módulo</th>
-                    <th className="font-mono text-[10px] uppercase tracking-widest text-white/50 px-3 py-4">Grátis</th>
-                    <th className="font-mono text-[10px] uppercase tracking-widest text-white/50 px-3 py-4">Essencial</th>
-                    <th className="font-mono text-[10px] uppercase tracking-widest text-tech-cyan px-3 py-4">Profissional</th>
-                    <th className="font-mono text-[10px] uppercase tracking-widest text-white/50 px-3 py-4">Premium</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparativo.map((row, i) => (
-                    <tr key={row.mod} className={i % 2 === 0 ? "bg-white/[0.015]" : ""}>
-                      <td className="text-white/80 px-5 py-3 border-b border-white/5">{row.mod}</td>
-                      <td className="text-center px-3 py-3 border-b border-white/5"><Cell v={row.g} /></td>
-                      <td className="text-center px-3 py-3 border-b border-white/5"><Cell v={row.e} /></td>
-                      <td className="text-center px-3 py-3 border-b border-white/5 bg-tech-cyan/[0.03]"><Cell v={row.p} /></td>
-                      <td className="text-center px-3 py-3 border-b border-white/5"><Cell v={row.x} /></td>
-                    </tr>
-                  ))}
-                  <tr className="bg-bg-surface/60">
-                    <td className="text-white/80 px-5 py-4 font-medium">Preço/mês</td>
-                    <td className="text-center px-3 py-4 text-white font-mono text-sm">R$ 0</td>
-                    <td className="text-center px-3 py-4 text-white font-mono text-sm">R$ 197</td>
-                    <td className="text-center px-3 py-4 text-tech-cyan font-mono text-sm font-semibold bg-tech-cyan/[0.05]">R$ 257</td>
-                    <td className="text-center px-3 py-4 text-white font-mono text-sm">R$ 497</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </Section>
-
-        {/* CTA: Vale a pena? */}
-        <section className="px-6 lg:px-10 -mt-8 md:-mt-12">
-          <div className="max-w-[1440px] mx-auto">
-            <Link
-              to="/vale-a-pena"
-              className="group flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-tech-cyan/30 bg-tech-cyan/5 hover:bg-tech-cyan/10 backdrop-blur p-6 md:p-7 transition"
-            >
-              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-tech-cyan">
-                Em dúvida?
-              </span>
-              <span className="text-base md:text-lg text-white font-medium text-center">
-                Veja se vale a pena o investimento — calcule seu ROI em segundos
-              </span>
-              <span className="font-mono text-[11px] uppercase tracking-widest px-5 py-2.5 bg-tech-cyan text-bg-base rounded-sm font-semibold group-hover:opacity-90 transition">
-                Fazer as contas →
-              </span>
-            </Link>
-          </div>
-        </section>
 
         {/* CTA */}
         <Section align="center">
