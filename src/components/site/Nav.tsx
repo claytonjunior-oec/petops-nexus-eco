@@ -4,8 +4,7 @@ import logo from "@/assets/petops-logo.png";
 const links = [
   { to: "/", label: "Home" },
   { to: "/tech", label: "Tech", accent: "hover:text-tech-cyan" },
-  // { to: "/care", label: "Care", accent: "hover:text-care-blue" }, // desativado
-  // { to: "/ecossistema", label: "Ecossistema" }, // desativado
+  { to: "/planos", label: "Planos", accent: "hover:text-tech-cyan" },
   { to: "/sobre", label: "Sobre" },
   { to: "/contato", label: "Contato" },
 ] as const;
