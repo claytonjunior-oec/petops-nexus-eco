@@ -124,12 +124,7 @@ function HomePage() {
     <div className="min-h-dvh bg-bg-base text-titanium overflow-x-hidden">
       <Nav />
       <Hero />
-      <Numeros />
-      <Conceito />
       <TechSection />
-      {/* <CareSection /> desativado */}
-      <Together />
-      <FAQ />
       <FinalCTA />
       <Footer />
       <MobileFloatingCTA />
