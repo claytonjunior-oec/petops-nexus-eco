@@ -204,7 +204,7 @@ const planos = [
   {
     id: "essencial",
     name: "Essencial",
-    price: "R$ 149",
+    price: "R$ 197",
     tagline: "Recepção, loja e estoque rodando juntos.",
     users: "Até 3 usuários",
     limits: "Agenda ilimitada · Portal do Tutor",
@@ -225,7 +225,7 @@ const planos = [
   {
     id: "profissional",
     name: "Profissional",
-    price: "R$ 297",
+    price: "R$ 257",
     tagline: "Clínica, hotel e gestão completa.",
     users: "Até 8 usuários",
     limits: "DRE · Assinaturas digitais · Lembretes",
@@ -346,195 +346,38 @@ function TechPage() {
           </div>
         </section>
 
-        {/* Marquee — Confiança técnica */}
-        <section
-          aria-label="Confiança técnica"
-          className="relative border-y border-white/10 bg-bg-surface/40 backdrop-blur-sm overflow-hidden"
-        >
-          <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-bg-base to-transparent z-10 pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-bg-base to-transparent z-10 pointer-events-none" />
-          <div className="flex w-max animate-marquee py-5">
-            {[...selos, ...selos].map((s, i) => (
-              <div
-                key={`${s.label}-${i}`}
-                className="flex items-center gap-3 px-8 shrink-0"
-              >
-                <s.icon className="size-5 text-tech-cyan shrink-0" />
-                <span className="text-sm text-white/85 whitespace-nowrap">
-                  {s.label}
-                </span>
-                <span className="ml-8 size-1 rounded-full bg-tech-cyan/40" aria-hidden="true" />
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Dores */}
-        <section className="relative py-24 md:py-32 px-6 lg:px-10">
-
-          <div className="max-w-[1440px] mx-auto grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            {/* Esquerda — imagem */}
-            <div className="relative order-2 lg:order-1">
-              <div className="absolute -inset-10 bg-tech-cyan/15 blur-[100px] rounded-full pointer-events-none" />
-              <img
-                src={painsMockup}
-                alt="PetOps Tech — agenda, WhatsApp e automações do petshop"
-                className="relative w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)] animate-[float_6s_ease-in-out_infinite]"
-              />
-            </div>
-
-            {/* Direita — texto e cards */}
-            <div className="order-1 lg:order-2">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="h-px w-8 bg-white/30" />
-                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-white/60">
-                  Dores que resolvemos
-                </span>
-              </div>
-              <h2 className="text-4xl md:text-5xl lg:text-[56px] font-medium tracking-tight text-white leading-[1.05] text-balance">
-                O dia a dia do pet shop não pode depender de planilha e memória
-              </h2>
-              <div className="grid sm:grid-cols-2 gap-4 mt-10">
-                {dores.map((d) => (
-                  <div
-                    key={d}
-                    className="p-5 rounded-lg border border-white/10 bg-bg-surface/50 backdrop-blur-sm flex items-start gap-3"
-                  >
-                    <div className="font-mono text-[10px] text-tech-cyan/70 mt-1">×</div>
-                    <p className="text-white/80 text-sm leading-relaxed">{d}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Frentes do sistema */}
-        <Section
-          eyebrow="O sistema"
-          title="Quatro frentes integradas, um só ecossistema"
-          intro="Atendimento, agenda, operação e crescimento conversando entre si — sem retrabalho, sem planilha, sem boleto solto."
-        >
-          <div className="grid lg:grid-cols-2 gap-6 lg:gap-x-6 lg:gap-y-14 pt-10">
-            {frentes.map((f, i) => (
-              <div
-                key={f.label}
-                className="relative rounded-2xl border border-white/10 bg-bg-surface/60 backdrop-blur-sm p-8 pr-10 hover:border-tech-cyan/30 transition-colors"
-              >
-                {/* Floating 3D icon — half in / half out top-right */}
-                <img
-                  src={f.icon}
-                  alt=""
-                  aria-hidden="true"
-                  loading="lazy"
-                  className="pointer-events-none absolute -top-10 -right-4 sm:-top-12 sm:-right-6 w-24 sm:w-28 lg:w-32 h-auto drop-shadow-[0_15px_30px_rgba(0,0,0,0.55)]"
-                />
-                <div className="flex items-center gap-3 mb-2 pr-16 sm:pr-20">
-                  <span className="font-mono text-[10px] text-tech-cyan tracking-widest">
-                    F.{String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-white/50">
-                    {f.label}
-                  </span>
-                </div>
-                <h3 className="text-2xl font-medium text-white mb-6 tracking-tight pr-16 sm:pr-20">
-                  {f.title}
-                </h3>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {f.items.map((it) => (
-                    <div key={it.name} className="flex gap-3">
-                      <div className="size-9 rounded-lg bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center shrink-0">
-                        <it.icon className="size-4 text-tech-cyan" />
-                      </div>
-                      <div>
-                        <div className="text-sm font-medium text-white">{it.name}</div>
-                        <p className="text-xs text-white/50 leading-relaxed mt-0.5">
-                          {it.desc}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        {/* Veja na prática */}
-        <Section
-          eyebrow="Veja na prática"
-          title="Interface pensada para a rotina do pet shop"
-          intro="Rápido, visual e intuitivo. Quem opera o caixa entende em minutos."
-        >
-          <div className="grid sm:grid-cols-2 gap-6">
-            {screens.map((s) => (
-              <div
-                key={s.label}
-                className="group relative rounded-2xl transition-transform duration-500 hover:scale-[1.06] hover:z-10"
-              >
-                <div className="rounded-2xl overflow-hidden bg-white border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
-                  <img
-                    src={s.img}
-                    alt={`PetOps — ${s.label}`}
-                    loading="lazy"
-                    className="w-full h-auto object-contain"
-                  />
-                </div>
-                <div className="px-2 pt-4 text-center">
-                  <div className="text-sm font-medium text-white">{s.label}</div>
-                  <div className="text-xs text-white/50 mt-0.5">{s.desc}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        {/* Automação */}
-        <Section
-          eyebrow="Automação"
-          title="Seu pet shop funcionando no piloto automático"
-          intro="O sistema cuida das tarefas repetitivas enquanto sua equipe foca no que importa: cuidar dos pets."
-        >
-          <div className="grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-14 items-center">
-            <div className="grid sm:grid-cols-2 gap-4">
-              {automacoes.map((a) => (
-                <div
-                  key={a.title}
-                  className="flex gap-4 p-5 rounded-xl border border-white/10 bg-bg-surface/50 hover:bg-bg-surface transition"
-                >
-                  <div className="size-10 rounded-lg bg-tech-cyan/10 border border-tech-cyan/20 flex items-center justify-center shrink-0">
-                    <a.icon className="size-5 text-tech-cyan" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-medium text-white">{a.title}</div>
-                    <p className="text-xs text-white/55 leading-relaxed mt-1">{a.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <div className="relative">
-              <div className="absolute -inset-10 bg-tech-cyan/15 blur-[100px] rounded-full pointer-events-none" />
-              <img
-                src={automacaoMockup}
-                alt="PetOps Tech — automações conectando dashboard, agenda, WhatsApp e relatórios"
-                loading="lazy"
-                className="relative w-full h-auto drop-shadow-[0_30px_60px_rgba(0,0,0,0.5)] animate-[float_6s_ease-in-out_infinite]"
-              />
-            </div>
-          </div>
-        </Section>
-
-
-
         {/* Planos */}
         <Section
           eyebrow="Planos · PetOps Tech"
-          title="Escolha o plano que cabe no tamanho do seu negócio"
-          intro="Do petshop começando a estruturar a operação à rede com múltiplas unidades. Todos os planos incluem suporte e Academy."
+          title="Escolha seu plano"
+          intro="Sem fidelidade. Cancele quando quiser."
         >
+          {/* Barra de preços no topo */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
+            {planos.map((p) => (
+              <a
+                key={`price-${p.id}`}
+                href={`#plano-${p.id}`}
+                className={`rounded-xl border p-5 text-center transition hover:-translate-y-0.5 ${
+                  p.highlight
+                    ? "border-tech-cyan/60 bg-tech-cyan/10"
+                    : "border-white/10 bg-bg-surface/60 hover:border-tech-cyan/30"
+                }`}
+              >
+                <div className="font-mono text-[10px] uppercase tracking-widest text-white/50 mb-1">
+                  {p.name}
+                </div>
+                <div className="text-3xl font-medium text-white tracking-tight">{p.price}</div>
+                <div className="text-[10px] text-white/40 font-mono">/mês</div>
+              </a>
+            ))}
+          </div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+
             {planos.map((p) => (
               <div
+                id={`plano-${p.id}`}
                 key={p.id}
                 className={`relative rounded-2xl border p-7 flex flex-col ${
                   p.highlight
@@ -583,66 +426,6 @@ function TechPage() {
           </div>
         </Section>
 
-        {/* Comparativo */}
-        <Section
-          eyebrow="Comparativo"
-          title="Tudo que você ganha em cada plano"
-          intro="Todos os módulos do sistema, lado a lado."
-        >
-          <div className="rounded-2xl border border-white/10 bg-bg-surface/40 overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm min-w-[640px]">
-                <thead>
-                  <tr className="border-b border-white/10 bg-bg-surface/60">
-                    <th className="text-left font-mono text-[10px] uppercase tracking-widest text-white/50 px-5 py-4">Módulo</th>
-                    <th className="font-mono text-[10px] uppercase tracking-widest text-white/50 px-3 py-4">Grátis</th>
-                    <th className="font-mono text-[10px] uppercase tracking-widest text-white/50 px-3 py-4">Essencial</th>
-                    <th className="font-mono text-[10px] uppercase tracking-widest text-tech-cyan px-3 py-4">Profissional</th>
-                    <th className="font-mono text-[10px] uppercase tracking-widest text-white/50 px-3 py-4">Premium</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {comparativo.map((row, i) => (
-                    <tr key={row.mod} className={i % 2 === 0 ? "bg-white/[0.015]" : ""}>
-                      <td className="text-white/80 px-5 py-3 border-b border-white/5">{row.mod}</td>
-                      <td className="text-center px-3 py-3 border-b border-white/5"><Cell v={row.g} /></td>
-                      <td className="text-center px-3 py-3 border-b border-white/5"><Cell v={row.e} /></td>
-                      <td className="text-center px-3 py-3 border-b border-white/5 bg-tech-cyan/[0.03]"><Cell v={row.p} /></td>
-                      <td className="text-center px-3 py-3 border-b border-white/5"><Cell v={row.x} /></td>
-                    </tr>
-                  ))}
-                  <tr className="bg-bg-surface/60">
-                    <td className="text-white/80 px-5 py-4 font-medium">Preço/mês</td>
-                    <td className="text-center px-3 py-4 text-white font-mono text-sm">R$ 0</td>
-                    <td className="text-center px-3 py-4 text-white font-mono text-sm">R$ 149</td>
-                    <td className="text-center px-3 py-4 text-tech-cyan font-mono text-sm font-semibold bg-tech-cyan/[0.05]">R$ 297</td>
-                    <td className="text-center px-3 py-4 text-white font-mono text-sm">R$ 497</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </Section>
-
-        {/* CTA: Vale a pena? */}
-        <section className="px-6 lg:px-10 -mt-8 md:-mt-12">
-          <div className="max-w-[1440px] mx-auto">
-            <Link
-              to="/vale-a-pena"
-              className="group flex flex-wrap items-center justify-center gap-4 rounded-2xl border border-tech-cyan/30 bg-tech-cyan/5 hover:bg-tech-cyan/10 backdrop-blur p-6 md:p-7 transition"
-            >
-              <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-tech-cyan">
-                Em dúvida?
-              </span>
-              <span className="text-base md:text-lg text-white font-medium text-center">
-                Veja se vale a pena o investimento — calcule seu ROI em segundos
-              </span>
-              <span className="font-mono text-[11px] uppercase tracking-widest px-5 py-2.5 bg-tech-cyan text-bg-base rounded-sm font-semibold group-hover:opacity-90 transition">
-                Fazer as contas →
-              </span>
-            </Link>
-          </div>
-        </section>
 
         {/* CTA */}
         <Section align="center">

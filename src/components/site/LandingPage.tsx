@@ -124,35 +124,11 @@ export function LandingPage({
           </div>
         </section>
 
-        {/* DORES */}
-        <Section
-          eyebrow="Dores comuns"
-          title={<>Sua operação <span className="text-tech-cyan">trava</span> nesses pontos?</>}
-          intro="Se você reconhece dois ou mais itens abaixo, o PetOps resolve hoje."
-        >
-          <div className="grid md:grid-cols-2 gap-4">
-            {pains.map((p, i) => (
-              <div
-                key={i}
-                className="flex items-start gap-4 p-6 rounded-lg border border-white/10 bg-white/[0.02] hover:border-tech-cyan/30 hover:bg-white/[0.04] transition"
-              >
-                <div className="font-mono text-xs text-tech-cyan/70 mt-0.5">
-                  {String(i + 1).padStart(2, "0")}
-                </div>
-                <p className="text-white/80 leading-relaxed">{p}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-12 flex justify-center">
-            <CTAButton msg={whatsappMessage} />
-          </div>
-        </Section>
-
         {/* FUNCIONALIDADES */}
         <Section
           eyebrow="O que o PetOps faz"
-          title="Funcionalidades pensadas para o pet"
-          intro="Tudo o que sua operação precisa em um único lugar — sem planilha, sem caderno, sem confusão."
+          title="Tudo em um só lugar"
+          intro="Sem planilha, sem caderno, sem confusão."
           className="bg-bg-surface/40"
         >
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -172,85 +148,12 @@ export function LandingPage({
               );
             })}
           </div>
-        </Section>
-
-        {/* BENEFÍCIOS */}
-        <Section
-          eyebrow="Resultado prático"
-          title={<>O que muda na sua rotina <span className="text-tech-cyan">a partir do dia 1</span></>}
-        >
-          <div className="grid md:grid-cols-2 gap-4 max-w-3xl">
-            {benefits.map((b, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-4 p-5 rounded-lg bg-gradient-to-br from-tech-cyan/10 to-transparent border border-tech-cyan/20"
-              >
-                <div className="size-8 rounded-full bg-tech-cyan flex items-center justify-center shrink-0">
-                  <Check className="size-4 text-bg-base" strokeWidth={3} />
-                </div>
-                <p className="text-white font-medium">{b}</p>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        {/* DIFERENCIAIS */}
-        <Section
-          eyebrow="Por que PetOps"
-          title="Feito por quem entende pet"
-          className="bg-bg-surface/40"
-        >
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { icon: Zap, title: "Implantação rápida", desc: "Sua agenda e clientes migrados em dias, não meses." },
-              { icon: HeartHandshake, title: "Suporte humano", desc: "Time que conhece petshop atende em minutos pelo WhatsApp." },
-              { icon: ShieldCheck, title: "Sem fidelidade abusiva", desc: "Cancele quando quiser. Sem letras miúdas." },
-            ].map((d, i) => (
-              <div key={i} className="p-8 rounded-lg border border-white/10 bg-bg-base">
-                <d.icon className="size-6 text-tech-cyan mb-4" />
-                <h3 className="text-lg font-medium text-white mb-2">{d.title}</h3>
-                <p className="text-sm text-white/55 leading-relaxed">{d.desc}</p>
-              </div>
-            ))}
-          </div>
-        </Section>
-
-        {/* PLANOS */}
-        <Section
-          eyebrow="Comece simples"
-          title={<>Comece com um <span className="text-tech-cyan">plano simples</span></>}
-          intro="Sem complicação. Escolha o tamanho da sua operação e evolua quando quiser."
-          align="center"
-        >
-          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mt-6">
+          <div className="mt-12 flex flex-col sm:flex-row gap-3 justify-center items-center">
             <CTAButton msg={whatsappMessage} />
             <SecondaryCTA />
           </div>
         </Section>
 
-        {/* FAQ */}
-        <Section
-          eyebrow="Dúvidas frequentes"
-          title="Perguntas comuns antes de começar"
-          className="bg-bg-surface/40"
-        >
-          <div className="max-w-3xl space-y-3">
-            {faq.map((f, i) => (
-              <details
-                key={i}
-                className="group border border-white/10 rounded-lg bg-bg-base hover:border-white/20 transition"
-              >
-                <summary className="cursor-pointer list-none p-5 flex items-center justify-between gap-4">
-                  <span className="text-white font-medium">{f.q}</span>
-                  <span className="size-6 rounded-full border border-white/20 flex items-center justify-center text-tech-cyan text-lg leading-none group-open:rotate-45 transition">
-                    +
-                  </span>
-                </summary>
-                <div className="px-5 pb-5 text-white/60 leading-relaxed">{f.a}</div>
-              </details>
-            ))}
-          </div>
-        </Section>
 
         {/* CTA FINAL */}
         <section className="relative px-6 lg:px-10 py-24 md:py-32 overflow-hidden">

@@ -28,7 +28,7 @@ const faqs = [
   },
   {
     q: "Quanto custa um sistema de gestão completo para petshop?",
-    a: "O PetOps começa em R$ 0 (plano Gratuito) e vai até R$ 497/mês no plano Premium com IA, multi-unidade e automações. Os planos Essencial (R$ 149) e Profissional (R$ 297) cobrem 90% das operações de banho & tosa, clínicas e daycare.",
+    a: "O PetOps começa em R$ 0 (Gratuito) e vai até R$ 497/mês no Premium com IA. Os planos Essencial (R$ 197) e Profissional (R$ 257) cobrem 90% das operações.",
   },
   {
     q: "O PetOps funciona para clínica veterinária e hotel pet?",
@@ -124,12 +124,7 @@ function HomePage() {
     <div className="min-h-dvh bg-bg-base text-titanium overflow-x-hidden">
       <Nav />
       <Hero />
-      <Numeros />
-      <Conceito />
       <TechSection />
-      {/* <CareSection /> desativado */}
-      <Together />
-      <FAQ />
       <FinalCTA />
       <Footer />
       <MobileFloatingCTA />
