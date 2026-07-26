@@ -1,11 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 
-const BASE_URL = "https://petops-nexus-eco.lovable.app";
+const BASE_URL = "https://petops.org";
 
 interface SitemapEntry {
   path: string;
-  changefreq?: "weekly" | "monthly" | "yearly";
+  changefreq?: "daily" | "weekly" | "monthly" | "yearly";
   priority?: string;
 }
 
@@ -17,23 +17,22 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/", changefreq: "weekly", priority: "1.0" },
           { path: "/tech", changefreq: "weekly", priority: "0.9" },
           { path: "/planos", changefreq: "weekly", priority: "0.9" },
-          // { path: "/care", changefreq: "weekly", priority: "0.9" }, // desativado
-          // { path: "/ecossistema", changefreq: "monthly", priority: "0.8" }, // desativado
-          { path: "/sobre", changefreq: "monthly", priority: "0.6" },
-          { path: "/contato", changefreq: "monthly", priority: "0.7" },
           { path: "/sistema-para-petshop", changefreq: "weekly", priority: "0.9" },
           { path: "/sistema-banho-e-tosa", changefreq: "weekly", priority: "0.9" },
           { path: "/whatsapp-para-petshop", changefreq: "weekly", priority: "0.9" },
+          { path: "/vale-a-pena", changefreq: "monthly", priority: "0.8" },
+          { path: "/sobre", changefreq: "monthly", priority: "0.6" },
+          { path: "/contato", changefreq: "monthly", priority: "0.7" },
         ];
 
         const urls = entries
-          .map((e) =>
+          .map((entry) =>
             [
-              `  <url>`,
-              `    <loc>${BASE_URL}${e.path}</loc>`,
-              e.changefreq ? `    <changefreq>${e.changefreq}</changefreq>` : null,
-              e.priority ? `    <priority>${e.priority}</priority>` : null,
-              `  </url>`,
+              "  <url>",
+              `    <loc>${BASE_URL}${entry.path}</loc>`,
+              entry.changefreq ? `    <changefreq>${entry.changefreq}</changefreq>` : null,
+              entry.priority ? `    <priority>${entry.priority}</priority>` : null,
+              "  </url>",
             ]
               .filter(Boolean)
               .join("\n"),
@@ -47,8 +46,8 @@ ${urls}
 
         return new Response(xml, {
           headers: {
-            "Content-Type": "application/xml",
-            "Cache-Control": "public, max-age=3600",
+            "Content-Type": "application/xml; charset=utf-8",
+            "Cache-Control": "public, max-age=3600, s-maxage=3600",
           },
         });
       },
