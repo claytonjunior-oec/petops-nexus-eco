@@ -1,4 +1,6 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
+import { Menu, X } from "lucide-react";
 import logo from "@/assets/petops-logo.png";
 
 const links = [
@@ -10,6 +12,8 @@ const links = [
 ] as const;
 
 export function Nav() {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className="fixed top-0 inset-x-0 h-16 z-50 border-b border-white/10 bg-bg-base/70 backdrop-blur-xl">
       <div className="h-full px-6 lg:px-10 flex items-center justify-between max-w-[1440px] mx-auto">
