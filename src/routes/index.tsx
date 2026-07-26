@@ -6,7 +6,7 @@ import { Section } from "@/components/site/Section";
 import heroHusky from "@/assets/hero-husky.jpg";
 import heroTech from "@/assets/hero-tech.jpg";
 import ogImage from "@/assets/og-petops.jpg";
-import { Heart, Sparkles, Star, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 
 const SITE_URL = "https://petops.org";
 const OG_IMAGE_URL = `${SITE_URL}${ogImage}`;
