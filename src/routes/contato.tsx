@@ -235,7 +235,7 @@ function Field({
   type?: string;
   maxLength?: number;
   autoComplete?: string;
-  inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"];
+  inputMode?: "none" | "text" | "tel" | "url" | "email" | "numeric" | "decimal" | "search";
 }) {
   return (
     <div>
