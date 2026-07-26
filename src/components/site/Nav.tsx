@@ -72,7 +72,7 @@ export function Nav() {
       </div>
 
       {open && (
-        <div id="menu-mobile" className="md:hidden border-t border-white/10 bg-bg-base/95 backdrop-blur-xl shadow-2xl">
+        <div id="menu-mobile" className="md:hidden border-t border-white/10 bg-bg-base backdrop-blur-xl shadow-2xl">
           <div className="px-5 sm:px-6 py-4 flex flex-col gap-1">
             {links.map((link) => (
               <Link

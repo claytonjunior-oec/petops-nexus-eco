@@ -222,7 +222,7 @@ function Hero() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[76px] font-medium tracking-tight text-white leading-[1.02] text-balance mb-6 [text-shadow:0_4px_30px_rgba(0,0,0,0.5)]">
-              Sua operação organizada. Seu atendimento <span className="text-gradient-brand">mais inteligente.</span>
+              Sua operação organizada. Seu atendimento <span className="text-gradient-brand">mais inteligente</span>
             </h1>
 
             <p className="text-base md:text-xl text-white/72 max-w-2xl text-pretty font-light leading-relaxed mb-4 [text-shadow:0_2px_20px_rgba(0,0,0,0.5)]">
