@@ -47,18 +47,64 @@ export function Nav() {
             href="https://petops.organizeeconecta.com/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-mono text-[11px] uppercase tracking-[0.18em] px-4 py-2 border border-white/15 text-white/80 rounded-sm hover:text-white hover:border-white/40 transition-all"
+            className="hidden sm:inline-block font-mono text-[11px] uppercase tracking-[0.18em] px-4 py-2 border border-white/15 text-white/80 rounded-sm hover:text-white hover:border-white/40 transition-all"
           >
             Login
           </a>
           <Link
             to="/contato"
-            className="font-mono text-[11px] uppercase tracking-[0.18em] px-4 py-2 bg-white text-bg-base rounded-sm hover:bg-white/90 transition-all font-medium"
+            className="hidden sm:inline-block font-mono text-[11px] uppercase tracking-[0.18em] px-4 py-2 bg-white text-bg-base rounded-sm hover:bg-white/90 transition-all font-medium"
           >
             Agendar Demo
           </Link>
+          <button
+            type="button"
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="md:hidden shrink-0 grid place-items-center size-10 -mr-2 text-white/80 hover:text-white"
+          >
+            {open ? <X className="size-5" /> : <Menu className="size-5" />}
+          </button>
         </div>
       </div>
+
+      {open && (
+        <div className="md:hidden border-t border-white/10 bg-bg-base/95 backdrop-blur-xl">
+          <div className="px-6 py-4 flex flex-col gap-1">
+            {links.map((l) => (
+              <Link
+                key={l.to}
+                to={l.to}
+                onClick={() => setOpen(false)}
+                className="py-3 font-mono text-[12px] uppercase tracking-[0.18em] text-white/60 hover:text-white transition-colors"
+                activeProps={{ className: "text-white" }}
+                activeOptions={{ exact: l.to === "/" }}
+              >
+                {l.label}
+              </Link>
+            ))}
+            <div className="flex gap-3 pt-3">
+              <a
+                href="https://petops.organizeeconecta.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 text-center font-mono text-[11px] uppercase tracking-[0.18em] px-4 py-3 border border-white/15 text-white/80 rounded-sm"
+              >
+                Login
+              </a>
+              <Link
+                to="/contato"
+                onClick={() => setOpen(false)}
+                className="flex-1 text-center font-mono text-[11px] uppercase tracking-[0.18em] px-4 py-3 bg-white text-bg-base rounded-sm font-medium"
+              >
+                Agendar Demo
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }
+
